@@ -1,0 +1,408 @@
+/******************************************************************************
+ * Copyright 2013-2014 hicling Systems (shanghai)
+ *
+ * FileName: base object.c
+ *
+ * Description: implement thefunction of heap
+ * Modification history:
+ *     2015/9/12, v1.0 create this file.
+*******************************************************************************/
+#include "lx_heap.h"
+#include "base_object.h"
+#include "../lx_nrf51Kit.h"
+/*********************************************************************
+* MACROS
+*/
+
+/*********************************************************************
+* TYPEDEFS
+*/
+/*********************************************************************
+* GLOBAL VARIABLES
+*/
+/*set to 1 to open the key trigger function */
+
+/*********************************************************************
+* LOCAL VARIABLES
+*/
+typedef struct lx_queue_item
+{
+	struct lx_queue_item *pnext;
+	void *pdata;
+
+}lx_queue_item;
+
+typedef struct
+{	
+	lx_queue_item 		*phead;
+	uint16_t 			item_size;
+	uint8_t 			count;
+
+}lx_queue;
+
+/*********************************************************************
+* LOCAL FUNCTIONS
+*/
+static void *queue_create(CLASS(base_object) *arg, uint16_t item_size);
+
+static void queue_destroy(CLASS(base_object) *arg, void **queue);
+
+static int queue_append(CLASS(base_object) *arg, void *queue, void *item);
+
+static int queue_take_first(CLASS(base_object) *arg, void *queue, void *item);
+
+static int queue_at(CLASS(base_object) *arg, void *queue, int index, void *item);
+
+static int queue_remove(CLASS(base_object) *arg, void *queue, int index);
+
+static uint32_t queue_count(CLASS(base_object) *arg, void *queue);
+
+static void queue_clear(CLASS(base_object) *arg, void *queue);
+/******************************************************************************
+ * FunctionName : void *lx_malloc(uint32_t size)
+ * Description  :data recieved function after data sended
+ * Parameters   : size : data size u need malloc
+ * Returns      : buffer pointer
+*******************************************************************************/
+static void *queue_create(CLASS(base_object) *arg, uint16_t item_size)
+{
+	if (item_size == 0)
+	{
+		return NULL;
+	}
+
+	LX_ENTER_CRITICAL();
+
+	lx_queue *queue = (lx_queue *)LX_Malloc(sizeof(lx_queue));
+
+	if (queue == NULL)
+	{
+		LX_EXIT_CRITICAL();
+		return NULL;
+	}
+
+	queue->phead 		= NULL;
+	queue->item_size 	= item_size;
+	queue->count 		= 0;
+
+	LX_EXIT_CRITICAL();
+
+	return queue;
+}
+/******************************************************************************
+ * FunctionName : void *lx_malloc(uint32_t size)
+ * Description  :data recieved function after data sended
+ * Parameters   : size : data size u need malloc
+ * Returns      : buffer pointer
+*******************************************************************************/
+static void queue_destroy(CLASS(base_object) *arg, void **q)
+{
+	LX_ENTER_CRITICAL();
+
+	lx_queue *queue = *((lx_queue **)q);
+	if (queue == NULL)
+	{
+		LX_EXIT_CRITICAL();
+		return;
+	}
+
+	queue_clear(arg, (void*)queue);
+
+	LX_Free(queue);
+
+	*q = NULL;
+
+	LX_EXIT_CRITICAL();
+}
+/******************************************************************************
+ * FunctionName : void *lx_malloc(uint32_t size)
+ * Description  :data recieved function after data sended
+ * Parameters   : size : data size u need malloc
+ * Returns      : buffer pointer
+*******************************************************************************/
+static int queue_append(CLASS(base_object) *arg, void *q, void *item)
+{
+	LX_ENTER_CRITICAL();
+
+	lx_queue *queue = q;
+	if (queue == NULL)
+	{
+		LX_EXIT_CRITICAL();
+		return -1;
+	}
+
+	lx_queue_item *new_item = (lx_queue_item *)LX_Malloc(sizeof(lx_queue_item));
+	if (new_item == NULL)
+	{
+		LX_EXIT_CRITICAL();
+		return -1;
+	}
+	new_item->pnext = NULL;
+
+	new_item->pdata = LX_Malloc(queue->item_size);
+	if (new_item->pdata == NULL)
+	{
+		LX_Free(new_item);
+		LX_EXIT_CRITICAL();
+		return -1;
+	}
+	memcpy(new_item->pdata, item, queue->item_size);
+
+	lx_queue_item **p = &queue->phead;
+	while (*p != NULL)
+	{
+		p = &((*p)->pnext);
+	} 		
+	*p = new_item;
+
+	queue->count++;
+
+	LX_EXIT_CRITICAL();
+
+	return 0;
+}
+/******************************************************************************
+ * FunctionName : void *lx_malloc(uint32_t size)
+ * Description  :data recieved function after data sended
+ * Parameters   : size : data size u need malloc
+ * Returns      : buffer pointer
+*******************************************************************************/
+static int queue_take_first(CLASS(base_object) *arg, void *q, void *item)
+{
+	LX_ENTER_CRITICAL();
+
+	lx_queue *queue = (lx_queue *)q;
+	if (queue == NULL)
+	{
+		LX_EXIT_CRITICAL();
+		return -1;
+	}
+
+	lx_queue_item *first_item = queue->phead;
+	if (first_item == NULL)
+	{
+		LX_EXIT_CRITICAL();
+		return -1;
+	}
+
+	queue->phead = queue->phead->pnext;
+	queue->count--;
+
+	memcpy(item, first_item->pdata, queue->item_size);
+	LX_Free(first_item->pdata);
+	LX_Free(first_item);
+
+	LX_EXIT_CRITICAL();
+
+	return 0;
+}
+/******************************************************************************
+ * FunctionName : void *lx_malloc(uint32_t size)
+ * Description  :data recieved function after data sended
+ * Parameters   : size : data size u need malloc
+ * Returns      : buffer pointer
+*******************************************************************************/
+static int queue_at(CLASS(base_object) *arg, void *q, int index, void *item)
+{
+	LX_ENTER_CRITICAL();
+
+	lx_queue *queue = (lx_queue *)q;
+	if (queue == NULL)
+	{
+		LX_EXIT_CRITICAL();
+		return -1;
+	}
+
+	if (queue->count <= index)
+	{
+		LX_EXIT_CRITICAL();
+		return -1;
+	}
+
+	lx_queue_item *index_item = queue->phead;
+	if (index_item == NULL)
+	{
+		LX_EXIT_CRITICAL();
+		return -1;
+	}
+
+	for (int i = 0; i < index; i++)
+	{
+		index_item = index_item->pnext;
+		if (index_item == NULL)
+		{
+			LX_EXIT_CRITICAL();
+			return -1;
+		}
+	}
+
+	memcpy(item, index_item->pdata, queue->item_size);
+
+	LX_EXIT_CRITICAL();
+
+	return 0;
+}
+/******************************************************************************
+ * FunctionName : void *lx_malloc(uint32_t size)
+ * Description  :data recieved function after data sended
+ * Parameters   : size : data size u need malloc
+ * Returns      : buffer pointer
+*******************************************************************************/
+static int queue_remove(CLASS(base_object) *arg, void *q, int index)
+{
+	LX_ENTER_CRITICAL();
+	/*critical setion*/
+	lx_queue *queue = (lx_queue *)q;
+	if (queue == NULL)
+	{
+		LX_EXIT_CRITICAL();
+		return -1;
+	}
+
+	if (queue->count <= index)
+	{
+		LX_EXIT_CRITICAL();
+		return -1;
+	}
+
+	lx_queue_item *delete_item;
+	if (index == 0)
+	{
+		delete_item = queue->phead;
+		if (delete_item == NULL)
+		{
+			LX_EXIT_CRITICAL();
+			return -1;
+		}
+
+		queue->phead = queue->phead->pnext;
+		queue->count--;
+	}
+	else
+	{
+		lx_queue_item *index_item = queue->phead;
+		if (index_item == NULL)
+		{
+			LX_EXIT_CRITICAL();
+			return -1;
+		}
+
+		for (int i = 0; i < index - 1; i++)
+		{
+			index_item = index_item->pnext;
+			if (index_item == NULL)
+			{
+				LX_EXIT_CRITICAL();
+				return -1;
+			}
+		}
+
+		delete_item = index_item->pnext;
+		if (delete_item == NULL)
+		{
+			LX_EXIT_CRITICAL();
+			return -1;
+		}
+
+		index_item->pnext = index_item->pnext->pnext;
+		queue->count--;
+	}
+
+	LX_Free(delete_item->pdata);
+	LX_Free(delete_item);
+	
+
+	LX_EXIT_CRITICAL();
+
+	return 0;
+}
+/******************************************************************************
+ * FunctionName : static uint32_t queue_count(void *q)
+ * Description  :data recieved function after data sended
+ * Parameters   : size : data size u need malloc
+ * Returns      : buffer pointer
+*******************************************************************************/
+static uint32_t queue_count(CLASS(base_object) *arg, void *q)
+{
+	LX_ENTER_CRITICAL();
+
+	lx_queue *queue = (lx_queue *)q;
+	if (queue == NULL)
+	{
+		LX_EXIT_CRITICAL();
+		return 0;
+	}
+
+	int count = queue->count;
+
+	LX_EXIT_CRITICAL();
+
+	return count;
+}
+/******************************************************************************
+ * FunctionName : static void lx_queue_clear(void *q)
+ * Description  :data recieved function after data sended
+ * Parameters   : size : data size u need malloc
+ * Returns      : buffer pointer
+*******************************************************************************/
+static void queue_clear(CLASS(base_object) *arg, void *q)
+{
+	LX_ENTER_CRITICAL();
+
+	lx_queue *queue = (lx_queue *)q;
+	if (queue == NULL)
+	{
+		LX_EXIT_CRITICAL();
+		return;
+	}
+
+	lx_queue_item *first_item;
+	while (queue->phead != NULL)
+	{
+		first_item = queue->phead;
+		queue->phead = queue->phead->pnext;
+		LX_Free(first_item->pdata);
+		LX_Free(first_item);
+	}
+
+	queue->count = 0;
+
+	LX_EXIT_CRITICAL();
+}        
+
+/******************************************************************************
+ * FunctionName : int  socket_recieved(void* env)
+ * Description  :data recieved function after data sended
+ * Parameters   : level : output level of pin
+ * Returns      : 0: init successfully
+ *				 -1: init failed
+ *
+*******************************************************************************/
+int deinit_base_object(CLASS(base_object) *arg) /*initiate http object*/
+{
+//	ASSERT(arg != NULL);
+	LX_Free(arg);
+	return LX_OK;
+}
+
+
+/******************************************************************************
+ * FunctionName : int  init_base_object(void* env)
+ * Description  : base object construction method
+	* Parameters   : arg: object pointer
+ * Returns      : 0: init successfully
+ *				 -1: init failed
+ *
+*******************************************************************************/
+int init_base_object(CLASS(base_object) *arg) /*initiate http object*/
+{
+//	assert(arg != NULL);
+	arg->init = init_base_object;
+	arg->create_queque = queue_create;
+	arg->destory_queue = queue_destroy;
+	arg->queue_append = queue_append;
+	arg->queue_at = queue_at;
+	arg->queue_remove = queue_remove;
+ 	arg->de_init =  deinit_base_object;
+	return LX_OK;
+}

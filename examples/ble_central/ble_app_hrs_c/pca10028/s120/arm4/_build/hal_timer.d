@@ -1,0 +1,50 @@
+.\_build\hal_timer.o: ..\..\..\kernel\hal_timer.c
+.\_build\hal_timer.o: ..\..\..\kernel\../lx_nrf51Kit.h
+.\_build\hal_timer.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
+.\_build\hal_timer.o: ..\..\..\config\stdbool.h
+.\_build\hal_timer.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
+.\_build\hal_timer.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
+.\_build\hal_timer.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\libraries\timer\app_timer.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\libraries\util\app_error.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\libraries\util\app_util.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\device\compiler_abstraction.h
+.\_build\hal_timer.o: ..\..\..\..\..\bsp\boards.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\device\nrf51.h
+.\_build\hal_timer.o: ..\..\..\config\core_cm0.h
+.\_build\hal_timer.o: ..\..\..\config\core_cmInstr.h
+.\_build\hal_timer.o: ..\..\..\config\core_cmFunc.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\toolchain\system_nrf51.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\device\nrf51_bitfields.h
+.\_build\hal_timer.o: ..\..\..\..\..\bsp\pca10028.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\libraries\trace\app_trace.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\libraries\util\nrf_assert.h
+.\_build\hal_timer.o: ..\..\..\incs\hal_event.h
+.\_build\hal_timer.o: ..\..\..\incs\base_object.h
+.\_build\hal_timer.o: ..\..\..\incs\oop_hal.h
+.\_build\hal_timer.o: ..\..\..\incs\message.h
+.\_build\hal_timer.o: ..\..\..\incs\event.h
+.\_build\hal_timer.o: ..\..\..\incs\os.h
+.\_build\hal_timer.o: ..\..\..\incs\../lx_nrf51Kit.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\libraries\util\nordic_common.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h
+.\_build\hal_timer.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h
+.\_build\hal_timer.o: ..\..\..\incs\lx_heap.h
+.\_build\hal_timer.o: ..\..\..\incs\hal_timer.h

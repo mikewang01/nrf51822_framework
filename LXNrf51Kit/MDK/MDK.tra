@@ -1,0 +1,35 @@
+*** Creating Trace Output File 'MDK.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"main.o"'
+### List of Objects: adding '".\arm_startup_nrf51.o"'
+### List of Objects: adding '"nrf51_delay.o"'
+### List of Objects: adding '"nrf51_gpio.o"'
+### List of Objects: adding '"nrf51_gpiote.o"'
+### List of Objects: adding '"nrf51_timer.o"'
+### List of Objects: adding '"nrf51_uart.o"'
+### List of Objects: adding '"nrf51_uart_simulate.o"'
+### List of Objects: adding '"system_nrf51.o"'
+### List of Objects: adding '"softdevice_handler.o"'
+### List of Objects: adding '"ble_advdata.o"'
+### List of Objects: adding '"ble_conn_params.o"'
+### List of Objects: adding '"ble_service_common.o"'
+### List of Objects: adding '"ble_service_dis.o"'
+### List of Objects: adding '"ble_service_hrs.o"'
+### List of Objects: adding '"log.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M0 "main.o" ".\arm_startup_nrf51.o" "nrf51_delay.o" "nrf51_gpio.o" "nrf51_gpiote.o" "nrf51_timer.o" "nrf51_uart.o" "nrf51_uart_simulate.o" "system_nrf51.o" "softdevice_handler.o" "ble_advdata.o" "ble_conn_params.o" "ble_service_common.o" "ble_service_dis.o" "ble_service_hrs.o" "log.o" 
+--library_type=microlib --strict --scatter "MDK.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\MDK.map" -o MDK.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'MDK.axf'
+### ADS-LD Command File: 'MDK.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'MDK.lnp', Handle=0x00000450
+### Writing '.lnp' file
+### ADS-LD Command file 'MDK.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,49 @@
+.\_build\base_object.o: ..\..\..\base_object\base_object.c
+.\_build\base_object.o: ..\..\..\incs\lx_heap.h
+.\_build\base_object.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
+.\_build\base_object.o: ..\..\..\incs\base_object.h
+.\_build\base_object.o: ..\..\..\incs\oop_hal.h
+.\_build\base_object.o: ..\..\..\base_object\../lx_nrf51Kit.h
+.\_build\base_object.o: ..\..\..\config\stdbool.h
+.\_build\base_object.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
+.\_build\base_object.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
+.\_build\base_object.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\libraries\timer\app_timer.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\libraries\util\app_error.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\libraries\util\app_util.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\device\compiler_abstraction.h
+.\_build\base_object.o: ..\..\..\..\..\bsp\boards.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\device\nrf51.h
+.\_build\base_object.o: ..\..\..\config\core_cm0.h
+.\_build\base_object.o: ..\..\..\config\core_cmInstr.h
+.\_build\base_object.o: ..\..\..\config\core_cmFunc.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\toolchain\system_nrf51.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\device\nrf51_bitfields.h
+.\_build\base_object.o: ..\..\..\..\..\bsp\pca10028.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\libraries\trace\app_trace.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\libraries\util\nrf_assert.h
+.\_build\base_object.o: ..\..\..\incs\hal_event.h
+.\_build\base_object.o: ..\..\..\incs\message.h
+.\_build\base_object.o: ..\..\..\incs\event.h
+.\_build\base_object.o: ..\..\..\incs\os.h
+.\_build\base_object.o: ..\..\..\incs\../lx_nrf51Kit.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\libraries\util\nordic_common.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h
+.\_build\base_object.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h

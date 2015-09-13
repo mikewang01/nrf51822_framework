@@ -1,0 +1,51 @@
+.\_build\system_task.o: ..\..\..\task\systemtask\system_task.c
+.\_build\system_task.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
+.\_build\system_task.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
+.\_build\system_task.o: ..\..\..\incs\event.h
+.\_build\system_task.o: ..\..\..\incs\task.h
+.\_build\system_task.o: ..\..\..\incs\message.h
+.\_build\system_task.o: ..\..\..\incs\os.h
+.\_build\system_task.o: ..\..\..\incs\../lx_nrf51Kit.h
+.\_build\system_task.o: ..\..\..\config\stdbool.h
+.\_build\system_task.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
+.\_build\system_task.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\libraries\timer\app_timer.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\libraries\util\app_error.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\libraries\util\app_util.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\device\compiler_abstraction.h
+.\_build\system_task.o: ..\..\..\..\..\bsp\boards.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\device\nrf51.h
+.\_build\system_task.o: ..\..\..\config\core_cm0.h
+.\_build\system_task.o: ..\..\..\config\core_cmInstr.h
+.\_build\system_task.o: ..\..\..\config\core_cmFunc.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\toolchain\system_nrf51.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\device\nrf51_bitfields.h
+.\_build\system_task.o: ..\..\..\..\..\bsp\pca10028.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\libraries\trace\app_trace.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\libraries\util\nrf_assert.h
+.\_build\system_task.o: ..\..\..\incs\hal_event.h
+.\_build\system_task.o: ..\..\..\incs\base_object.h
+.\_build\system_task.o: ..\..\..\incs\oop_hal.h
+.\_build\system_task.o: ..\..\..\incs\message.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\libraries\util\nordic_common.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h
+.\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h
+.\_build\system_task.o: ..\..\..\incs\lx_heap.h
+.\_build\system_task.o: ..\..\..\incs\hal_timer.h

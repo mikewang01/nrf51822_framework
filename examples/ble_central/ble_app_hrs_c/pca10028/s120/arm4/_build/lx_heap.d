@@ -1,0 +1,49 @@
+.\_build\lx_heap.o: ..\..\..\lx_heap\lx_heap.c
+.\_build\lx_heap.o: ..\..\..\incs\lx_heap.h
+.\_build\lx_heap.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
+.\_build\lx_heap.o: ..\..\..\lx_heap\../lx_nrf51Kit.h
+.\_build\lx_heap.o: ..\..\..\config\stdbool.h
+.\_build\lx_heap.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
+.\_build\lx_heap.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
+.\_build\lx_heap.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\libraries\timer\app_timer.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\libraries\util\app_error.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\libraries\util\app_util.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\device\compiler_abstraction.h
+.\_build\lx_heap.o: ..\..\..\..\..\bsp\boards.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\device\nrf51.h
+.\_build\lx_heap.o: ..\..\..\config\core_cm0.h
+.\_build\lx_heap.o: ..\..\..\config\core_cmInstr.h
+.\_build\lx_heap.o: ..\..\..\config\core_cmFunc.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\toolchain\system_nrf51.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\device\nrf51_bitfields.h
+.\_build\lx_heap.o: ..\..\..\..\..\bsp\pca10028.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\libraries\trace\app_trace.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\libraries\util\nrf_assert.h
+.\_build\lx_heap.o: ..\..\..\incs\hal_event.h
+.\_build\lx_heap.o: ..\..\..\incs\base_object.h
+.\_build\lx_heap.o: ..\..\..\incs\oop_hal.h
+.\_build\lx_heap.o: ..\..\..\incs\message.h
+.\_build\lx_heap.o: ..\..\..\incs\event.h
+.\_build\lx_heap.o: ..\..\..\incs\os.h
+.\_build\lx_heap.o: ..\..\..\incs\../lx_nrf51Kit.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\libraries\util\nordic_common.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h
+.\_build\lx_heap.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h

@@ -1,0 +1,82 @@
+Dependencies for Project 'MDK', Target 'nrf51822': (DO NOT MODIFY !)
+F (..\CODE\APP\app.c)(0x54D8DC03)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\app.o --omf_browse ..\obj\app.crf --depend ..\obj\app.d)
+I (..\CODE\APP\app.h)(0x54D8DB4A)
+I (..\CODE\LX_NRF51Kit\lx_nrf51Kit.h)(0x54D8D1FC)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+F (..\CODE\APP\app_button.c)(0x54D8D9DF)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\app_button.o --omf_browse ..\obj\app_button.crf --depend ..\obj\app_button.d)
+I (..\CODE\APP\app_button.h)(0x54D85D05)
+I (..\CODE\LX_NRF51Kit\lx_nrf51Kit.h)(0x54D8D1FC)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+F (..\CODE\APP\app_timer.c)(0x54D8DA4B)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\app_timer.o --omf_browse ..\obj\app_timer.crf --depend ..\obj\app_timer.d)
+I (..\CODE\APP\app_timer.h)(0x54D8DA62)
+I (..\CODE\LX_NRF51Kit\lx_nrf51Kit.h)(0x54D8D1FC)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+F (..\CODE\APP\main.c)(0x54D8D9C8)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (..\CODE\Debug\debug.h)(0x54D8D367)
+I (..\CODE\LX_NRF51Kit\lx_nrf51Kit.h)(0x54D8D1FC)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+F (..\CODE\CortexM0\arm_startup_nrf51.s)(0x54242004)(--cpu Cortex-M0 --li -g --apcs=interwork --pd "__MICROLIB SETA 1"-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include--pd "__UVISION_VERSION SETA 514"--list .\arm_startup_nrf51.lst --xref -o ..\obj\arm_startup_nrf51.o --depend ..\obj\arm_startup_nrf51.d)
+F (..\CODE\nrf51822\src\nrf51_delay.c)(0x54D85682)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\nrf51_delay.o --omf_browse ..\obj\nrf51_delay.crf --depend ..\obj\nrf51_delay.d)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h)(0x3BEB19E6)
+I (..\CODE\nrf51822\inc\nrf51_delay.h)(0x5424201F)
+I (..\CODE\nrf51822\inc\nrf51.h)(0x54D8D7BE)
+F (..\CODE\nrf51822\src\nrf51_gpio.c)(0x54242032)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\nrf51_gpio.o --omf_browse ..\obj\nrf51_gpio.crf --depend ..\obj\nrf51_gpio.d)
+I (..\CODE\nrf51822\inc\nrf51_gpio.h)(0x54242020)
+I (..\CODE\nrf51822\inc\nrf51.h)(0x54D8D7BE)
+F (..\CODE\nrf51822\src\nrf51_gpiote.c)(0x54242035)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\nrf51_gpiote.o --omf_browse ..\obj\nrf51_gpiote.crf --depend ..\obj\nrf51_gpiote.d)
+I (..\CODE\nrf51822\inc\nrf51_gpiote.h)(0x54242020)
+I (..\CODE\nrf51822\inc\nrf51.h)(0x54D8D7BE)
+F (..\CODE\nrf51822\src\nrf51_timer.c)(0x54242038)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\nrf51_timer.o --omf_browse ..\obj\nrf51_timer.crf --depend ..\obj\nrf51_timer.d)
+I (..\CODE\nrf51822\inc\nrf51_timer.h)(0x54242025)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+I (..\CODE\nrf51822\inc\nrf51.h)(0x54D8D7BE)
+F (..\CODE\nrf51822\src\nrf51_uart.c)(0x54D8D363)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\nrf51_uart.o --omf_browse ..\obj\nrf51_uart.crf --depend ..\obj\nrf51_uart.d)
+I (..\CODE\nrf51822\inc\nrf51_uart.h)(0x54D8D7A8)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+I (..\CODE\nrf51822\inc\nrf51.h)(0x54D8D7BE)
+F (..\CODE\nrf51822\src\nrf51_uart_simulate.c)(0x5424203A)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\nrf51_uart_simulate.o --omf_browse ..\obj\nrf51_uart_simulate.crf --depend ..\obj\nrf51_uart_simulate.d)
+I (..\CODE\nrf51822\inc\nrf51_uart_simulate.h)(0x54242029)
+I (..\CODE\nrf51822\inc\nrf51.h)(0x54D8D7BE)
+F (..\CODE\nrf51822\src\system_nrf51.c)(0x5424203A)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\system_nrf51.o --omf_browse ..\obj\system_nrf51.crf --depend ..\obj\system_nrf51.d)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+F (..\CODE\nrf51822\src\nrf51_spi.c)(0x54242039)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\nrf51_spi.o --omf_browse ..\obj\nrf51_spi.crf --depend ..\obj\nrf51_spi.d)
+I (..\CODE\nrf51822\inc\nrf51_spi.h)(0x54D8D31E)
+I (..\CODE\nrf51822\inc\nrf51.h)(0x54D8D7BE)
+F (..\CODE\nrf51822\src\nrf51_radio.c)(0x54D8D368)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\nrf51_radio.o --omf_browse ..\obj\nrf51_radio.crf --depend ..\obj\nrf51_radio.d)
+I (..\CODE\nrf51822\inc\nrf51_radio.h)(0x54242024)
+I (..\CODE\nrf51822\inc\nrf51.h)(0x54D8D7BE)
+F (..\CODE\nrf51822\src\nrf51_i2c.c)(0x54242033)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\nrf51_i2c.o --omf_browse ..\obj\nrf51_i2c.crf --depend ..\obj\nrf51_i2c.d)
+I (..\CODE\nrf51822\inc\nrf51_i2c.h)(0x54242022)
+I (..\CODE\nrf51822\inc\nrf51.h)(0x54D8D7BE)
+F (..\CODE\nrf51822\src\nrf51_adc.c)(0x54242030)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\nrf51_adc.o --omf_browse ..\obj\nrf51_adc.crf --depend ..\obj\nrf51_adc.d)
+I (..\CODE\nrf51822\inc\nrf51_adc.h)(0x54D8D31C)
+I (..\CODE\LX_NRF51Kit\lx_nrf51Kit.h)(0x54D8D1FC)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+F (..\CODE\SoftDevice\softdevice_manager.c)(0x54D8D94E)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\softdevice_manager.o --omf_browse ..\obj\softdevice_manager.crf --depend ..\obj\softdevice_manager.d)
+I (..\CODE\SoftDevice\softdevice_manager.h)(0x54242048)
+F (..\CODE\Debug\debug.c)(0x54D8D365)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\debug.o --omf_browse ..\obj\debug.crf --depend ..\obj\debug.d)
+I (..\CODE\Debug\debug.h)(0x54D8D367)
+I (..\CODE\LX_NRF51Kit\lx_nrf51Kit.h)(0x54D8D1FC)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+F (..\CODE\Hardware\MX25L4006E.c)(0x54D8D95B)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\mx25l4006e.o --omf_browse ..\obj\mx25l4006e.crf --depend ..\obj\mx25l4006e.d)
+I (..\CODE\Hardware\MX25L4006E.h)(0x54D8D327)
+I (..\CODE\LX_NRF51Kit\lx_nrf51Kit.h)(0x54D8D1FC)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+F (..\CODE\LX_NRF51Kit\lx_queue\lx_queue.c)(0x54D8D5E2)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\lx_queue.o --omf_browse ..\obj\lx_queue.crf --depend ..\obj\lx_queue.d)
+I (..\CODE\LX_NRF51Kit\lx_queue\lx_queue.h)(0x54D8D182)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+I (..\CODE\LX_NRF51Kit\lx_queue\../lx_nrf51Kit.h)(0x54D8D1FC)
+F (..\CODE\LX_NRF51Kit\lx_fifo\lx_fifo.c)(0x54D8D4D8)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\lx_fifo.o --omf_browse ..\obj\lx_fifo.crf --depend ..\obj\lx_fifo.d)
+I (..\CODE\LX_NRF51Kit\lx_fifo\lx_fifo.h)(0x54D8D102)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+F (..\CODE\LX_NRF51Kit\lx_heap\lx_heap.c)(0x54D8D4D9)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\lx_heap.o --omf_browse ..\obj\lx_heap.crf --depend ..\obj\lx_heap.d)
+I (..\CODE\LX_NRF51Kit\lx_heap\lx_heap.h)(0x54D8D158)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+I (..\CODE\LX_NRF51Kit\lx_heap\../lx_nrf51Kit.h)(0x54D8D1FC)
+F (..\CODE\LX_NRF51Kit\lx_notificationcenter\lx_notificationcenter.c)(0x54D8D5FF)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\lx_notificationcenter.o --omf_browse ..\obj\lx_notificationcenter.crf --depend ..\obj\lx_notificationcenter.d)
+I (..\CODE\LX_NRF51Kit\lx_notificationcenter\lx_notificationcenter.h)(0x54D8D170)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+F (..\CODE\LX_NRF51Kit\lx_date\lx_date.c)(0x54D8D602)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 -Otime --apcs=interwork --enum_is_int -I..\CODE\APP -I..\CODE\CortexM0 -I..\CODE\Debug -I..\CODE\nrf51822\inc -I..\CODE\SoftDevice -I..\CODE\SoftDevice\s110 -I..\CODE\Hardware -I..\CODE\LX_NRF51Kit --c99-I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\CMSIS\Include-I d:\Keil_v5\ARM\Device\Nordic\nRF51822\Include-D__UVISION_VERSION="514"-o ..\obj\lx_date.o --omf_browse ..\obj\lx_date.crf --depend ..\obj\lx_date.d)
+I (..\CODE\LX_NRF51Kit\lx_date\lx_date.h)(0x54D8D0B9)
+I (d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h)(0x3BEB19E6)
+I (..\CODE\LX_NRF51Kit\lx_nrf51Kit.h)(0x54D8D1FC)

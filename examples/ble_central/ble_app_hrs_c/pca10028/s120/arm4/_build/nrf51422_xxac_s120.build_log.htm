@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: d d, d, LIC=2TTJJ-ULLVY-HQQ0I-TCPMV-QU6XK-7Q4B3
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.14.0.0
+Toolchain Path:  d:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DARMCM1.DLL V1.12.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.13.0
+Dialog DLL:      TARMCM1.DLL V1.9.0.0
+ 
+<h2>Project:</h2>
+F:\nrf51822_frame\examples\ble_central\ble_app_hrs_c\pca10028\s120\arm4\ble_app_hrs_c_s120_pca10028.uvprojx
+Project File Date:  09/13/2015
+
+<h2>Output:</h2>
+Build Project 'ble_app_hrs_c_s120_pca10028' - Target 'nrf51422_xxac_s120'
+compiling event_hal.c...
+F:\nrf51822_frame\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
+        
+F:\nrf51822_frame\examples\ble_central\ble_app_hrs_c\kernel\event_hal.c(44): warning:  #550-D: variable "this" was set but never used
+  static CLASS(event_hal_manager) *this =  NULL;
+..\..\..\kernel\event_hal.c: 2 warnings, 0 errors
+compiling message.c...
+F:\nrf51822_frame\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
+        
+F:\nrf51822_frame\examples\ble_central\ble_app_hrs_c\kernel\message.c(132): warning:  #546-D: transfer of control bypasses initialization of:
+            variable "cpusr" (declared at line 149)
+            variable "is_softdevice_enabled" (declared at line 149)
+          goto fault;
+          ^
+..\..\..\kernel\message.c: 2 warnings, 0 errors
+compiling bsp.c...
+linking...
+Program Size: Code=19492 RO-data=412 RW-data=292 ZI-data=8452  
+FromELF: creating hex file...
+".\_build\nrf51422_xxac_s120.axf" - 0 Error(s), 4 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  F:\nrf51822_frame\examples\ble_central\ble_app_hrs_c\pca10028\s120\arm4\RTE
+  d:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.4\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+</pre>
+</body>
+</html>
