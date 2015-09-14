@@ -30,8 +30,17 @@ void app_trace_init(void);
  *
  * @note Though this is currently a macro, it should be used used and treated as function.
  */
+void simple_uart_putstring(const uint8_t *str);
 #define app_trace_log printf
-
+/*
+#define app_trace_log(...)  do{\
+        char buf[128];\
+        uint16_t len = 0;\
+		len += sprintf(buf, __VA_ARGS__);\
+		len += sprintf(buf+len, "\r\n");\
+        simple_uart_putstring(buf);\
+}while(0)
+*/
 /**
  * @brief Dump auxiliary byte buffer to the debug trace.
  *

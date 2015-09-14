@@ -1,17 +1,17 @@
 .\_build\softdevice_handler.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.c
 .\_build\softdevice_handler.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h
-.\_build\softdevice_handler.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
+.\_build\softdevice_handler.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
 .\_build\softdevice_handler.o: ..\..\..\..\..\..\components\libraries\util\nordic_common.h
 .\_build\softdevice_handler.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h
 .\_build\softdevice_handler.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h
 .\_build\softdevice_handler.o: ..\..\..\..\..\..\components\device\nrf51.h
 .\_build\softdevice_handler.o: ..\..\..\config\core_cm0.h
-.\_build\softdevice_handler.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
+.\_build\softdevice_handler.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\_build\softdevice_handler.o: ..\..\..\config\core_cmInstr.h
 .\_build\softdevice_handler.o: ..\..\..\config\core_cmFunc.h
 .\_build\softdevice_handler.o: ..\..\..\..\..\..\components\toolchain\system_nrf51.h
 .\_build\softdevice_handler.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h
-.\_build\softdevice_handler.o: ..\..\..\config\stdbool.h
+.\_build\softdevice_handler.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\_build\softdevice_handler.o: ..\..\..\..\..\..\components\device\nrf51_bitfields.h
 .\_build\softdevice_handler.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h
 .\_build\softdevice_handler.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h

@@ -1,0 +1,219 @@
+/***************************************************************
+ * Name:      __CLING_COMM_MAC_H__
+ * Purpose:   code for lenth sample  to store and send
+ * Author:    mikewang(s)
+ * Created:   2014-06-12
+ * Copyright: mikewang(mikewang01@hotmail.com)
+ * License:
+ **************************************************************/
+
+/*********************************************************************
+ * INCLUDES
+ */
+
+#ifndef __CLING_COMM_MAC_H__
+#define __CLING_COMM_MAC_H__
+
+/* Exported constants --------------------------------------------------------*/
+
+#include "stdint.h"
+#include <nrf.h>
+#include <stdbool.h>
+/* Exported types ------------------------------------------------------------*/
+// Maximum message length: 256 KB
+
+//#define OS_EVENT_LOG(arg...)    printf(arg)
+#define OS_EVENT_LOG(arg...)
+
+#define MAXIMUM_MESSAGE_LENGTH (256*1024)
+
+// Maximum packet payload size
+#define MAXIMUM_PACKET_PAYLOAD_SIZE 16
+#define MAXIMUM_PACKET_SIZE           20
+#define MAXIMUM_UUID_PACKET_SIZE 22
+
+// Customized BLE characteristics
+#define UUID_TX_SP      0xffe1
+#define UUID_TX_START   0xffe2
+#define UUID_TX_MIDDLE  0xffe3
+#define UUID_TX_END     0xffe4
+
+
+#define UUID_RX_SP      0xffe5
+#define UUID_RX_START   0xffe6
+#define UUID_RX_MIDDLE  0xffe7
+#define UUID_RX_END     0xffe8
+
+
+
+
+//Radio communication TX states
+typedef enum {
+    PROTOCOL_TX_IDLE = 0,
+    PROTOCOL_TX_TRYING_SEND,
+    PROTOCOL_TX_INVALID,
+} PROTOCOL_TX_STATE;
+
+//Radio communication RX states
+typedef enum {
+    PROTOCOL_RX_IDLE = 0,
+    PROTOCOL_RX_RECEIVING,
+    PROTOCOL_RX_COMPLETE,
+    PROTOCOL_RX_INVALID,
+} PROTOCOL_RX_STATE;
+
+//Communication states are also bit flags
+typedef enum {
+    PROTOCOL_EVENT_INVALID,
+    PROTOCOL_EVENT_RCVR_TO,
+    PROTOCOL_EVENT_RCVR_DIRECT_PKT,
+    PROTOCOL_EVENT_RCVR_LAST_PKT,
+    PROTOCOL_EVENT_RCVR_ACK_PKT,
+    PROTOCOL_EVENT_RCVR_MSG_CALLBACK,
+    PROTOCOL_EVENT_RCVR_BUSY,
+    PROTOCOL_EVENT_SEND_TO,
+    PROTOCOL_EVENT_SEND_CANCEL,
+} PROTOCOL_EVENT_TYPE;
+
+typedef enum {
+    PROTOCOL_TERMINAL_STATE_OK = 0,
+    PROTOCOL_TERMINAL_STATE_BUSY,
+    PROTOCOL_TERMINAL_STATE_FAIL,
+    PROTOCOL_TERMINAL_STATE_INVALID_PARAMETER,
+    PROTOCOL_TERMINAL_STATE_ERROR_LOW_MEMORY,
+    PROTOCOL_TERMINAL_STATE_ERROR_WRITE_FILE_NAME,
+    PROTOCOL_TERMINAL_STATE_ERROR_WRITE_FILE_LEN,
+    PROTOCOL_TERMINAL_STATE_ERROR_GET_DEV_INFO,
+    PROTOCOL_TERMINAL_STATE_ERROR_INSUFFICIENT_RESOURCE,
+    PROTOCOL_TERMINAL_STATE_UNAVAILABLE,
+    PROTOCOL_TERMINAL_STATE_MAX
+} PROTOCOL_TERMINAL_STATE;
+
+typedef struct tagRX_BUF_CONTEXT {
+#if 0
+    uint8_t retrans_cnt;									// retransmission time -> terminate the channel if it gets too many
+#endif
+    // Packet list
+    //BASE_OBJECTLIST packetList;
+    // Total packet number in this message
+    uint16_t totalPackets;
+    // Message buffer
+    uint8_t messageBuffer[MAXIMUM_MESSAGE_LENGTH];
+    // Timestamp:  last received packet
+    uint32_t timeLastReceived;
+    // Message received length
+    uint16_t messageReceivedLength;
+    // Message length
+    uint32_t messageLength;
+    // Message sequence number
+    uint16_t messageSequenceNumber;
+    // Last message sequence number to indicate whether multiple message with same IDs are received
+    uint16_t messageLastSequenceNumber;
+    // RX state machine
+    PROTOCOL_RX_STATE state;
+} RX_BUF_CONTEXT;
+
+typedef struct tagTX_BUF_CONTEXT {
+#if 0
+    uint8_t retrans_cnt;
+    uint32_t retrans_ts;
+    GCP_PKT_OBJECT retrans_pkt;
+#endif
+    // Total packet number
+    uint16_t totalPacketNumber;
+    // Message length
+    uint32_t messageLength;
+    // Maximum 256 K file size
+    uint8_t messageBuffer[MAXIMUM_MESSAGE_LENGTH];
+    // Messae type
+    uint32_t messageType;
+    // TX state machine
+    PROTOCOL_TX_STATE state;
+} TX_BUF_CONTEXT;
+
+typedef struct tagCOMMUNICATION_CHANNEL {
+//    BASE_OBJECT base;
+    RX_BUF_CONTEXT rxBuffer;									// Receiver buffer state
+    TX_BUF_CONTEXT txBuffer;									// Transmit buffer state
+
+} COMMUNICATION_CHANNEL;
+
+typedef struct tagFILE_CONTEXT {
+    uint32_t downloadLength; // file length downloaded
+    uint32_t uploadLength;   // file length uploaded
+    uint8_t name[128];
+    bool bUpdated;
+    bool bUploading;
+    uint32_t length;          // file actual length
+
+} FILE_CONTEXT;
+
+typedef struct tagPROTOCOL_PACKET_CONTEXT {
+    // Received packet list
+    //BASE_OBJECTLIST rxPacketList;
+    // Packet list to be sent out
+   // BASE_OBJECTLIST txPacketList;
+    // Overall message are sent
+    uint16_t messageNumber;
+    // Message TX time stamp
+    uint32_t messageTxTimeStamp;
+} PROTOCOL_PACKET_CONTEXT;
+
+typedef enum {
+    PROTOCOL_MESSAGE_STATE_IDLE = 0,
+    PROTOCOL_MESSAGE_STATE_BUSY,
+} MESSAGE_STATE;
+
+typedef struct tagDEVICE_INFO_CONTEXT {
+    uint8_t                statusReg;
+    bool                bUpdated;
+
+} DEVICE_INFO_CONTEXT;
+
+struct protocol_serial_link_packet {
+    // Unique ID to file/register type
+    uint8_t uuid[2];
+    // Short header - 4 uint8_ts
+    uint8_t messageId;
+    // Message length
+    uint8_t length[3];
+    // Payload - 16 uint8_ts
+    uint8_t payload[MAXIMUM_PACKET_PAYLOAD_SIZE];
+};
+
+typedef struct tagPROTOCL_PACKET_OBJECT {
+    //BASE_OBJECT base;
+
+    // Fixed 22 uint8_ts packet
+    uint8_t data[MAXIMUM_UUID_PACKET_SIZE];					// Data content in a packet
+
+    bool needPacketAck;
+
+} PROTOCOL_PACKET_OBJECT;
+
+typedef struct tagCLING_CP_OBJECT {
+    // Cling communication channel list
+    //BASE_OBJECTLIST channelList;
+    // Packet TX/RX state
+    PROTOCOL_PACKET_CONTEXT packet;
+    // File operation context
+    FILE_CONTEXT file;
+    // critical section (TX)
+    //OS_CRITICALSECTION criticalSectionTX;
+    // critical section (RX)
+    //OS_CRITICALSECTION criticalSectionRX;
+    // device state
+    MESSAGE_STATE messageState;
+    // Device info
+    DEVICE_INFO_CONTEXT device;								// Local device information
+    // Terminal state
+    PROTOCOL_TERMINAL_STATE terminalState;
+#if 0
+    CLING_AUTHENTICATION_CTX auth;
+#endif
+} CLING_CP_OBJECT;
+
+
+#endif // __VERSION_H__
+
+

@@ -159,98 +159,99 @@ static ret_code_t device_manager_event_handler(const dm_handle_t    * p_handle,
     uint32_t err_code;
 
     switch(p_event->event_id) {
-    case DM_EVT_CONNECTION: {
-        APPL_LOG("[APPL]: >> DM_EVT_CONNECTION\r\n");
+        case DM_EVT_CONNECTION: {
+            APPL_LOG("[APPL]: >> DM_EVT_CONNECTION\r\n");
 #ifdef ENABLE_DEBUG_LOG_SUPPORT
-        ble_gap_addr_t * peer_addr;
-        peer_addr = &p_event->event_param.p_gap_param->params.connected.peer_addr;
+            ble_gap_addr_t * peer_addr;
+            peer_addr = &p_event->event_param.p_gap_param->params.connected.peer_addr;
 #endif // ENABLE_DEBUG_LOG_SUPPORT
-        APPL_LOG("[APPL]:[%02X %02X %02X %02X %02X %02X]: Connection Established\r\n",
-                 peer_addr->addr[0], peer_addr->addr[1], peer_addr->addr[2],
-                 peer_addr->addr[3], peer_addr->addr[4], peer_addr->addr[5]);
+            APPL_LOG("[APPL]:[%02X %02X %02X %02X %02X %02X]: Connection Established\r\n",
+                     peer_addr->addr[0], peer_addr->addr[1], peer_addr->addr[2],
+                     peer_addr->addr[3], peer_addr->addr[4], peer_addr->addr[5]);
 
-        err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
-        APP_ERROR_CHECK(err_code);
+            err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
+            APP_ERROR_CHECK(err_code);
 
-        m_conn_handle = p_event->event_param.p_gap_param->conn_handle;
+            m_conn_handle = p_event->event_param.p_gap_param->conn_handle;
 
-        m_dm_device_handle = (*p_handle);
+            m_dm_device_handle = (*p_handle);
 
-        // Discover peer's services.
-        err_code = ble_db_discovery_start(&m_ble_db_discovery,
-                                          p_event->event_param.p_gap_param->conn_handle);
-        APP_ERROR_CHECK(err_code);
+            // Discover peer's services.
+            err_code = ble_db_discovery_start(&m_ble_db_discovery,
+                                              p_event->event_param.p_gap_param->conn_handle);
+            APP_ERROR_CHECK(err_code);
 
-        m_peer_count++;
+            m_peer_count++;
 
-        if(m_peer_count < MAX_PEER_COUNT) {
-            scan_start();
+            if(m_peer_count < MAX_PEER_COUNT) {
+                scan_start();
+            }
+
+            APPL_LOG("[APPL]: << DM_EVT_CONNECTION\r\n");
+            break;
         }
 
-        APPL_LOG("[APPL]: << DM_EVT_CONNECTION\r\n");
-        break;
-    }
+        case DM_EVT_DISCONNECTION: {
+            APPL_LOG("[APPL]: >> DM_EVT_DISCONNECTION\r\n");
+            memset(&m_ble_db_discovery, 0 , sizeof(m_ble_db_discovery));
 
-    case DM_EVT_DISCONNECTION: {
-        APPL_LOG("[APPL]: >> DM_EVT_DISCONNECTION\r\n");
-        memset(&m_ble_db_discovery, 0 , sizeof(m_ble_db_discovery));
+            err_code = bsp_indication_set(BSP_INDICATE_IDLE);
+            APP_ERROR_CHECK(err_code);
 
-        err_code = bsp_indication_set(BSP_INDICATE_IDLE);
-        APP_ERROR_CHECK(err_code);
+            if(m_peer_count == MAX_PEER_COUNT) {
+                scan_start();
+            }
 
-        if(m_peer_count == MAX_PEER_COUNT) {
-            scan_start();
+            m_peer_count--;
+            APPL_LOG("[APPL]: << DM_EVT_DISCONNECTION\r\n");
+            break;
         }
 
-        m_peer_count--;
-        APPL_LOG("[APPL]: << DM_EVT_DISCONNECTION\r\n");
-        break;
-    }
+        case DM_EVT_SECURITY_SETUP: {
+            APPL_LOG("[APPL]:[0x%02X] >> DM_EVT_SECURITY_SETUP\r\n", p_handle->connection_id);
+            // Slave securtiy request received from peer, if from a non bonded device,
+            // initiate security setup, else, wait for encryption to complete.
+            err_code = dm_security_setup_req(&m_dm_device_handle);
+            APP_ERROR_CHECK(err_code);
+            APPL_LOG("[APPL]:[0x%02X] << DM_EVT_SECURITY_SETUP\r\n", p_handle->connection_id);
+            break;
+        }
 
-    case DM_EVT_SECURITY_SETUP: {
-        APPL_LOG("[APPL]:[0x%02X] >> DM_EVT_SECURITY_SETUP\r\n", p_handle->connection_id);
-        // Slave securtiy request received from peer, if from a non bonded device,
-        // initiate security setup, else, wait for encryption to complete.
-        err_code = dm_security_setup_req(&m_dm_device_handle);
-        APP_ERROR_CHECK(err_code);
-        APPL_LOG("[APPL]:[0x%02X] << DM_EVT_SECURITY_SETUP\r\n", p_handle->connection_id);
-        break;
-    }
+        case DM_EVT_SECURITY_SETUP_COMPLETE: {
+            APPL_LOG("[APPL]: >> DM_EVT_SECURITY_SETUP_COMPLETE\r\n");
+            // Heart rate service discovered. Enable notification of Heart Rate Measurement.
+            err_code = ble_hrs_c_hrm_notif_enable(&m_ble_hrs_c);
+            APP_ERROR_CHECK(err_code);
+            APPL_LOG("[APPL]: << DM_EVT_SECURITY_SETUP_COMPLETE\r\n");
+            break;
+        }
 
-    case DM_EVT_SECURITY_SETUP_COMPLETE: {
-        APPL_LOG("[APPL]: >> DM_EVT_SECURITY_SETUP_COMPLETE\r\n");
-        // Heart rate service discovered. Enable notification of Heart Rate Measurement.
-        err_code = ble_hrs_c_hrm_notif_enable(&m_ble_hrs_c);
-        APP_ERROR_CHECK(err_code);
-        APPL_LOG("[APPL]: << DM_EVT_SECURITY_SETUP_COMPLETE\r\n");
-        break;
-    }
+        case DM_EVT_LINK_SECURED:
+            APPL_LOG("[APPL]: >> DM_LINK_SECURED_IND\r\n");
+            //ble_hrs_c_hrm_notif_enable(&m_ble_hrs_c);
+            APPL_LOG("[APPL]: << DM_LINK_SECURED_IND\r\n");
+            break;
 
-    case DM_EVT_LINK_SECURED:
-        APPL_LOG("[APPL]: >> DM_LINK_SECURED_IND\r\n");
-        APPL_LOG("[APPL]: << DM_LINK_SECURED_IND\r\n");
-        break;
+        case DM_EVT_DEVICE_CONTEXT_LOADED:
+            APPL_LOG("[APPL]: >> DM_EVT_LINK_SECURED\r\n");
+            APP_ERROR_CHECK(event_result);
+            APPL_LOG("[APPL]: << DM_EVT_DEVICE_CONTEXT_LOADED\r\n");
+            break;
 
-    case DM_EVT_DEVICE_CONTEXT_LOADED:
-        APPL_LOG("[APPL]: >> DM_EVT_LINK_SECURED\r\n");
-        APP_ERROR_CHECK(event_result);
-        APPL_LOG("[APPL]: << DM_EVT_DEVICE_CONTEXT_LOADED\r\n");
-        break;
+        case DM_EVT_DEVICE_CONTEXT_STORED:
+            APPL_LOG("[APPL]: >> DM_EVT_DEVICE_CONTEXT_STORED\r\n");
+            APP_ERROR_CHECK(event_result);
+            APPL_LOG("[APPL]: << DM_EVT_DEVICE_CONTEXT_STORED\r\n");
+            break;
 
-    case DM_EVT_DEVICE_CONTEXT_STORED:
-        APPL_LOG("[APPL]: >> DM_EVT_DEVICE_CONTEXT_STORED\r\n");
-        APP_ERROR_CHECK(event_result);
-        APPL_LOG("[APPL]: << DM_EVT_DEVICE_CONTEXT_STORED\r\n");
-        break;
+        case DM_EVT_DEVICE_CONTEXT_DELETED:
+            APPL_LOG("[APPL]: >> DM_EVT_DEVICE_CONTEXT_DELETED\r\n");
+            APP_ERROR_CHECK(event_result);
+            APPL_LOG("[APPL]: << DM_EVT_DEVICE_CONTEXT_DELETED\r\n");
+            break;
 
-    case DM_EVT_DEVICE_CONTEXT_DELETED:
-        APPL_LOG("[APPL]: >> DM_EVT_DEVICE_CONTEXT_DELETED\r\n");
-        APP_ERROR_CHECK(event_result);
-        APPL_LOG("[APPL]: << DM_EVT_DEVICE_CONTEXT_DELETED\r\n");
-        break;
-
-    default:
-        break;
+        default:
+            break;
     }
 
     return NRF_SUCCESS;
@@ -322,86 +323,86 @@ static void on_ble_evt(ble_evt_t * p_ble_evt)
     const ble_gap_evt_t   * p_gap_evt = &p_ble_evt->evt.gap_evt;
 
     switch(p_ble_evt->header.evt_id) {
-    case BLE_GAP_EVT_ADV_REPORT: {
-        data_t adv_data;
-        data_t type_data;
+        case BLE_GAP_EVT_ADV_REPORT: {
+            data_t adv_data;
+            data_t type_data;
 
-        // Initialize advertisement report for parsing.
-        adv_data.p_data = (uint8_t *)p_gap_evt->params.adv_report.data;
-        adv_data.data_len = p_gap_evt->params.adv_report.dlen;
+            // Initialize advertisement report for parsing.
+            adv_data.p_data = (uint8_t *)p_gap_evt->params.adv_report.data;
+            adv_data.data_len = p_gap_evt->params.adv_report.dlen;
 
-        err_code = adv_report_parse(BLE_GAP_AD_TYPE_16BIT_SERVICE_UUID_MORE_AVAILABLE,
-                                    &adv_data,
-                                    &type_data);
-
-        if(err_code != NRF_SUCCESS) {
-            // Compare short local name in case complete name does not match.
-            err_code = adv_report_parse(BLE_GAP_AD_TYPE_16BIT_SERVICE_UUID_COMPLETE,
+            err_code = adv_report_parse(BLE_GAP_AD_TYPE_16BIT_SERVICE_UUID_MORE_AVAILABLE,
                                         &adv_data,
                                         &type_data);
-        }
 
-        // Verify if short or complete name matches target.
-        if(err_code == NRF_SUCCESS) {
-            uint16_t extracted_uuid;
+            if(err_code != NRF_SUCCESS) {
+                // Compare short local name in case complete name does not match.
+                err_code = adv_report_parse(BLE_GAP_AD_TYPE_16BIT_SERVICE_UUID_COMPLETE,
+                                            &adv_data,
+                                            &type_data);
+            }
 
-            // UUIDs found, look for matching UUID
-            for(uint32_t u_index = 0; u_index < (type_data.data_len / UUID16_SIZE); u_index++) {
-                UUID16_EXTRACT(&extracted_uuid, &type_data.p_data[u_index * UUID16_SIZE]);
+            // Verify if short or complete name matches target.
+            if(err_code == NRF_SUCCESS) {
+                uint16_t extracted_uuid;
 
-                APPL_LOG("\t[APPL]: %x\r\n", extracted_uuid);
+                // UUIDs found, look for matching UUID
+                for(uint32_t u_index = 0; u_index < (type_data.data_len / UUID16_SIZE); u_index++) {
+                    UUID16_EXTRACT(&extracted_uuid, &type_data.p_data[u_index * UUID16_SIZE]);
 
-                if(extracted_uuid == TARGET_UUID) {
-                    // Stop scanning.
-                    err_code = sd_ble_gap_scan_stop();
-										event_upload_obj_p->event_put(event_upload_obj_p, 1, NULL, 0);
-                    if(err_code != NRF_SUCCESS) {
-                        APPL_LOG("[APPL]: Scan stop failed, reason %d\r\n", err_code);
+                    APPL_LOG("\t[APPL]: %x\r\n", extracted_uuid);
+
+                    if(extracted_uuid == TARGET_UUID) {
+                        // Stop scanning.
+                        err_code = sd_ble_gap_scan_stop();
+                        event_upload_obj_p->event_put(event_upload_obj_p, 1, NULL, 0);
+                        if(err_code != NRF_SUCCESS) {
+                            APPL_LOG("[APPL]: Scan stop failed, reason %d\r\n", err_code);
+                        }
+
+                        err_code = bsp_indication_set(BSP_INDICATE_IDLE);
+                        APP_ERROR_CHECK(err_code);
+
+                        m_scan_param.selective = 0;
+
+                        // Initiate connection.
+                        err_code = sd_ble_gap_connect(&p_gap_evt->params.adv_report.peer_addr,
+                                                      &m_scan_param,
+                                                      &m_connection_param);
+
+                        m_whitelist_temporarily_disabled = false;
+
+                        if(err_code != NRF_SUCCESS) {
+                            APPL_LOG("[APPL]: Connection Request Failed, reason %d\r\n", err_code);
+                        }
+
+                        break;
                     }
-
-                    err_code = bsp_indication_set(BSP_INDICATE_IDLE);
-                    APP_ERROR_CHECK(err_code);
-
-                    m_scan_param.selective = 0;
-
-                    // Initiate connection.
-                    err_code = sd_ble_gap_connect(&p_gap_evt->params.adv_report.peer_addr,
-                                                  &m_scan_param,
-                                                  &m_connection_param);
-
-                    m_whitelist_temporarily_disabled = false;
-
-                    if(err_code != NRF_SUCCESS) {
-                        APPL_LOG("[APPL]: Connection Request Failed, reason %d\r\n", err_code);
-                    }
-
-                    break;
                 }
             }
+
+            break;
         }
 
-        break;
-    }
+        case BLE_GAP_EVT_TIMEOUT:
+            if(p_gap_evt->params.timeout.src == BLE_GAP_TIMEOUT_SRC_SCAN) {
+                APPL_LOG("[APPL]: Scan timed out.\r\n");
+                scan_start();
+            } else if(p_gap_evt->params.timeout.src == BLE_GAP_TIMEOUT_SRC_CONN) {
+                APPL_LOG("[APPL]: Connection Request timed out.\r\n");
+            }
 
-    case BLE_GAP_EVT_TIMEOUT:
-        if(p_gap_evt->params.timeout.src == BLE_GAP_TIMEOUT_SRC_SCAN) {
-            APPL_LOG("[APPL]: Scan timed out.\r\n");
-            scan_start();
-        } else if(p_gap_evt->params.timeout.src == BLE_GAP_TIMEOUT_SRC_CONN) {
-            APPL_LOG("[APPL]: Connection Request timed out.\r\n");
-        }
+            break;
 
-        break;
+        case BLE_GAP_EVT_CONN_PARAM_UPDATE_REQUEST:
+            // Accepting parameters requested by peer.
+            err_code = sd_ble_gap_conn_param_update(p_gap_evt->conn_handle,
+                                                    &p_gap_evt->params.conn_param_update_request.conn_params);
+            APP_ERROR_CHECK(err_code);
+            break;
 
-    case BLE_GAP_EVT_CONN_PARAM_UPDATE_REQUEST:
-        // Accepting parameters requested by peer.
-        err_code = sd_ble_gap_conn_param_update(p_gap_evt->conn_handle,
-                                                &p_gap_evt->params.conn_param_update_request.conn_params);
-        APP_ERROR_CHECK(err_code);
-        break;
-
-    default:
-        break;
+        default:
+            break;
     }
 }
 
@@ -413,21 +414,21 @@ static void on_ble_evt(ble_evt_t * p_ble_evt)
 static void on_sys_evt(uint32_t sys_evt)
 {
     switch(sys_evt) {
-    case NRF_EVT_FLASH_OPERATION_SUCCESS:
+        case NRF_EVT_FLASH_OPERATION_SUCCESS:
 
-        /* fall through */
-    case NRF_EVT_FLASH_OPERATION_ERROR:
+            /* fall through */
+        case NRF_EVT_FLASH_OPERATION_ERROR:
 
-        if(m_memory_access_in_progress) {
-            m_memory_access_in_progress = false;
-            scan_start();
-        }
+            if(m_memory_access_in_progress) {
+                m_memory_access_in_progress = false;
+                scan_start();
+            }
 
-        break;
+            break;
 
-    default:
-        // No implementation needed.
-        break;
+        default:
+            // No implementation needed.
+            break;
     }
 }
 
@@ -444,7 +445,7 @@ static void ble_evt_dispatch(ble_evt_t * p_ble_evt)
     dm_ble_evt_handler(p_ble_evt);
     ble_db_discovery_on_ble_evt(&m_ble_db_discovery, p_ble_evt);
     ble_hrs_c_on_ble_evt(&m_ble_hrs_c, p_ble_evt);
-    ble_bas_c_on_ble_evt(&m_ble_bas_c, p_ble_evt);
+    //ble_bas_c_on_ble_evt(&m_ble_bas_c, p_ble_evt);
     bsp_btn_ble_on_ble_evt(p_ble_evt);
     on_ble_evt(p_ble_evt);
 }
@@ -571,25 +572,25 @@ void bsp_event_handler(bsp_event_t event)
     uint32_t err_code;
 
     switch(event) {
-    case BSP_EVENT_SLEEP:
-        sleep_mode_enter();
-        break;
+        case BSP_EVENT_SLEEP:
+            sleep_mode_enter();
+            break;
 
-    case BSP_EVENT_DISCONNECT:
-        err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+        case BSP_EVENT_DISCONNECT:
+            err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
 
-        if(err_code != NRF_ERROR_INVALID_STATE) {
-            APP_ERROR_CHECK(err_code);
-        }
+            if(err_code != NRF_ERROR_INVALID_STATE) {
+                APP_ERROR_CHECK(err_code);
+            }
 
-        break;
+            break;
 
-    case BSP_EVENT_WHITELIST_OFF:
-        whitelist_disable();
-        break;
+        case BSP_EVENT_WHITELIST_OFF:
+            whitelist_disable();
+            break;
 
-    default:
-        break;
+        default:
+            break;
     }
 }
 
@@ -601,27 +602,27 @@ static void hrs_c_evt_handler(ble_hrs_c_t * p_hrs_c, ble_hrs_c_evt_t * p_hrs_c_e
     uint32_t err_code;
 
     switch(p_hrs_c_evt->evt_type) {
-    case BLE_HRS_C_EVT_DISCOVERY_COMPLETE:
-        // Initiate bonding.
-        err_code = dm_security_setup_req(&m_dm_device_handle);
-        APP_ERROR_CHECK(err_code);
+        case BLE_HRS_C_EVT_DISCOVERY_COMPLETE:
+            // Initiate bonding.
+            err_code = dm_security_setup_req(&m_dm_device_handle);
+            APP_ERROR_CHECK(err_code);
 
-        // Heart rate service discovered. Enable notification of Heart Rate Measurement.
-        err_code = ble_hrs_c_hrm_notif_enable(p_hrs_c);
-        APP_ERROR_CHECK(err_code);
+            // Heart rate service discovered. Enable notification of Heart Rate Measurement.
+            err_code = ble_hrs_c_hrm_notif_enable(p_hrs_c);
+            APP_ERROR_CHECK(err_code);
 
-        printf("Heart rate service discovered \r\n");
-        break;
+            printf("Heart rate service discovered \r\n");
+            break;
 
-    case BLE_HRS_C_EVT_HRM_NOTIFICATION: {
-        APPL_LOG("[APPL]: HR Measurement received %d \r\n", p_hrs_c_evt->params.hrm.hr_value);
+        case BLE_HRS_C_EVT_HRM_NOTIFICATION: {
+            APPL_LOG("[APPL]: HR Measurement received %d \r\n", p_hrs_c_evt->params.hrm.hr_value);
 
-        printf("Heart Rate = %d\r\n", p_hrs_c_evt->params.hrm.hr_value);
-        break;
-    }
+            printf("Heart Rate = %d\r\n", p_hrs_c_evt->params.hrm.hr_value);
+            break;
+        }
 
-    default:
-        break;
+        default:
+            break;
     }
 }
 
@@ -633,38 +634,38 @@ static void bas_c_evt_handler(ble_bas_c_t * p_bas_c, ble_bas_c_evt_t * p_bas_c_e
     uint32_t err_code;
 
     switch(p_bas_c_evt->evt_type) {
-    case BLE_BAS_C_EVT_DISCOVERY_COMPLETE:
-        // Batttery service discovered. Enable notification of Battery Level.
-        APPL_LOG("[APPL]: Battery Service discovered. \r\n");
+        case BLE_BAS_C_EVT_DISCOVERY_COMPLETE:
+            // Batttery service discovered. Enable notification of Battery Level.
+            APPL_LOG("[APPL]: Battery Service discovered. \r\n");
 
-        APPL_LOG("[APPL]: Reading battery level. \r\n");
+            APPL_LOG("[APPL]: Reading battery level. \r\n");
 
-        err_code = ble_bas_c_bl_read(p_bas_c);
-        APP_ERROR_CHECK(err_code);
+            err_code = ble_bas_c_bl_read(p_bas_c);
+            APP_ERROR_CHECK(err_code);
 
 
-        APPL_LOG("[APPL]: Enabling Battery Level Notification. \r\n");
-        err_code = ble_bas_c_bl_notif_enable(p_bas_c);
-        APP_ERROR_CHECK(err_code);
+            APPL_LOG("[APPL]: Enabling Battery Level Notification. \r\n");
+            err_code = ble_bas_c_bl_notif_enable(p_bas_c);
+            APP_ERROR_CHECK(err_code);
 
-        break;
+            break;
 
-    case BLE_BAS_C_EVT_BATT_NOTIFICATION: {
-        APPL_LOG("[APPL]: Battery Level received %d %%\r\n", p_bas_c_evt->params.battery_level);
+        case BLE_BAS_C_EVT_BATT_NOTIFICATION: {
+            APPL_LOG("[APPL]: Battery Level received %d %%\r\n", p_bas_c_evt->params.battery_level);
 
-        printf("Battery = %d %%\r\n", p_bas_c_evt->params.battery_level);
-        break;
-    }
+            printf("Battery = %d %%\r\n", p_bas_c_evt->params.battery_level);
+            break;
+        }
 
-    case BLE_BAS_C_EVT_BATT_READ_RESP: {
-        APPL_LOG("[APPL]: Battery Level Read as %d %%\r\n", p_bas_c_evt->params.battery_level);
+        case BLE_BAS_C_EVT_BATT_READ_RESP: {
+            APPL_LOG("[APPL]: Battery Level Read as %d %%\r\n", p_bas_c_evt->params.battery_level);
 
-        printf("Battery = %d %%\r\n", p_bas_c_evt->params.battery_level);
-        break;
-    }
+            printf("Battery = %d %%\r\n", p_bas_c_evt->params.battery_level);
+            break;
+        }
 
-    default:
-        break;
+        default:
+            break;
     }
 }
 
@@ -845,11 +846,11 @@ int main(void)
     device_manager_init(erase_bonds);
     db_discovery_init();
     hrs_c_init();
-    bas_c_init();
-		NEW(event_upload_obj_p, event_hal_manager);
+    //bas_c_init();
+    NEW(event_upload_obj_p, event_hal_manager);
     scan_start();
-	
-		
+
+
     // Start scanning for peripherals and initiate connection
     // with devices that advertise Heart Rate UUID.
 

@@ -334,17 +334,15 @@ ARM Macro Assembler    Page 6
               40000554 
               00000000 
               00000000 
-Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
-ork --depend=.\_build\arm_startup_nrf51.d -o.\_build\arm_startup_nrf51.o -IF:\n
-rf51822_frame\examples\ble_central\ble_app_hrs_c\pca10028\s120\arm4\RTE -Id:\Ke
-il_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.4\Device\Include -I
-d:\Keil_v5\ARM\CMSIS\Include --predefine="__MICROLIB SETA 1" --predefine="__UVI
-SION_VERSION SETA 514" --predefine="NRF51 SETA 1" --predefine="__HEAP_SIZE SETA
- 0" --predefine="BLE_STACK_SUPPORT_REQD SETA 1" --predefine="S120 SETA 1" --pre
-define="BOARD_PCA10028 SETA 1" --predefine="BSP_UART_SUPPORT SETA 1" --predefin
-e="NRF51 SETA 1" --predefine="SOFTDEVICE_PRESENT SETA 1" --predefine="SWI_DISAB
-LE0 SETA 1" --list=.\_build\arm_startup_nrf51.lst ..\..\..\..\..\..\components\
-toolchain\arm\arm_startup_nrf51.s
+Command Line: --debug --xref --cpu=Cortex-M0 --apcs=interwork --depend=.\_build
+\arm_startup_nrf51.d -o.\_build\arm_startup_nrf51.o -Id:\Keil\ARM\RV31\INC -Id:
+\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include -Id:\Keil\ARM\PACK\NordicSemicond
+uctor\nRF_DeviceFamilyPack\7.1.0\Device\Include --predefine="__MICROLIB SETA 1"
+ --predefine="__HEAP_SIZE SETA 0" --predefine="BLE_STACK_SUPPORT_REQD SETA 1" -
+-predefine="S120 SETA 1" --predefine="BOARD_PCA10028 SETA 1" --predefine="BSP_U
+ART_SUPPORT SETA 1" --predefine="NRF51 SETA 1" --predefine="SOFTDEVICE_PRESENT 
+SETA 1" --predefine="SWI_DISABLE0 SETA 1" --list=.\_build\arm_startup_nrf51.lst
+ ..\..\..\..\..\..\components\toolchain\arm\arm_startup_nrf51.s
 
 
 
@@ -1000,4 +998,4 @@ p_nrf51.s
 p_nrf51.s
 Comment: __main used once
 2 symbols
-395 symbols in table
+394 symbols in table

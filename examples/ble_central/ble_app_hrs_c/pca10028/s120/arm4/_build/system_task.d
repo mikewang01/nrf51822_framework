@@ -1,14 +1,14 @@
 .\_build\system_task.o: ..\..\..\task\systemtask\system_task.c
-.\_build\system_task.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
-.\_build\system_task.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
+.\_build\system_task.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\_build\system_task.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\_build\system_task.o: ..\..\..\incs\event.h
 .\_build\system_task.o: ..\..\..\incs\task.h
 .\_build\system_task.o: ..\..\..\incs\message.h
 .\_build\system_task.o: ..\..\..\incs\os.h
 .\_build\system_task.o: ..\..\..\incs\../lx_nrf51Kit.h
-.\_build\system_task.o: ..\..\..\config\stdbool.h
-.\_build\system_task.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
-.\_build\system_task.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
+.\_build\system_task.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\_build\system_task.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\_build\system_task.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
 .\_build\system_task.o: ..\..\..\..\..\..\components\libraries\timer\app_timer.h
 .\_build\system_task.o: ..\..\..\..\..\..\components\libraries\util\app_error.h
 .\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h

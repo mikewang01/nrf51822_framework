@@ -1,6 +1,6 @@
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\bsp\bsp_btn_ble.c
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\bsp\bsp_btn_ble.h
-.\_build\bsp_btn_ble.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
+.\_build\bsp_btn_ble.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble.h
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h
@@ -13,7 +13,7 @@
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\bsp\bsp.h
-.\_build\bsp_btn_ble.o: ..\..\..\config\stdbool.h
+.\_build\bsp_btn_ble.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\bsp\boards.h
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\..\components\device\nrf51.h
@@ -32,4 +32,4 @@
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\..\components\libraries\util\app_util_platform.h
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h
 .\_build\bsp_btn_ble.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h
-.\_build\bsp_btn_ble.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stddef.h
+.\_build\bsp_btn_ble.o: d:\Keil\ARM\ARMCC\bin\..\include\stddef.h

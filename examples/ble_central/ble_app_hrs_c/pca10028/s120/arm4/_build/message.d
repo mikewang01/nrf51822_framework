@@ -1,13 +1,13 @@
 .\_build\message.o: ..\..\..\kernel\message.c
 .\_build\message.o: ..\..\..\incs\message.h
-.\_build\message.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
-.\_build\message.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
+.\_build\message.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\_build\message.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\_build\message.o: ..\..\..\incs\event.h
 .\_build\message.o: ..\..\..\incs\os.h
 .\_build\message.o: ..\..\..\incs\../lx_nrf51Kit.h
-.\_build\message.o: ..\..\..\config\stdbool.h
-.\_build\message.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
-.\_build\message.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
+.\_build\message.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\_build\message.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\_build\message.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
 .\_build\message.o: ..\..\..\..\..\..\components\libraries\timer\app_timer.h
 .\_build\message.o: ..\..\..\..\..\..\components\libraries\util\app_error.h
 .\_build\message.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h

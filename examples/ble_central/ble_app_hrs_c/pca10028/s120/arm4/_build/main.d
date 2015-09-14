@@ -1,7 +1,7 @@
 .\_build\main.o: ..\..\..\main.c
-.\_build\main.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
-.\_build\main.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
-.\_build\main.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
+.\_build\main.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\_build\main.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\_build\main.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\util\nordic_common.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h
@@ -11,7 +11,7 @@
 .\_build\main.o: ..\..\..\config\core_cmFunc.h
 .\_build\main.o: ..\..\..\..\..\..\components\toolchain\system_nrf51.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h
-.\_build\main.o: ..\..\..\config\stdbool.h
+.\_build\main.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\_build\main.o: ..\..\..\..\..\..\components\device\nrf51_bitfields.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h
@@ -31,7 +31,7 @@
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\util\app_util.h
 .\_build\main.o: ..\..\..\..\..\..\components\device\compiler_abstraction.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h
-.\_build\main.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
+.\_build\main.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\util\app_error.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h

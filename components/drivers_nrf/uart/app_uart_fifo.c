@@ -551,3 +551,27 @@ uint32_t app_uart_close(uint16_t app_uart_uid)
     return NRF_SUCCESS;
 }
 
+
+void simple_uart_put(uint8_t cr)
+{
+  NRF_UART0->TXD = (uint8_t)cr;
+
+  while (NRF_UART0->EVENTS_TXDRDY!=1)
+  {
+    // Wait for TXD data to be sent
+  }
+
+  NRF_UART0->EVENTS_TXDRDY=0;
+}
+
+void simple_uart_putstring(const uint8_t *str)
+{
+  uint_fast8_t i = 0;
+  uint8_t ch = str[i++];
+  while (ch != '\0')
+  {
+    simple_uart_put(ch);
+    ch = str[i++];
+  }
+}
+

@@ -1,8 +1,8 @@
 .\_build\retarget.o: ..\..\..\..\..\..\components\libraries\uart\retarget.c
-.\_build\retarget.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
-.\_build\retarget.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
+.\_build\retarget.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\_build\retarget.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\_build\retarget.o: ..\..\..\..\..\..\components\drivers_nrf\uart\app_uart.h
-.\_build\retarget.o: ..\..\..\config\stdbool.h
+.\_build\retarget.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\_build\retarget.o: ..\..\..\..\..\..\components\libraries\util\app_util_platform.h
 .\_build\retarget.o: ..\..\..\..\..\..\components\device\compiler_abstraction.h
 .\_build\retarget.o: ..\..\..\..\..\..\components\device\nrf51.h

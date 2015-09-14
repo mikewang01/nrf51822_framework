@@ -1,7 +1,7 @@
 .\_build\ble_srv_common.o: ..\..\..\..\..\..\components\ble\common\ble_srv_common.c
 .\_build\ble_srv_common.o: ..\..\..\..\..\..\components\ble\common\ble_srv_common.h
-.\_build\ble_srv_common.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
-.\_build\ble_srv_common.o: ..\..\..\config\stdbool.h
+.\_build\ble_srv_common.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\_build\ble_srv_common.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\_build\ble_srv_common.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h
 .\_build\ble_srv_common.o: ..\..\..\..\..\..\components\libraries\util\app_util.h
 .\_build\ble_srv_common.o: ..\..\..\..\..\..\components\device\compiler_abstraction.h
@@ -15,6 +15,6 @@
 .\_build\ble_srv_common.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h
 .\_build\ble_srv_common.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h
 .\_build\ble_srv_common.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h
-.\_build\ble_srv_common.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
+.\_build\ble_srv_common.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
 .\_build\ble_srv_common.o: ..\..\..\..\..\..\components\libraries\util\nordic_common.h
 .\_build\ble_srv_common.o: ..\..\..\..\..\..\components\libraries\util\app_error.h

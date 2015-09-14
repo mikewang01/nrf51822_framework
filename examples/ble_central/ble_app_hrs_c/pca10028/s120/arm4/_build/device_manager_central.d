@@ -1,9 +1,9 @@
 .\_build\device_manager_central.o: ..\..\..\..\..\..\components\ble\device_manager\device_manager_central.c
 .\_build\device_manager_central.o: ..\..\..\..\..\..\components\ble\device_manager\device_manager.h
-.\_build\device_manager_central.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
-.\_build\device_manager_central.o: ..\..\..\config\stdbool.h
+.\_build\device_manager_central.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\_build\device_manager_central.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\_build\device_manager_central.o: ..\..\..\..\..\..\components\libraries\util\sdk_common.h
-.\_build\device_manager_central.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
+.\_build\device_manager_central.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
 .\_build\device_manager_central.o: ..\..\..\..\..\..\components\libraries\util\nordic_common.h
 .\_build\device_manager_central.o: ..\..\..\..\..\..\components\device\compiler_abstraction.h
 .\_build\device_manager_central.o: ..\..\..\..\..\..\components\libraries\util\sdk_os.h
@@ -22,7 +22,7 @@
 .\_build\device_manager_central.o: ..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h
 .\_build\device_manager_central.o: ..\..\..\config\device_manager_cnfg.h
 .\_build\device_manager_central.o: ..\..\..\..\..\..\components\libraries\trace\app_trace.h
-.\_build\device_manager_central.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
+.\_build\device_manager_central.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\_build\device_manager_central.o: ..\..\..\..\..\..\components\ble\common\ble_advdata.h
 .\_build\device_manager_central.o: ..\..\..\..\..\..\components\drivers_nrf\pstorage\pstorage.h
 .\_build\device_manager_central.o: ..\..\..\config\pstorage_platform.h

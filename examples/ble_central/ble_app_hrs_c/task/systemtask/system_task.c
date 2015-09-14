@@ -146,8 +146,8 @@ static void task_system_init()
 {
     uint8_t this_task_id = os_get_current_taskid();
     os_timer_period(this_task_id , TIMEOUT_SYSTEM_STATE_SWITCH , 1 , NULL);
-		NEW(event_mgr_obj_p, event_hal_manager);
-		event_mgr_obj_p->event_register(event_mgr_obj_p, 1, this_task_id);
+    NEW(event_mgr_obj_p, event_hal_manager);
+    event_mgr_obj_p->event_register(event_mgr_obj_p, 1, this_task_id);
 }
 
 
@@ -181,7 +181,7 @@ static void task_system()
         /*get detailed message through tcb_t*/
         msg_num = get_message(task_state , &msg_get);
 
-        DEBUG("recive message SYSTEM_EVENT");
+       // DEBUG("recive message SYSTEM_EVENT\r\n");
 
         /*process the message has been recieved*/
         process_msg(my_id, msg_num , msg_get);
@@ -207,37 +207,38 @@ static void task_system()
  * @return  none
  */
 #if 1
+void tx_buffer_process(void);
 static void process_msg(uint16_t taskid , uint16_t msg_num , smessage_t* msg)
 {
 
 
-    DEBUG("message type =%d" , msg->type);
+   // DEBUG("message type =%d\r\n" , msg->type);
 
     do {
 
         switch(msg->type) {
-            /* inter process communication message*/
-        case IPC_MSG:
+                /* inter process communication message*/
+            case IPC_MSG:
 
-            break;
+                break;
 
-            /*timer related message*/
-        case TIMER_MSG:
-            if((msg->event) == TIMEOUT_SYSTEM_STATE_SWITCH) {
-                DEBUG("HELLO\R\N");
+                /*timer related message*/
+            case TIMER_MSG:
+                if((msg->event) == TIMEOUT_SYSTEM_STATE_SWITCH) {
+                   // DEBUG("HELLO\r\n");
+tx_buffer_process();
+                    LEDS_INVERT(BSP_LED_1_MASK);
+                }
 
-                LEDS_INVERT(BSP_LED_1_MASK);
-            }
+                break;
 
-            break;
-
-            /*device related message*/
-        case DEV_MSG:
-            break;
-				case EVENT_CENTER_MSG:
-						LEDS_INVERT(BSP_LED_2_MASK);
-        default:
-            break;
+                /*device related message*/
+            case DEV_MSG:
+                break;
+            case EVENT_CENTER_MSG:
+                LEDS_INVERT(BSP_LED_2_MASK);
+            default:
+                break;
         }
 
         /*get next message from message queue*/

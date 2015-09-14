@@ -1,7 +1,7 @@
 .\_build\bsp.o: ..\..\..\..\..\bsp\bsp.c
 .\_build\bsp.o: ..\..\..\..\..\bsp\bsp.h
-.\_build\bsp.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
-.\_build\bsp.o: ..\..\..\config\stdbool.h
+.\_build\bsp.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\_build\bsp.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\_build\bsp.o: ..\..\..\..\..\bsp\boards.h
 .\_build\bsp.o: ..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h
 .\_build\bsp.o: ..\..\..\..\..\..\components\device\nrf51.h
@@ -22,8 +22,8 @@
 .\_build\bsp.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h
 .\_build\bsp.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h
 .\_build\bsp.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h
-.\_build\bsp.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stddef.h
-.\_build\bsp.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
+.\_build\bsp.o: d:\Keil\ARM\ARMCC\bin\..\include\stddef.h
+.\_build\bsp.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\_build\bsp.o: ..\..\..\..\..\..\components\libraries\util\nordic_common.h
 .\_build\bsp.o: ..\..\..\..\..\..\components\libraries\timer\app_timer.h
 .\_build\bsp.o: ..\..\..\..\..\..\components\libraries\util\app_util.h

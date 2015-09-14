@@ -58,7 +58,7 @@ static uint32_t      m_tx_index        = 0;        /**< Current index in the tra
 
 /**@brief Function for passing any pending request from the buffer to the stack.
  */
-static void tx_buffer_process(void)
+void tx_buffer_process(void)
 {
     if (m_tx_index != m_tx_insert_index)
     {
@@ -281,6 +281,7 @@ void ble_bas_c_on_ble_evt(ble_bas_c_t * p_ble_bas_c, const ble_evt_t * p_ble_evt
             break;
 
         case BLE_GATTC_EVT_WRITE_RSP:
+            LOG("[%s]:BLE_GATTC_EVT_WRITE_RSP\r\n", __FUNCTION__);
             on_write_rsp(p_ble_bas_c, p_ble_evt);
             break;
 

@@ -1,10 +1,10 @@
 .\_build\event_hal.o: ..\..\..\kernel\event_hal.c
 .\_build\event_hal.o: ..\..\..\kernel\../lx_nrf51Kit.h
-.\_build\event_hal.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
-.\_build\event_hal.o: ..\..\..\config\stdbool.h
-.\_build\event_hal.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
-.\_build\event_hal.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
-.\_build\event_hal.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
+.\_build\event_hal.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\_build\event_hal.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\_build\event_hal.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\_build\event_hal.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\_build\event_hal.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\_build\event_hal.o: ..\..\..\..\..\..\components\libraries\timer\app_timer.h
 .\_build\event_hal.o: ..\..\..\..\..\..\components\libraries\util\app_error.h
 .\_build\event_hal.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h

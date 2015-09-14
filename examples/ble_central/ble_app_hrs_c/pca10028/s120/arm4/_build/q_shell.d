@@ -1,10 +1,10 @@
 .\_build\q_shell.o: ..\..\..\kernel\q_shell\Q_Shell.c
 .\_build\q_shell.o: ..\..\..\config\../lx_nrf51Kit.h
-.\_build\q_shell.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
-.\_build\q_shell.o: ..\..\..\config\stdbool.h
-.\_build\q_shell.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
-.\_build\q_shell.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
-.\_build\q_shell.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
+.\_build\q_shell.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\_build\q_shell.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\_build\q_shell.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\_build\q_shell.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\_build\q_shell.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\_build\q_shell.o: ..\..\..\..\..\..\components\libraries\timer\app_timer.h
 .\_build\q_shell.o: ..\..\..\..\..\..\components\libraries\util\app_error.h
 .\_build\q_shell.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h

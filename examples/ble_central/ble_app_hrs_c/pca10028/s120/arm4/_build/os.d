@@ -1,10 +1,10 @@
 .\_build\os.o: ..\..\..\kernel\os.c
 .\_build\os.o: ..\..\..\kernel\../lx_nrf51Kit.h
-.\_build\os.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
-.\_build\os.o: ..\..\..\config\stdbool.h
-.\_build\os.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
-.\_build\os.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
-.\_build\os.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdio.h
+.\_build\os.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\_build\os.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\_build\os.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\_build\os.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\_build\os.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\_build\os.o: ..\..\..\..\..\..\components\libraries\timer\app_timer.h
 .\_build\os.o: ..\..\..\..\..\..\components\libraries\util\app_error.h
 .\_build\os.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h

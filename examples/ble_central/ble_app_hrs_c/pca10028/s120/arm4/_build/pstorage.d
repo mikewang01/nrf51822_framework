@@ -1,7 +1,7 @@
 .\_build\pstorage.o: ..\..\..\..\..\..\components\drivers_nrf\pstorage\pstorage.c
 .\_build\pstorage.o: ..\..\..\..\..\..\components\drivers_nrf\pstorage\pstorage.h
 .\_build\pstorage.o: ..\..\..\config\pstorage_platform.h
-.\_build\pstorage.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
+.\_build\pstorage.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\_build\pstorage.o: ..\..\..\..\..\..\components\device\nrf.h
 .\_build\pstorage.o: ..\..\..\..\..\..\components\device\nrf51.h
 .\_build\pstorage.o: ..\..\..\config\core_cm0.h
@@ -11,13 +11,13 @@
 .\_build\pstorage.o: ..\..\..\..\..\..\components\device\nrf51_bitfields.h
 .\_build\pstorage.o: ..\..\..\..\..\..\components\device\nrf51_deprecated.h
 .\_build\pstorage.o: ..\..\..\..\..\..\components\device\compiler_abstraction.h
-.\_build\pstorage.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdlib.h
-.\_build\pstorage.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\string.h
+.\_build\pstorage.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\_build\pstorage.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
 .\_build\pstorage.o: ..\..\..\..\..\..\components\libraries\util\nordic_common.h
 .\_build\pstorage.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h
 .\_build\pstorage.o: ..\..\..\..\..\..\components\libraries\util\nrf_assert.h
 .\_build\pstorage.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h
-.\_build\pstorage.o: ..\..\..\config\stdbool.h
+.\_build\pstorage.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\_build\pstorage.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h
 .\_build\pstorage.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h
 .\_build\pstorage.o: ..\..\..\..\..\..\components\libraries\util\app_util.h

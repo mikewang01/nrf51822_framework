@@ -3,7 +3,7 @@
 .\_build\nrf_drv_common.o: ..\..\..\..\..\..\components\device\nrf.h
 .\_build\nrf_drv_common.o: ..\..\..\..\..\..\components\device\nrf51.h
 .\_build\nrf_drv_common.o: ..\..\..\config\core_cm0.h
-.\_build\nrf_drv_common.o: d:\Program Files (x86)\ARM\ADSv1_2\INCLUDE\stdint.h
+.\_build\nrf_drv_common.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\_build\nrf_drv_common.o: ..\..\..\config\core_cmInstr.h
 .\_build\nrf_drv_common.o: ..\..\..\config\core_cmFunc.h
 .\_build\nrf_drv_common.o: ..\..\..\..\..\..\components\toolchain\system_nrf51.h
@@ -13,6 +13,6 @@
 .\_build\nrf_drv_common.o: ..\..\..\..\..\..\components\libraries\util\nrf_assert.h
 .\_build\nrf_drv_common.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h
 .\_build\nrf_drv_common.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h
-.\_build\nrf_drv_common.o: ..\..\..\config\stdbool.h
+.\_build\nrf_drv_common.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\_build\nrf_drv_common.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h
 .\_build\nrf_drv_common.o: ..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h

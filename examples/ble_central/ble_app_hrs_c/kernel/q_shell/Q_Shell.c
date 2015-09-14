@@ -672,9 +672,7 @@ void  q_sh_setmode(uint8_t mode)
 int  Q_Sh_init()
 {
     shell = LX_Malloc(sizeof(finsh_shell_t));
-
     if(shell == NULL);
-
     {
         return LX_ERROR;
     }
