@@ -12,8 +12,37 @@
  **************************************************************************************************/
 #include "cling_comm_mac.h"
 #include "cling_comm_cmd.h"
+#include "base_object.h"
 #include "../../lx_nrf51Kit.h"
 #include <string.h>
+
+/*********************************************************************
+ * TYPEDEFS
+ */
+
+
+/*********************************************************************
+ * GLOBAL VARIABLES
+ */
+
+
+/*********************************************************************
+ * LOCAL VARIABLES
+ */
+
+static struct	base_object *mac_send_list_header = NULL;
+static struct	base_object *mac_rev_list_header = NULL;
+static CLASS(base_object_implement) *list_mgr_obj =  NULL;
+/*********************************************************************
+ * EXTERNAL VARIABLES 
+ */
+
+/*********************************************************************
+ * FUNCTIONS
+ */
+
+
+
 /*********************************************************************
  * @fn      cling_cp_send_data
  *
@@ -35,24 +64,23 @@ int cling_cp_send_data(uint16_t uuid, char *data, uint16_t lenth)
     uint16_t t = htons(uuid);
     memcpy(pkt->uuid, &t, sizeof(uuid));
     /*fullfill data area in payload field*/
-    memcpy(pkt->payload, data, lenth);
+    memcpy(pkt->package.normal_package.payload, data, lenth);
     /*convert data from little endian to big edian*/
     uint32_t i = htonl(lenth);
-    memcpy(pkt->length, &i, CLING_PACKET_LENTH_SIZE);
-    
+    memcpy(pkt->package.normal_package.length, &i, CLING_PACKET_LENTH_SIZE);
+
     ble_tx_send(uuid, (char *)pkt + sizeof(uuid), sizeof(struct protocol_serial_link_packet) - sizeof(uuid));
 #if 1
     {
         char *t = (char *)pkt;
         DEBUG("Single message (22): %02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x\r\n",
-             t[0], t[1], t[2], t[3], t[4],
-             t[5], t[6], t[7], t[8], t[9]);
+              t[0], t[1], t[2], t[3], t[4],
+              t[5], t[6], t[7], t[8], t[9]);
     }
 #endif
 }
 
-
-static void _receivedPacketProcess(struct protocol_serial_link_packet *spacket);
+void _receivedPacketProcess(uint16_t uuid, char type, char *msg, uint32_t len);
 /*********************************************************************
  * @fn      cling_cp_recieve_one_pacakge
  *
@@ -70,135 +98,115 @@ int cling_cp_recieve_one_pacakge(uint16_t uuid, char *data, uint32_t lenth)
     /*fullfill uuid feild*/
     uuid = htons(uuid);
     memcpy(p.uuid, &uuid, sizeof(uuid));
-    memcpy(p.payload, data, lenth);
+    memcpy(p.package.normal_package.payload, data, lenth);
     /*FULL FILL payload lenth field*/
     lenth = htonl(lenth);
-    memcpy(p.length, &lenth, CLING_PACKET_LENTH_SIZE);
-    _receivedPacketProcess(&p);
+    memcpy(p.package.normal_package.length, &lenth, CLING_PACKET_LENTH_SIZE);
+   // _receivedPacketProcess(uuid, data, lenth);
 
 
 }
 
 
-
-static void _receivedPacketProcess(struct protocol_serial_link_packet *spacket)
+int comm_logic_link_recevive_normal_package_call_back(uint16_t uuid, char type, char *msg, uint32_t len);
+void _receivedPacketProcess(uint16_t uuid, char type, char *msg, uint32_t len)
 {
-    COMMUNICATION_CHANNEL *c;
-    uint16_t UUID = spacket->uuid[0];
-    PROTOCOL_EVENT_TYPE evt;
 
-
-    // Assemble a message
-    UUID <<= 8;
-    UUID += spacket->uuid[1];
-
-    DEBUG("_receivedPacketProcess: UUID=0x%x", UUID);
-    if (UUID == UUID_TX_SP) {
-        DEBUG ("_receivedPacketProcess: msgid=%d", spacket->messageId);
-        if (spacket->messageId == PROTOCOL_MESSAGE_STREAMING_SECOND) {
-
-            return;
-        }
-        if (spacket->messageId == PROTOCOL_MESSAGE_STREAMING_MINUTE) {
-
-
-            return;
-        }
-        if (spacket->messageId == PROTOCOL_MESSAGE_STREAMING_MULTI_MINUTES) {
-
-            return;
-        }
-        if (spacket->messageId == PROTOCOL_MESSAGE_STREAMING_DAY) {
-
-            return;
-        }
-    } else {
-
-    }
-
-    if ((UUID == UUID_TX_SP) || (UUID == UUID_TX_START) || (UUID == UUID_TX_MIDDLE) || (UUID == UUID_TX_END)) {
-
-
-    }
-
-    switch (UUID) {
-        case UUID_TX_SP:
-
-            break;
-        case UUID_TX_START:
-
-            break;
-        case UUID_TX_MIDDLE:
-
-            break;
-        case UUID_TX_END:
-
-            break;
-        default:
-            // No need for further processing.
-            return;
-    }
-
+   
+    struct protocol_serial_link_packet t;
+    /*as we can see data only transfer part of the construction*/
+    memcpy(&(t.package.normal_package), msg, len);
+                len = t.package.normal_package.length[0];
+                len <<= 8;
+                len += t.package.normal_package.length[1];
+                len <<= 8;
+                len += t.package.normal_package.length[2];
+    
+    DEBUG("_receivedPacketProcess: UUID=0x%x lenth=  %d\r\n",uuid, len);
+    comm_logic_link_recevive_normal_package_call_back(uuid, type, (char*)t.package.normal_package.payload, len);
 
 }
 
 
-static void _sendSinglePacketMessage(char type, char *msg, uint32_t len)
+void comm_protocol_mac_send_singlepacket(uint16_t uuid, char type, char *msg, uint32_t len)
 {
 
-	struct protocol_serial_link_packet *pkt;
-	pkt = (struct protocol_serial_link_packet *)LX_Malloc(sizeof(struct protocol_serial_link_packet));;
-	
-	// Indiate it is a starting packet
-	pkt->uuid[0] = (UUID_RX_SP>>8) & 0xff;
-	pkt->uuid[1] = UUID_RX_SP & 0xff;
-	memcpy(&pkt->messageId, msg, MAXIMUM_PACKET_SIZE);
+    struct protocol_serial_link_packet *pkt;
+    pkt = (struct protocol_serial_link_packet *)LX_Malloc(sizeof(struct protocol_serial_link_packet));;
+
+    // Indiate it is a starting packet
+    pkt->uuid[0] = (uuid >> 8) & 0xff;
+    pkt->uuid[1] = uuid & 0xff;
+    memcpy(&(pkt->package.single_package.payload), msg, MAXIMUM_PACKET_SIZE);
 
     DEBUG("wait 1020\r\n");
 
-    
-	BASE_list_add(&cco.packet.txPacketList, p);
-	
+    ble_tx_send(uuid, (char*)(&(pkt->package.single_package)) , sizeof(pkt->package.single_package));
+
     DEBUG("post 1020\r\n");
-   
+
 #if 1
     {
         char *data = (char *)pkt;
-        
+
         DEBUG("Single message (22): %02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x\n",
-                 data[0],data[1],data[2],data[3],data[4],
-                 data[5],data[6],data[7],data[8],data[9]);
+              data[0], data[1], data[2], data[3], data[4],
+              data[5], data[6], data[7], data[8], data[9]);
     }
 #endif
 }
 
-void PROTOCOL_sendPacketProcess(char type, char *msg, uint32_t len)
+void comm_protocol_mac_send_normal_package(uint16_t uuid, char type, char *msg, uint32_t len)
 {
+    struct protocol_serial_link_packet t;
+    struct protocol_serial_link_packet *pkt;
+    pkt = &t;
+	// Indiate it is a starting packet
+	pkt->uuid[0] = (UUID_RX_START>>8) & 0xff;
+	pkt->uuid[1] = UUID_RX_START & 0xff;
+	pkt->package.normal_package.messageId = 0;
+    //len = htonl(len);
+    //memcpy(pkt->package.normal_package.length, &len, CLING_PACKET_LENTH_SIZE);
     
-  
-	if ((type == PROTOCOL_MESSAGE_REGISTER_READ) || (type == PROTOCOL_MESSAGE_REGISTER_WRITE)) {
-//		ENTER_FUNC();
+	pkt->package.normal_package.length[0] = (len >> 16) & 0xff;
+	pkt->package.normal_package.length[1] = (len >> 8) & 0xff;
+	pkt->package.normal_package.length[2] = len & 0xff;
+    memcpy(pkt->package.normal_package.payload, msg, len);
+    DEBUG("wait 1020\r\n");
 
-		// Register read/write is dedicated single-packet message
-		_sendSinglePacketMessage(type, msg, len);
-        
-		return;
-	}
+    uuid = UUID_RX_START;
+    ble_tx_send(uuid, (char *)(&(pkt->package.normal_package)), sizeof(pkt->package.normal_package));
+    #if 1
+    {
+        char *data = (char *)(pkt->uuid);
+
+        DEBUG(" message (22): %02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x\r\n",
+              data[0], data[1], data[2], data[3], data[4],
+              data[5], data[6], data[7], data[8], data[9]);
+    }
+#endif
+    DEBUG("post 1020\r\n");
 
 }
 
 void TERMINAL_loadDeviceInfo()
 {
-	char buf[2];
-	
-	// Load device info
-	buf[0] = PROTOCOL_MESSAGE_LOAD_DEVICE_INFO;
-    
-	PROTOCOL_sendPacketProcess(PROTOCOL_MESSAGE_LOAD_DEVICE_INFO, buf, 1);
-	
+    char buf[2];
+
+    // Load device info
+    buf[0] = PROTOCOL_MESSAGE_LOAD_DEVICE_INFO;
+
+    comm_protocol_mac_send_normal_package(PROTOCOL_MESSAGE_LOAD_DEVICE_INFO,0, buf, 1);
+
 }
 
 void cpapi_get_local_deviceinfo()
 {
-	TERMINAL_loadDeviceInfo();
+    TERMINAL_loadDeviceInfo();
+}
+
+int cling_comm_mac_init()
+{
+    //CLASS(base_object_implement) *list_mgr_obj
+    NEW(list_mgr_obj, base_object_implement);
 }

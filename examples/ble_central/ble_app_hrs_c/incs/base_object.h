@@ -72,7 +72,7 @@ int (*de_init)(CLASS(base_object_implement)*);
 int (*add)(CLASS(base_object_implement) *arg, struct base_object **object_list , struct base_object *obj, enum os_object_class_type class_type , const char *name);
 int (*find)(CLASS(base_object_implement) *arg, struct base_object *object_dev_list, struct base_object **object_finded, const char * name);
 int (*detach)(CLASS(base_object_implement) *arg, struct base_object **object_list_header, struct base_object *obj);
-
+int (*pop)(CLASS(base_object_implement) *arg, struct base_object **object_dev_list, struct base_object **object_finded);
 END_DEF_CLASS(base_object_implement)
 
 

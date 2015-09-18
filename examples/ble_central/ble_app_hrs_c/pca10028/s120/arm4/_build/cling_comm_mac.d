@@ -12,6 +12,8 @@
 .\_build\cling_comm_mac.o: ..\..\..\..\..\..\components\device\compiler_abstraction.h
 .\_build\cling_comm_mac.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\_build\cling_comm_mac.o: ..\..\..\incs\cling_comm_cmd.h
+.\_build\cling_comm_mac.o: ..\..\..\incs\base_object.h
+.\_build\cling_comm_mac.o: ..\..\..\incs\oop_hal.h
 .\_build\cling_comm_mac.o: ..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h
 .\_build\cling_comm_mac.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
 .\_build\cling_comm_mac.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
@@ -26,8 +28,6 @@
 .\_build\cling_comm_mac.o: ..\..\..\..\..\..\components\libraries\trace\app_trace.h
 .\_build\cling_comm_mac.o: ..\..\..\..\..\..\components\libraries\util\nrf_assert.h
 .\_build\cling_comm_mac.o: ..\..\..\incs\hal_event.h
-.\_build\cling_comm_mac.o: ..\..\..\incs\base_object.h
-.\_build\cling_comm_mac.o: ..\..\..\incs\oop_hal.h
 .\_build\cling_comm_mac.o: ..\..\..\incs\message.h
 .\_build\cling_comm_mac.o: ..\..\..\incs\event.h
 .\_build\cling_comm_mac.o: ..\..\..\incs\os.h

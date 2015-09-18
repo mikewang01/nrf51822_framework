@@ -40,14 +40,11 @@
 	extern int init_##__NAME(CLASS(__NAME) *arg)
 
 #endif/*__OOP_HAL_H__*/
+    
 	
 
 
 
-
-	
-	
-	
 	
 
 	

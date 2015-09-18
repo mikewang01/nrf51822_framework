@@ -1,0 +1,397 @@
+/***************************************************************
+ * Name:      message.c
+ * Purpose:   code for lenth sample  to store and send
+ * Author:    mikewang(s)
+ * Created:   2014-05-15
+ * Copyright: mikewang(mikewang01@hotmail.com)
+ * License:
+ **************************************************************/
+
+/**************************************************************************************************
+ *                                            INCLUDES
+ **************************************************************************************************/
+#include "cling_comm_cmd.h"
+#include "cling_comm_mac.h"
+#include "cling_comm_cmd.h"
+#include "base_object.h"
+#include "../../lx_nrf51Kit.h"
+#include <string.h>
+
+//
+// All the system commands
+//
+enum {
+	SYSTEM_COMMAND_STREAMING_MODE,
+	SYSTEM_COMMAND_AUTH_A0,
+	SYSTEM_COMMAND_AUTH_A1,
+	SYSTEM_COMMAND_AUTH_A2,
+	SYSTEM_COMMAND_AUTH_FA,
+	SYSTEM_COMMAND_TIME_SYNC,
+	SYSTEM_COMMAND_DISK_FORMAT,
+	SYSTEM_COMMAND_RESET_FOR_NEW_USER,
+} ;
+
+//
+// All the system commands
+//
+
+
+//CLING_DEVICE_TIME_CONTEXT
+// Device Hardware Configuration information
+//
+typedef struct tagCLING_DEVICE_INFO_CONTEXT {
+	uint8_t                touchVersion;
+	uint8_t                sensorType;
+	uint8_t                batteryLevel;
+	uint8_t                softwareMajor;
+    uint8_t                softwareMinor;
+	uint8_t                bleMinor;
+	uint8_t                memoryFree[4];
+	uint8_t                availableFileWrites[2]; 
+	uint8_t                bondToken[2];
+	uint8_t                bondCrc[2];
+	uint8_t                bondUserID[4];
+	uint8_t                bondEpoch[4];
+	uint8_t                clingId[20];
+	uint8_t				resetCount[4];
+    uint8_t                modelNumber[6];
+	uint8_t                minuteStreamingFile;
+    bool                bUpdated;
+} CLING_DEVICE_INFO_CONTEXT;
+
+//
+// Device daily total information
+//
+typedef struct tagCLING_DAILY_ACTIVITY_CONTEXT {
+    uint8_t steps[4];
+    uint8_t distance[4];
+    uint8_t caloriesActive[2];
+    uint8_t caloriesIdle[2];
+    uint8_t wakeUpTimes;
+    uint8_t sleepLight[2];
+    uint8_t sleepSound[2];
+    uint8_t sleepRem[2];
+    uint8_t heartRate;
+    uint8_t skinTemperature[2];
+    uint8_t acttype : 4;
+    uint8_t uv : 4;
+    bool  bUpdated;
+} CLING_DAILY_ACTIVITY_CONTEXT;
+
+//
+// Device binding information
+//
+typedef struct tagCLING_BINDING_INFO_CONTEXT {
+    uint8_t state;
+	uint8_t errorCode;
+	uint8_t userId[4];
+    bool bUpdated;
+} CLING_BINDING_INFO_CONTEXT;
+
+//
+// Device File List Structure
+//
+#define MAXIMUM_FILE_NAME_LEN		128 
+typedef struct tagCLING_FILE_LIST_CONTEXT {
+	uint16_t totalFiles;
+	uint8_t name[500][MAXIMUM_FILE_NAME_LEN];
+	uint32_t length[500];
+	uint16_t crc[500];
+	bool bUpdated;
+} CLING_FILE_LIST_CONTEXT;
+
+//
+// Device weather info structure
+//
+typedef struct tagCLING_WEATHER_CONTEXT {
+    uint8_t month;
+    uint8_t day;
+    uint8_t type;
+    uint8_t low_temperature;
+    uint8_t high_temperature;
+} CLING_WEATHER_CONTEXT;
+
+//
+// Device weather info structure
+//
+typedef struct tagCLING_USER_REMINDER_CONTEXT {
+    uint8_t hour;
+    uint8_t minute;
+} CLING_USER_REMINDER_CONTEXT;
+
+//
+// Device time context
+//
+typedef struct tagCLING_DEVICE_TIME_CONTEXT {
+	uint8_t tm_hour_local; // +/- 12 hours (in 15 minutes) -> +/- 48 unit in 15 minutes
+	uint8_t tm_epoch[4];
+} CLING_DEVICE_TIME_CONTEXT;
+
+typedef enum {
+	CLING_AUTH_IDLE,
+	CLING_AUTH_A1_DONE,
+	CLING_AUTH_A2_DONE,
+	CLING_AUTH_FA_DONE,
+	CLING_AUTH_ERROR,
+} CLING_AUTH_STATES;
+
+
+//
+// CP API Internal Object
+//
+typedef struct tagCPAPI_OBJECT {
+    // All the file list
+    CLING_FILE_LIST_CONTEXT *pFileList;
+    // File Content
+    uint8_t *pFileData;
+    // Cling Device Info
+    CLING_DEVICE_INFO_CONTEXT *pClingInfo;
+    // CLING Bind/authentication Info
+    CLING_BINDING_INFO_CONTEXT *pLinkInfo;
+    // Callback function pointer
+	int (*pCallback)(uint8_t, uint8_t*);
+} CPAPI_OBJECT;
+
+
+/*********************************************************************
+ * @fn      get_message
+ *
+ * @brief   This function is used for task to get message and message number.
+ *
+ * @param   task_state pointer ,msg pointer
+ *
+ * @return  message numbers
+ */
+void cling_comm_cmd_set_system_mode(uint8_t command, bool b_ena, uint8_t *data)
+{
+	uint8_t buf[MAXIMUM_PACKET_SIZE];
+	uint8_t *p;
+	uint8_t *reg;
+    uint8_t mode = command;
+	
+	buf[0] = PROTOCOL_MESSAGE_REGISTER_WRITE;
+	reg = buf+1;
+	reg[SYSTEM_DEVICE_REGISTER_CTL] = 0;
+	reg[SYSTEM_DEVICE_REGISTER_CLEAR] = 0;
+    
+	// Enable / Disable a mode control bit
+	if (b_ena)
+		p = &reg[SYSTEM_DEVICE_REGISTER_CTL]; // Enable uses control register
+	else
+		p = &reg[SYSTEM_DEVICE_REGISTER_CLEAR]; // Disable uses clear register
+    
+	switch (mode) {
+        case SYSTEM_COMMAND_STREAMING_MODE:
+            *p |= CTL_IM;
+            break;
+        case SYSTEM_COMMAND_TIME_SYNC:
+            *p |= CTL_TS;
+            memcpy(buf+4, data, sizeof(CLING_DEVICE_TIME_CONTEXT));
+            break;
+        case SYSTEM_COMMAND_DISK_FORMAT:
+            *p |= CTL_DF;
+            reg[SYSTEM_DEVICE_REGISTER_PROTECT] = *((uint8_t *)data);
+            break;
+        case SYSTEM_COMMAND_AUTH_A0:
+            *p |= CTL_A0;
+            break;
+        case SYSTEM_COMMAND_RESET_FOR_NEW_USER:
+            *p |= CTL_RFNU;
+            reg[SYSTEM_DEVICE_REGISTER_PROTECT] = *((uint8_t *)data);
+            break;
+        case SYSTEM_COMMAND_AUTH_A1:
+            *p |= CTL_A1;
+            break;
+        case SYSTEM_COMMAND_AUTH_A2:
+            *p |= CTL_A2;
+            break;
+        case SYSTEM_COMMAND_AUTH_FA:
+            *p |= CTL_FA;
+            break;
+        default:
+            break;
+	}
+	PROTOCOL_sendPacketProcess(PROTOCOL_MESSAGE_REGISTER_WRITE, buf, MAXIMUM_PACKET_SIZE);
+}
+
+void cling_comm_cmd_get_daily_activity_total()
+{
+	uint8_t buf[2];
+	
+	// Load device info
+	buf[0] = PROTOCOL_MESSAGE_LOAD_DAILY_ACTIVITY;
+    
+	PROTOCOL_sendPacketProcess(PROTOCOL_MESSAGE_LOAD_DAILY_ACTIVITY, buf, 2);
+}
+
+void TERMINAL_loadDeviceInfo()
+{
+	uint8_t buf[2];
+	
+	ENTER_FUNC();
+
+	// Load device info
+	buf[0] = PROTOCOL_MESSAGE_LOAD_DEVICE_INFO;
+    
+	PROTOCOL_sendPacketProcess(PROTOCOL_MESSAGE_LOAD_DEVICE_INFO, buf, 1);
+	
+	cco.messageState = PROTOCOL_MESSAGE_STATE_IDLE;
+
+	EXIT_FUNC();
+}
+
+void CPAPI_syncTime(CLING_DEVICE_TIME_CONTEXT t)
+{
+	// Sync client to UTC and local time
+	TERMINAL_setSystemMode(SYSTEM_COMMAND_TIME_SYNC, TRUE, (uint8_t *)&t);
+}
+
+void CPAPI_setSystemMode(CLING_SYSTEM_COMMAND_MODE mode, bool b_ena, void *data)
+{
+	// Turn on/off client mode
+	TERMINAL_setSystemMode(mode, b_ena, (uint8_t *)data);
+}
+
+void CPAPI_getDailyActivityTotal()
+{
+    TERMINAL_getDailyActivityTotal();
+}
+
+void CPAPI_getLocalDeviceInfo()
+{
+	TERMINAL_loadDeviceInfo();
+}
+
+void CPAPI_deviceOverTheAirUpdate()
+{
+	TERMINAL_deviceOverTheAirUpdate();
+}
+
+void CPAPI_updateWeatherForcast(uint8_t *data, int numOfDays)
+{
+    TERMINAL_weatherUpdate(data, numOfDays);
+}
+
+void CPAPI_updateUserReminder(uint8_t *data, int numOfReminders)
+{
+    TERMINAL_userReminderUpdate(data, numOfReminders);
+}
+
+void CPAPI_updateSimulation(uint8_t *data)
+{
+    TERMINAL_simulationUpdate(data);
+}
+
+void CPAPI_setANCS(uint8_t *data)
+{
+    TERMINAL_setANCS(data);
+}
+
+void CPAPI_setSmartNotification(uint8_t * data )
+{
+	TERMINAL_setSmartNotification(data);
+}
+
+void CPAPI_deviceSetup(uint8_t *data, int len)
+{
+    TERMINAL_deviceSetup(data, len);
+}
+
+void CPAPI_deviceReboot()
+{
+	TERMINAL_rebootDevice();
+}
+
+int CPAPI_deleteFile(uint8_t *f_name)
+{
+	// TERM sends delete command to the CLING with a specific file name
+	TERMINAL_deleteFile(f_name);
+    
+	return 0;
+}
+
+void CPAPI_getWriteFileStatus(uint32_t *len, uint8_t *f_name)
+{
+	uint32_t dwlen_left = cco.packet.txPacketList.size;
+	uint32_t dwlen_upload = 0;
+    
+	// length of overall packet left
+	dwlen_left <<= 4;
+    
+    sprintf((char*)f_name, "%s", cco.file.name);
+    
+	// Calculate the amount of file length left
+	if (dwlen_left > cco.file.length)
+		dwlen_upload = 0;
+	else
+		dwlen_upload = cco.file.length - dwlen_left;
+    
+    //OS_LOG("+++ file (%s) upload: %d, %d, %d", cco.file.name, dwlen_left, dwlen_upload, cco.file.length);
+    
+	// Keep the latest download file length
+	if (dwlen_upload > cco.file.uploadLength)
+		cco.file.uploadLength = dwlen_upload;
+    
+	// Return uploaded file length
+	*len = cco.file.uploadLength;
+}
+
+void CPAPI_writeFile(uint8_t *f_name, uint8_t *p_f_content, uint32_t f_len)
+{
+    cco.packet.txPacketList.size = f_len;
+    cco.file.uploadLength = 0;
+    cco.file.length = f_len;
+	sprintf((char *)cco.file.name, "%s", f_name);
+    cco.file.bUpdated = FALSE;
+    
+	// Notify CLING that we are ready for file transfering
+	TERMINAL_writeFile(f_name, p_f_content, f_len);
+}
+
+ int CPAPI_readFile(uint8_t *f_name, uint8_t *f_content, uint32_t f_len)
+{
+	// Pre-load file info
+	cpapio.pFileData= f_content;
+	cco.file.length = f_len;
+	cco.file.bUpdated = FALSE;
+	cco.file.downloadLength = 0;
+	sprintf((char *)cco.file.name, "%s", f_name);
+    
+	// Notify CLING that we are ready for file transfering
+	TERMINAL_readFile(f_name);
+    
+	return 0;
+}
+
+void CPAPI_getReadFileStat(uint32_t *len, uint8_t *f_name)
+{
+	uint32_t dwlen = TERMINAL_getMessageReceivedLength();
+    
+    sprintf((char*)f_name, "%s", cco.file.name);
+
+	// Not exceed the expected file size
+	if (dwlen > cco.file.length)
+		dwlen = cco.file.length;
+    
+	// Keep the latest download file length
+	if (dwlen > cco.file.downloadLength)
+		cco.file.downloadLength = dwlen;
+    
+	*len = cco.file.downloadLength;
+    
+}
+
+
+// Get local file list
+void CPAPI_getFileList(CLING_FILE_LIST_CONTEXT *ctx)
+{
+	// Get file list handle
+    cpapio.pFileList = ctx;
+	cpapio.pFileList->bUpdated = FALSE;  // Clear update flag
+    
+	// Send the message to load file list
+	TERMINAL_getFileList();
+}
+
+
+

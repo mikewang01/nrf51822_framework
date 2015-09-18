@@ -449,11 +449,6 @@
                 </FileArmAds>
               </FileOption>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>kernel</GroupName>
-          <Files>
             <File>
               <FileName>lx_heap.c</FileName>
               <FileType>1</FileType>
@@ -464,6 +459,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\base_object\base_object.c</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>kernel</GroupName>
+          <Files>
             <File>
               <FileName>hal_timer.c</FileName>
               <FileType>1</FileType>
@@ -484,11 +484,6 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\kernel\message.c</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>hicling_comm</GroupName>
-          <Files>
             <File>
               <FileName>cling_comm_cmd.c</FileName>
               <FileType>1</FileType>
@@ -508,6 +503,11 @@
               <FileName>cling_comm_mac.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_mac.c</FilePath>
+            </File>
+            <File>
+              <FileName>cling_comm_user.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_user.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2093,11 +2093,6 @@
                 </FileArmAds>
               </FileOption>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>kernel</GroupName>
-          <Files>
             <File>
               <FileName>lx_heap.c</FileName>
               <FileType>1</FileType>
@@ -2108,6 +2103,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\base_object\base_object.c</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>kernel</GroupName>
+          <Files>
             <File>
               <FileName>hal_timer.c</FileName>
               <FileType>1</FileType>
@@ -2128,11 +2128,6 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\kernel\message.c</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>hicling_comm</GroupName>
-          <Files>
             <File>
               <FileName>cling_comm_cmd.c</FileName>
               <FileType>1</FileType>
@@ -2152,6 +2147,11 @@
               <FileName>cling_comm_mac.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_mac.c</FilePath>
+            </File>
+            <File>
+              <FileName>cling_comm_user.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_user.c</FilePath>
             </File>
           </Files>
         </Group>

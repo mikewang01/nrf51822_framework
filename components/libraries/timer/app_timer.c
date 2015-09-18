@@ -124,7 +124,7 @@ STATIC_ASSERT(sizeof(timer_user_t) % 4 == 0);
 typedef uint32_t timer_user_id_t;
 
 #define TIMER_NULL                  ((app_timer_id_t)(0 - 1))                   /**< Invalid timer id. */
-#define CONTEXT_QUEUE_SIZE_MAX      (2)                                         /**< Timer internal elapsed ticks queue size. */
+#define CONTEXT_QUEUE_SIZE_MAX      (4)                                         /**< Timer internal elapsed ticks queue size. */
 
 static uint8_t                       m_node_array_size;                         /**< Size of timer node array. */
 static timer_node_t *                mp_nodes = NULL;                           /**< Array of timer nodes. */

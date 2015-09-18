@@ -66,7 +66,6 @@ static tx_message_t  m_tx_buffer[TX_BUFFER_SIZE];  /**< Transmit buffer for mess
 static uint32_t      m_tx_insert_index = 0;        /**< Current index in the transmit buffer where the next message should be inserted. */
 static uint32_t      m_tx_index = 0;               /**< Current index in the transmit buffer from where the next message to be transmitted resides. */
 
-
 /**@brief Function for passing any pending request from the buffer to the stack.
  */
 static void tx_buffer_process(void)
@@ -103,10 +102,15 @@ static void tx_buffer_process(void)
  * @param[in] p_ble_evt   Pointer to the BLE event received.
  */
 void cpapi_get_local_deviceinfo(void);
+int ble_stack_mac_layer_write_rsp_call_back();
 static void on_write_rsp(ble_hrs_c_t * p_ble_hrs_c, const ble_evt_t * p_ble_evt)
 {
     // Check if there is any message to be sent across to the peer and send it.
     tx_buffer_process();
+    if(p_ble_evt->evt.gattc_evt.params.write_rsp.handle> p_ble_hrs_c->hrm_handle[4]){
+        LOG("[%s]:%d\r\n",__FUNCTION__, p_ble_evt->evt.gattc_evt.params.write_rsp.handle);
+        ble_stack_mac_layer_write_rsp_call_back();
+    }
    // cpapi_get_local_deviceinfo();
 }
 
@@ -121,10 +125,14 @@ static void on_write_rsp(ble_hrs_c_t * p_ble_hrs_c, const ble_evt_t * p_ble_evt)
  * @param[in] p_ble_hrs_c Pointer to the Heart Rate Client structure.
  * @param[in] p_ble_evt   Pointer to the BLE event received.
  */
+#define CLING_UUID_1 0xffe0
+void _receivedPacketProcess(uint16_t uuid, char type, char *msg, uint32_t len);
 static void on_hvx(ble_hrs_c_t * p_ble_hrs_c, const ble_evt_t * p_ble_evt)
 {
     // Check if this is a heart rate notification.
-    LOG("[%s]:%d\r\n",__FUNCTION__,p_ble_evt->evt.gattc_evt.params.hvx.handle );
+    LOG("[%s]:%d %d\r\n",__FUNCTION__,p_ble_evt->evt.gattc_evt.params.hvx.handle, p_ble_evt->evt.gattc_evt.params.hvx.len);
+    _receivedPacketProcess(((p_ble_evt->evt.gattc_evt.params.hvx.handle - p_ble_hrs_c->hrm_handle[0] ) >>2)+ CLING_UUID_1 + 1, 0 , (char*)p_ble_evt->evt.gattc_evt.params.hvx.data, p_ble_evt->evt.gattc_evt.params.hvx.len);
+ #if 0
     if (p_ble_evt->evt.gattc_evt.params.hvx.handle == p_ble_hrs_c->hrm_handle[0]) {
         ble_hrs_c_evt_t ble_hrs_c_evt;
         uint32_t        index = 0;
@@ -142,6 +150,7 @@ static void on_hvx(ble_hrs_c_t * p_ble_hrs_c, const ble_evt_t * p_ble_evt)
 
         p_ble_hrs_c->evt_handler(p_ble_hrs_c, &ble_hrs_c_evt);
     }
+#endif
 }
 
 
@@ -156,7 +165,7 @@ static void on_hvx(ble_hrs_c_t * p_ble_hrs_c, const ble_evt_t * p_ble_evt)
  * @param[in] p_evt Pointer to the event received from the database discovery module.
  *
  */
-#define CLING_UUID_1 0xffe0
+
 static void db_discover_evt_handler(ble_db_discovery_evt_t * p_evt)
 {
     // Check if the Heart Rate Service was discovered.
@@ -164,7 +173,6 @@ static void db_discover_evt_handler(ble_db_discovery_evt_t * p_evt)
         p_evt->params.discovered_db.srv_uuid.uuid == CLING_UUID_1 &&
         p_evt->params.discovered_db.srv_uuid.type == BLE_UUID_TYPE_BLE) {
         mp_ble_hrs_c->conn_handle = p_evt->conn_handle;
-
         // Find the CCCD Handle of the Heart Rate Measurement characteristic.
         uint32_t i;
         LOG("[%s]:p_evt->params.discovered_db.char_count = %d\r\n", __FUNCTION__, p_evt->params.discovered_db.char_count);
@@ -207,8 +215,8 @@ uint32_t ble_hrs_c_init(ble_hrs_c_t * p_ble_hrs_c, ble_hrs_c_init_t * p_ble_hrs_
 
     mp_ble_hrs_c = p_ble_hrs_c;
 
-    mp_ble_hrs_c->evt_handler     = p_ble_hrs_c_init->evt_handler;
-    mp_ble_hrs_c->conn_handle     = BLE_CONN_HANDLE_INVALID;
+    mp_ble_hrs_c->evt_handler  = p_ble_hrs_c_init->evt_handler;
+    mp_ble_hrs_c->conn_handle  = BLE_CONN_HANDLE_INVALID;
 
     for(int i = 0; i < HEARTRATE_MAX_CHARACTORS; i++) {
         mp_ble_hrs_c->hrm_cccd_handle[i] = BLE_GATT_HANDLE_INVALID;
@@ -272,7 +280,9 @@ static uint32_t cccd_configure(uint16_t conn_handle, uint16_t handle_cccd, bool 
     return NRF_SUCCESS;
 }
 
-
+void cling_comm_cmd_load_device_info();
+void cling_comm_cmd_device_reboot();
+void cling_comm_cmd_get_daily_activity_total();
 uint32_t ble_hrs_c_hrm_notif_enable(ble_hrs_c_t * p_ble_hrs_c)
 {
     if (p_ble_hrs_c == NULL) {
@@ -283,7 +293,12 @@ uint32_t ble_hrs_c_hrm_notif_enable(ble_hrs_c_t * p_ble_hrs_c)
     for(i=0; i< 4; i++){
         cccd_configure(p_ble_hrs_c->conn_handle, p_ble_hrs_c->hrm_cccd_handle[i], true);
     }
-    cpapi_get_local_deviceinfo();
+    //cling_comm_cmd_device_reboot();
+    //cling_comm_cmd_load_device_info();
+    cling_comm_cmd_load_device_info();
+    cling_comm_cmd_load_device_info();
+    cling_comm_cmd_load_device_info();
+    cling_comm_cmd_load_device_info();
     return NRF_SUCCESS;
 }
 

@@ -208,6 +208,7 @@ static void task_system()
  */
 #if 1
 void tx_buffer_process(void);
+int send_packet_list_demon(void * p_context);
 static void process_msg(uint16_t taskid , uint16_t msg_num , smessage_t* msg)
 {
 
@@ -226,7 +227,8 @@ static void process_msg(uint16_t taskid , uint16_t msg_num , smessage_t* msg)
             case TIMER_MSG:
                 if((msg->event) == TIMEOUT_SYSTEM_STATE_SWITCH) {
                    // DEBUG("HELLO\r\n");
-tx_buffer_process();
+                    //send_packet_list_demon(NULL);
+                    tx_buffer_process();
                     LEDS_INVERT(BSP_LED_1_MASK);
                 }
 

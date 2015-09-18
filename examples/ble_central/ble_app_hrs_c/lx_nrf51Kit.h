@@ -27,6 +27,8 @@
 #define LX_ERROR_TIMEOUT                        -4
 
 
+
+
 /* ================================================================================ */
 /* ================               hal_timer  support================ */
 /* ================================================================================ */
@@ -65,14 +67,35 @@ __y: process callback
 #include "nrf_assert.h"
 #define DEBUG  		app_trace_log
 
-									
-									
+
+/* ================================================================================ */
+/* ================               mutex support                ================ */
+/* ================================================================================ */
+
+/*SEMAPHORE RELATED*/
+#define MUTEX 	        bool
+#define LOCKED		    true
+#define UNLOCKED        false
+#define DECLARE_MUTEX(__NAME)  static MUTEX __##__NAME = UNLOCKED;
+#define IS_MUTEX_LOCKED(__NAME) (__##__NAME == LOCKED)
+#define LOCK_MUTEX(__NAME) 	 (__##__NAME =  LOCKED)
+#define UNLOCK_MUTEX(__NAME)	 (__##__NAME = UNLOCKED)
+
+#define MUTEX_POST(__NAME)   UNLOCK_MUTEX(__NAME)
+#define MUTEX_WAIT(__NAME)    do{ \
+                                if(IS_MUTEX_LOCKED(__NAME)) {\
+                                        return LX_ERROR;\
+                                    } else { \
+                                        LOCK_MUTEX(__NAME);\
+                                        }\
+                                } while(0)
+
 /* ================================================================================ */
 /* ================      	    MESSAGE HAL Function     	           ================ */
 /* ================================================================================ */
 #include "hal_event.h"
 
-									
+
 /* ================================================================================ */
 /* ================      	    OOPC SUPPORT     	           ================ */
 /* ================================================================================ */
@@ -83,27 +106,27 @@ __y: process callback
 /* ================================================================================ */
 #define LITTLE_ENDIAN
 #if defined(BIG_ENDIAN) && !defined(LITTLE_ENDIAN)
- 
-   #define htons(A) (A)
-   #define htonl(A) (A)
-   #define ntohs(A) (A)
-   #define ntohl(A) (A)
- 
+
+#define htons(A) (A)
+#define htonl(A) (A)
+#define ntohs(A) (A)
+#define ntohl(A) (A)
+
 #elif defined(LITTLE_ENDIAN) && !defined(BIG_ENDIAN)
- 
-   #define htons(A) ((((uint16_t)(A) & 0xff00) >> 8 ) | \
+
+#define htons(A) ((((uint16_t)(A) & 0xff00) >> 8 ) | \
                       (((uint16_t)(A) & 0x00ff) << 8 ))
-   #define htonl(A) ((((uint32_t)(A) & 0xff000000) >> 24) | \
+#define htonl(A) ((((uint32_t)(A) & 0xff000000) >> 24) | \
                       (((uint32_t)(A) & 0x00ff0000) >> 8 ) | \
                       (((uint32_t)(A) & 0x0000ff00) << 8 ) | \
                       (((uint32_t)(A) & 0x000000ff) << 24))
-   #define ntohs     htons
-   #define ntohl     htohl
- 
+#define ntohs     htons
+#define ntohl     htohl
+
 #else
- 
-   #error Either BIG_ENDIAN or LITTLE_ENDIAN must be #defined, but not both.
- 
+
+#error Either BIG_ENDIAN or LITTLE_ENDIAN must be #defined, but not both.
+
 #endif
 /* ================================================================================ */
 /* ================              Thread Safe Support     	   ================ */
@@ -174,6 +197,13 @@ __y: process callback
 #define LX_Memset                               memset
 #define LX_Memcmp                               memcmp
 
+
+/* ================================================================================ */
+/* ================      	  COMMUNICATION PORT   	             ================ */
+/* ================================================================================ */
+#define  TIMER_INSTALL(__X, __Y)     app_timer_create(__X, APP_TIMER_MODE_REPEATED, __Y)
+#define  TIMER_START(__X, __Y, __Z)               app_timer_start(__X, BSP_MS_TO_TICK(__Y), __Z)
+#define  TIMER_STOP(__X)                                       app_timer_stop(__X)
 #if 0
 /* ================================================================================ */
 /* ================      	    FIFO Function     	           ================ */

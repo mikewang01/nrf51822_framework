@@ -44,7 +44,7 @@
 #define BOND_DELETE_ALL_BUTTON_ID  0                                  /**< Button used for deleting all bonded centrals during startup. */
 
 #define APP_TIMER_PRESCALER        0                                  /**< Value of the RTC1 PRESCALER register. */
-#define APP_TIMER_MAX_TIMERS       (2+BSP_APP_TIMERS_NUMBER)          /**< Maximum number of simultaneously created timers. */
+#define APP_TIMER_MAX_TIMERS       (3+BSP_APP_TIMERS_NUMBER)          /**< Maximum number of simultaneously created timers. */
 #define APP_TIMER_OP_QUEUE_SIZE    2                                  /**< Size of timer operation queues. */
 
 #define APPL_LOG                   app_trace_log                      /**< Debug logger macro that will be used in this file to do logging of debug information over UART. */
@@ -829,7 +829,8 @@ extern void system_timer_init(void);
 
 void os_init(void);
 void os_shedule(void);
-
+int cling_comm_logic_link_init();
+int cling_comm_user_init();
 int main(void)
 {
     bool erase_bonds;
@@ -846,6 +847,7 @@ int main(void)
     device_manager_init(erase_bonds);
     db_discovery_init();
     hrs_c_init();
+    cling_comm_user_init();
     //bas_c_init();
     NEW(event_upload_obj_p, event_hal_manager);
     scan_start();

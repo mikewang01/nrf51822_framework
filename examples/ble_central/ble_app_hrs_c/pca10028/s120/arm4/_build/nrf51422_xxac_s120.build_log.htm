@@ -8,519 +8,24 @@ Project File Date:  09/14/2015
 
 <h2>Output:</h2>
 Build Project 'ble_app_hrs_c_s120_pca10028' - Target 'nrf51422_xxac_s120'
-compiling ble_hrs_c.c...
+compiling cling_comm_hal.c...
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(50): warning:  #1-D: last line of file ends without a newline
+        
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\cling_comm_link.h(23): warning:  #1295-D: Deprecated declaration cling_comm_logic_link_init - give arg types
+  int cling_comm_logic_link_init();
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_hal.c(124): warning:  #940-D: missing return statement at end of non-void function "hal_error_handler"
+  }
+..\..\..\kernel\hicling_comm_prot\cling_comm_hal.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=25880 RO-data=2420 RW-data=296 ZI-data=9832  
+Program Size: Code=28356 RO-data=2536 RW-data=368 ZI-data=10016  
 FromELF: creating hex file...
-".\_build\nrf51422_xxac_s120.axf" - 0 Error(s), 0 Warning(s).
-Load "E:\\vm\\share\\nrf51822_framework\\examples\\ble_central\\ble_app_hrs_c\\pca10028\\s120\\arm4\\_build\\nrf51422_xxac_s120.axf" 
-Set JLink Project File to "E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\pca10028\s120\arm4\JLinkSettings.ini"
-* JLink Info: Device "NRF51422_XXAC" selected.
- 
-JLink info:
-------------
-DLL: V4.98c, compiled Apr 23 2015 20:21:50
-Firmware: J-Link OB-SAM3U128-V2-NordicSemi compiled Apr 23 2015 19:13:52
-Hardware: V1.00
-S/N : 681857305 
- 
-* JLink Info: Found SWD-DP with ID 0x0BB11477
-* JLink Info: Found Cortex-M0 r0p0, Little endian.
-* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
-* JLink Info: CoreSight components:
-* JLink Info: ROMTbl 0 @ F0000000
-* JLink Info: ROMTbl 0 [0]: F00FF000, CID: B105100D, PID: 000BB471 ROM Table
-* JLink Info: ROMTbl 1 @ E00FF000
-* JLink Info: ROMTbl 1 [0]: FFF0F000, CID: B105E00D, PID: 000BB008 SCS
-* JLink Info: ROMTbl 1 [1]: FFF02000, CID: B105E00D, PID: 000BB00A DWT
-* JLink Info: ROMTbl 1 [2]: FFF03000, CID: B105E00D, PID: 000BB00B FPB
-* JLink Info: ROMTbl 0 [1]: 00002000, CID: B105900D, PID: 000BB9A3 ???
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: nRF51422_xxAC
-VTarget = 3.300V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 1, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 4
-Software-Breakpoints: 8192
-Watchpoints:          2
-JTAG speed: 1000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
+".\_build\nrf51422_xxac_s120.axf" - 0 Error(s), 3 Warning(s).
 </pre>
 </body>
 </html>
-bl 1 [1]: FFF02000, CID: B105E00D, PID: 000BB00A DWT
-* JLink Info: ROMTbl 1 [2]: FFF03000, CID: B105E00D, PID: 000BB00B FPB
-* JLink Info: ROMTbl 0 [1]: 00002000, CID: B105900D, PID: 000BB9A3 ???
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: nRF51422_xxAC
-VTarget = 3.300V
-State of Pins: 
-TCK: 0, TDI: 1, TDO: 1, TMS: 1, TRES: 1, TRST: 1
-Hardware-Breakpoints: 4
-Software-Breakpoints: 8192
-Watchpoints:          2
-JTAG speed: 1000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-
-Hardware-Breakpoints: 4
-Software-Breakpoints: 8192
-Watchpoints:          2
-JTAG speed: 1000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-ng ...
-" (declared at line 149)
-          goto fault;
-          ^
-..\..\..\kernel\message.c: 2 warnings, 0 errors
-compiling cling_comm_mac.c...
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
-        
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(52): warning:  #940-D: missing return statement at end of non-void function "cling_cp_send_data"
-  }
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(80): warning:  #940-D: missing return statement at end of non-void function "cling_cp_recieve_one_pacakge"
-  }
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(86): warning:  #177-D: variable "c" was declared but never referenced
-      COMMUNICATION_CHANNEL *c;
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(88): warning:  #177-D: variable "evt" was declared but never referenced
-      PROTOCOL_EVENT_TYPE evt;
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(219): warning:  #1-D: last line of file ends without a newline
-  }
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(146): warning:  #177-D: function "_sendSinglePacketMessage" was declared but never referenced
-  static void _sendSinglePacketMessage(char type, char *msg, uint32_t len)
-..\..\..\kernel\hicling_comm_prot\cling_comm_mac.c: 7 warnings, 0 errors
-compiling ble_bas_c.c...
-compiling ble_db_discovery.c...
-compiling ble_hrs_c.c...
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(308): warning:  #181-D: argument is incompatible with corresponding format string conversion
-      app_trace_log("[%s]:p_msg->req.write_req.gattc_params.handle= %d \r\n", p_msg->req.write_req.gattc_params.handle);
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(308): warning:  #224-D: the format string requires additional arguments
-      app_trace_log("[%s]:p_msg->req.write_req.gattc_params.handle= %d \r\n", p_msg->req.write_req.gattc_params.handle);
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(319): warning:  #223-D: function "memcpy" declared implicitly
-      memcpy(p_msg->req.write_req.gattc_value, str, len);
-..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c: 3 warnings, 0 errors
-compiling device_manager_central.c...
-compiling app_trace.c...
-compiling Q_Shell.c...
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
-        
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\q_shell\Q_Shell.c(679): warning:  #111-D: statement is unreachable
-      return LX_OK;
-..\..\..\kernel\q_shell\Q_Shell.c: 2 warnings, 0 errors
-linking...
-Program Size: Code=25632 RO-data=2216 RW-data=284 ZI-data=9668  
+ata=368 ZI-data=10016  
 FromELF: creating hex file...
-".\_build\nrf51422_xxac_s120.axf" - 0 Error(s), 23 Warning(s).
-- 0 Error(s), 23 Warning(s).
-nt8_t *"
-                  APPL_LOG("[APPL]: Scan timed out.\r\n");
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\main.c(392): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  APPL_LOG("[APPL]: Connection Request timed out.\r\n");
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\main.c(618): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              APPL_LOG("[APPL]: HR Measurement received %d \r\n", p_hrs_c_evt->params.hrm.hr_value);
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\main.c(639): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              APPL_LOG("[APPL]: Battery Service discovered. \r\n");
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\main.c(641): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              APPL_LOG("[APPL]: Reading battery level. \r\n");
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\main.c(647): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              APPL_LOG("[APPL]: Enabling Battery Level Notification. \r\n");
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\main.c(654): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              APPL_LOG("[APPL]: Battery Level received %d %%\r\n", p_bas_c_evt->params.battery_level);
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\main.c(661): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              APPL_LOG("[APPL]: Battery Level Read as %d %%\r\n", p_bas_c_evt->params.battery_level);
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\main.c(690): warning:  #177-D: function "bas_c_init" was declared but never referenced
-  static void bas_c_init(void)
-..\..\..\main.c: 30 warnings, 0 errors
-compiling lx_heap.c...
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
-        
-..\..\..\lx_heap\lx_heap.c: 1 warning, 0 errors
-compiling base_object.c...
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
-        
-..\..\..\base_object\base_object.c: 1 warning, 0 errors
-compiling hal_timer.c...
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
-        
-..\..\..\kernel\hal_timer.c: 1 warning, 0 errors
-compiling event_hal.c...
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
-        
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\event_hal.c(44): warning:  #550-D: variable "this" was set but never used
-  static CLASS(event_hal_manager) *this =  NULL;
-..\..\..\kernel\event_hal.c: 2 warnings, 0 errors
-compiling os.c...
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
-        
-..\..\..\kernel\os.c: 1 warning, 0 errors
-compiling message.c...
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
-        
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\message.c(132): warning:  #546-D: transfer of control bypasses initialization of:
-            variable "cpusr" (declared at line 149)
-            variable "is_softdevice_enabled" (declared at line 149)
-          goto fault;
-          ^
-..\..\..\kernel\message.c: 2 warnings, 0 errors
-compiling cling_comm_mac.c...
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
-        
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(47): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DEBUG("Single message (22): %02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x\r\n",
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(52): warning:  #940-D: missing return statement at end of non-void function "cling_cp_send_data"
-  }
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(80): warning:  #940-D: missing return statement at end of non-void function "cling_cp_recieve_one_pacakge"
-  }
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(95): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DEBUG("_receivedPacketProcess: UUID=0x%x", UUID);
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(97): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DEBUG ("_receivedPacketProcess: msgid=%d", spacket->messageId);
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(86): warning:  #177-D: variable "c" was declared but never referenced
-      COMMUNICATION_CHANNEL *c;
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(88): warning:  #177-D: variable "evt" was declared but never referenced
-      PROTOCOL_EVENT_TYPE evt;
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(157): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DEBUG("wait 1020\r\n");
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(162): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DEBUG("post 1020\r\n");
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(168): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DEBUG("Single message (22): %02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x\n",
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(188): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DEBUG("wait 1020\r\n");
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DEBUG(" message (22): %02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x,%02x\r\n",
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(201): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DEBUG("post 1020\r\n");
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(219): warning:  #1-D: last line of file ends without a newline
-  }
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(146): warning:  #177-D: function "_sendSinglePacketMessage" was declared but never referenced
-  static void _sendSinglePacketMessage(char type, char *msg, uint32_t len)
-..\..\..\kernel\hicling_comm_prot\cling_comm_mac.c: 16 warnings, 0 errors
-compiling ble_bas_c.c...
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_bas_c\ble_bas_c.c(80): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              LOG("[BAS_C]: SD Read/Write API returns Success..\r\n");
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_bas_c\ble_bas_c.c(86): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              LOG("[BAS_C]: SD Read/Write API returns error. This message sending will be "
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_bas_c\ble_bas_c.c(199): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          LOG("[BAS_C]: Battery Service discovered at peer.\r\n");
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_bas_c\ble_bas_c.c(209): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          LOG("[BAS_C]: Battery Service discovery failure at peer. \r\n");
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_bas_c\ble_bas_c.c(218): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      LOG("[BAS_C]: Configuring CCCD. CCCD Handle = %d, Connection Handle = %d\r\n",
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_bas_c\ble_bas_c.c(284): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              LOG("[%s]:BLE_GATTC_EVT_WRITE_RSP\r\n", __FUNCTION__);
-..\..\..\..\..\..\components\ble\ble_services\ble_bas_c\ble_bas_c.c: 6 warnings, 0 errors
-compiling ble_db_discovery.c...
-E:\vm\share\nrf51822_framework\components\ble\ble_db_discovery\ble_db_discovery.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DB_LOG("[DB]: Starting discovery of service with UUID 0x%x for Connection handle %d\r\n",
-E:\vm\share\nrf51822_framework\components\ble\ble_db_discovery\ble_db_discovery.c(671): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DB_LOG("[DB]: Discovery of service with UUID 0x%x completed with success for Connection"
-E:\vm\share\nrf51822_framework\components\ble\ble_db_discovery\ble_db_discovery.c(755): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DB_LOG("[DB]: Discovery of service with UUID 0x%x completed with success for Connection"
-E:\vm\share\nrf51822_framework\components\ble\ble_db_discovery\ble_db_discovery.c(847): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DB_LOG("[DB]: Starting discovery of service with UUID 0x%x for Connection handle %d\r\n",
-..\..\..\..\..\..\components\ble\ble_db_discovery\ble_db_discovery.c: 4 warnings, 0 errors
-compiling ble_hrs_c.c...
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(86): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              LOG("[HRS_C]: SD Read/Write API returns Success..\r\n");
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(90): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              LOG("[HRS_C]: SD Read/Write API returns error. This message sending will be "
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(164): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          LOG("[%s]:p_evt->params.discovered_db.char_count = %d\r\n", __FUNCTION__, p_evt->params.discovered_db.char_count);
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(177): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          LOG("[HRS_C]: Heart Rate Service discovered at peer. = %d\r\n",mp_ble_hrs_c->hrm_handle[5] );
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(207): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      LOG("[%s]:%s", __FUNCTION__, "ble_hrs_c_init");
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(229): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              LOG("[%s]:BLE_GATTC_EVT_WRITE_RSP\r\n", __FUNCTION__);
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(243): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      LOG("[HRS_C]: Configuring CCCD. CCCD Handle = %d, Connection Handle = %d\r\n",
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(308): warning:  #181-D: argument is incompatible with corresponding format string conversion
-      app_trace_log("[%s]:p_msg->req.write_req.gattc_params.handle= %d \r\n", p_msg->req.write_req.gattc_params.handle);
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(308): warning:  #224-D: the format string requires additional arguments
-      app_trace_log("[%s]:p_msg->req.write_req.gattc_params.handle= %d \r\n", p_msg->req.write_req.gattc_params.handle);
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(308): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      app_trace_log("[%s]:p_msg->req.write_req.gattc_params.handle= %d \r\n", p_msg->req.write_req.gattc_params.handle);
-E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(319): warning:  #223-D: function "memcpy" declared implicitly
-      memcpy(p_msg->req.write_req.gattc_value, str, len);
-..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c: 11 warnings, 0 errors
-compiling device_manager_central.c...
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(548): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: Initializing Application Instance 0x%08X.\r\n", index);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(562): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: Initializing Connection Instance 0x%08X.\r\n", index);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(578): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: Initializing Peer Instance 0x%08X.\r\n", index);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(666): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_TRC("[DM]:[DI 0x%02X]: Device type 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(668): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_TRC("[DM]: Device Addr 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(691): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]: Allocated device instance 0x%02X\r\n", index);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(717): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_TRC("[DM]:[DI 0x%02X]: Freeing Instance.\r\n", device_index);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(747): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: Searching for device 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(757): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_TRC("[DM]:[DI 0x%02X]: Device type 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(759): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_TRC("[DM]: Device Addr 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(769): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]: Found device at instance 0x%02X\r\n", index);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(796): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: Notifying application of event 0x%02X\r\n", p_event->event_id);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(819): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: Request to allocation connection instance\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(825): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_LOG("[DM]:[%02X]: Connection Instance Allocated.\r\n", (*p_instance));        
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(830): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_LOG("[DM]: No free connection instances available\r\n");        
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(845): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]:[CI 0x%02X]: Freeing connection instance\r\n", (*p_instance));
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(849): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_LOG("[DM]:[%02X]: Freed connection instance.\r\n", (*p_instance));
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(888): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> device_context_store\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(900): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]:[DI %02X]:[CI %02X]: -> Updating bonding information.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(907): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]:[DI %02X]:[CI %02X]: -> Storing bonding information.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(914): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]:[DI %02X]:[CI %02X]: -> No update in bonding information.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(939): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  DM_ERR("[DM]:[0x%02X]:Failed to store bond information, reason 0x%08X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(956): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  DM_ERR("[DM]: Failed to store service context, reason %08X\r\n", err_code);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(964): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_ERR("[DM]: Failed to store device context, reason %08X\r\n", err_code);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(979): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> no_service_context_store\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(999): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> gatts_context_store\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1012): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]:[0x%02X]: No change in GATTS Context information.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1018): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  DM_LOG("[DM]:[0x%02X]: Resetting GATTS for active instance.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1030): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  DM_LOG("[DM]:[0x%02X]: Updating stored service context\r\n", p_handle->device_id);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1037): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  DM_LOG("[DM]:[0x%02X]: Storing service context\r\n", p_handle->device_id);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1047): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]:[0x%02X]: GATTS Data size 0x%08X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1059): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  DM_ERR("[DM]:[0x%02X]:Failed to store service context, reason 0x%08X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1065): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  DM_LOG("[DM]: Service context successfully stored.\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1084): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> gattc_context_store\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1100): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> gattsc_context_store\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1123): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> no_service_context_load\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1139): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]:[CI 0x%02X]:[DI 0x%02X]: --> gatts_context_load\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1150): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_LOG("[DM]:[%02X]:[Block ID 0x%08X]: Service context loaded, size 0x%08X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1163): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_ERR("[DM]:[%02X]: Failed to load Service context, reason %08X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1182): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> gattc_context_load\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1198): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> gattsc_context_load\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1219): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> no_service_context_apply\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1220): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]:[CI 0x%02X]: No Service context\r\n", p_handle->connection_id);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1240): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> gatts_context_apply\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1241): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]:[CI 0x%02X]: State 0x%02X, Size 0x%08X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1254): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_LOG("[DM]: Setting stored context.\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_LOG("[DM]: Failed to set system attributes, reason 0x%08X.\r\n", err_code);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1284): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> gattc_context_apply\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1300): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: --> gattsc_context_apply\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1317): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: Initiating authentication request\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1447): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                      DM_LOG("[DM]:[0x%02X]:[0x%02X]: Bond context Event\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1473): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                          DM_LOG("[DM]:[0x%02X]:[0x%02X]: Service context Event\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1487): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                              DM_LOG("[DM]:[0x%02X]:[0x%02X]: Resetting bond information for "
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1499): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                          DM_LOG("[DM]:[0x%02X]:[0x%02X]: App context Event\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1573): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: >> dm_init.\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1612): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]: Storage handle 0x%08X.\r\n", m_storage_handle.block_id);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1625): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                      DM_TRC("[DM]:[0x%02X]: Block handle 0x%08X.\r\n", index, block_handle.block_id);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1637): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                          DM_ERR(
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1647): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                          DM_TRC("[DM]:[DI 0x%02X]: Device type 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1650): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                          DM_TRC("[DM]: Device Addr 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1663): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                      DM_LOG("[DM]: Failed to get block handle for instance %08X, reason %08X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1675): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_ERR("[DM]: Successfully requested clear of persistent data.\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1680): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_ERR("[DM]: Failed to register with storage module, reason 0x%08X.\r\n", err_code);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1685): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_init.\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1701): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: >> dm_register.\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1708): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_LOG("[DM]: Application Instance allocated.\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1726): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_register.\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1741): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: >> dm_security_setup_req\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1773): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                      DM_LOG("[DM]: Marked pending\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1788): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_security_setup_req, 0x%08X\r\n", err_code);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1807): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: >> dm_security_status_req\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1823): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_security_status_req\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1843): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: >> dm_whitelist_create\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1884): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: Created whitelist, number of IRK = 0x%02X, number of addr = 0x%02X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1888): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_whitelist_create\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1912): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: >> dm_device_delete\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1916): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_device_delete\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1934): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: >> dm_device_delete_all\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1944): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_device_delete_all\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1964): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: >> dm_service_context_set\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(1988): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_service_context_set\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2007): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          DM_TRC("[DM]: Device must be connected to get context. \r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2014): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: >> dm_service_context_get\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2033): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_service_context_get\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2048): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_LOG("[DM]: Context delete is not supported yet.\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2068): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: >> dm_application_context_set\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2092): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]:[DI 0x%02X]: Updating existing application context, existing len 0x%08X, "
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2100): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]: Storing application context.\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2124): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_application_context_set\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2148): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: >> dm_application_context_get\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_application_context_get\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2214): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: >> dm_application_context_delete\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2240): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  DM_ERR("[DM]: Failed to delete application context, reason 0x%08X\r\n", err_code);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2249): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_application_context_delete\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2298): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: >> dm_peer_addr_set\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2315): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_peer_addr_set\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2333): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: >> dm_peer_addr_get\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2345): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_TRC("[DM]:[CI 0x%02X]: Address get for non bonded active connection.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2356): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_TRC("[DM]:[DI 0x%02X]: Address get for bonded device.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2364): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_peer_addr_get\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2383): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: >> dm_distributed_keys_get\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2418): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      DM_TRC("[DM]: << dm_distributed_keys_get\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2501): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                          DM_LOG("[DM]:[%02X]:[Block ID 0x%08X]:Loading bond information at %p, size 0x%08X, offset 0x%08X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2515): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                              DM_ERR("[DM]:[%02X]: Failed to load Bond information, reason %08X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2520): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                          DM_LOG("[DM]:[%02X]:Loading service context at %p, size 0x%08X, offset 0x%08X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2531): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                              DM_ERR("[DM]:[%02X]: Failed to load service information, reason %08X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2538): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                          DM_ERR("[DM]:[%02X]: Failed to get block identifier for "
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2551): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]: Disconnect Reason 0x%04X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2587): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]: >> BLE_GAP_EVT_SEC_PARAMS_REQUEST\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2592): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]: 0x%02X, 0x%02X, 0x%02X, 0x%02X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2613): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  DM_LOG("[DM]: Security parameter reply request failed, reason 0x%08X.\r\n", err_code);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2624): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]: >> BLE_GAP_EVT_AUTH_STATUS, status %08X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2657): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                              DM_LOG("[DM]:[CI 0x%02X]:[DI 0x%02X]: Bonded!\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2684): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]: >> BLE_GAP_EVT_CONN_SEC_UPDATE, Mode 0x%02X, Level 0x%02X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2711): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                      DM_ERR("[DM]:[CI 0x%02X]:[DI 0x%02X]: Failed to apply service context\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2724): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]: >> BLE_GATTS_EVT_SYS_ATTR_MISSING\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2731): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]: >> BLE_GAP_EVT_SEC_REQUEST\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2766): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-              DM_LOG("[DM]:Queued request\r\n");
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2777): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  DM_LOG("[DM]:[CI 0x%02X]:[DI 0x%02X]: Security request result 0x%08X\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(2784): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-                  DM_LOG("[DM]:Nothing pending!\r\n");
-..\..\..\..\..\..\components\ble\device_manager\device_manager_central.c: 120 warnings, 0 errors
-compiling app_trace.c...
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(69): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      app_trace_log("\r\n");
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(72): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-          app_trace_log("0x%02X ", p_buffer[index]);
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(74): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "const uint8_t *"
-      app_trace_log("\r\n");
-..\..\..\..\..\..\components\libraries\trace\app_trace.c: 3 warnings, 0 errors
-compiling Q_Shell.c...
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
-        
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\q_shell\Q_Shell.c(679): warning:  #111-D: statement is unreachable
-      return LX_OK;
-..\..\..\kernel\q_shell\Q_Shell.c: 2 warnings, 0 errors
-linking...
-Program Size: Code=28384 RO-data=2120 RW-data=284 ZI-data=9668  
-FromELF: creating hex file...
-".\_build\nrf51422_xxac_s120.axf" - 0 Error(s), 201 Warning(s).
+".\_build\nrf51422_xxac_s120.axf" - 0 Error(s), 3 Warning(s).
 Load "E:\\vm\\share\\nrf51822_framework\\examples\\ble_central\\ble_app_hrs_c\\pca10028\\s120\\arm4\\_build\\nrf51422_xxac_s120.axf" 
 Set JLink Project File to "E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\pca10028\s120\arm4\JLinkSettings.ini"
 * JLink Info: Device "NRF51422_XXAC" selected.
@@ -560,6 +65,13 @@ Erase Done.
 Programming Done.
 Verify OK.
 Application running ...
+rnel\hicling_comm_prot\cling_comm_user.c(246): warning:  #177-D: variable "normal_package_recieve_callback" was declared but never referenced
+  static int (*normal_package_recieve_callback)(char *msg, uint32_t len);
+..\..\..\kernel\hicling_comm_prot\cling_comm_user.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=28352 RO-data=2536 RW-data=368 ZI-data=10016  
+FromELF: creating hex file...
+".\_build\nrf51422_xxac_s120.axf" - 0 Error(s), 10 Warning(s).
 Load "E:\\vm\\share\\nrf51822_framework\\examples\\ble_central\\ble_app_hrs_c\\pca10028\\s120\\arm4\\_build\\nrf51422_xxac_s120.axf" 
 Set JLink Project File to "E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\pca10028\s120\arm4\JLinkSettings.ini"
 * JLink Info: Device "NRF51422_XXAC" selected.
@@ -599,141 +111,139 @@ Erase Done.
 Programming Done.
 Verify OK.
 Application running ...
-reated
-;\
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
+MS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 1000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+: B105E00D, PID: 000BB00B FPB
+* JLink Info: ROMTbl 0 [1]: 00002000, CID: B105900D, PID: 000BB9A3 ???
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: nRF51422_xxAC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 1000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+*" is incompatible with parameter of type "app_timer_id_t *"
+      TIMER_INSTALL(&m_logic_link_recieve_timer_id , recieve_packet_timeout_process);
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_logic_link.c(57): warning:  #177-D: variable "mac_rev_list_header" was declared but never referenced
+  static struct base_object *mac_rev_list_header = NULL;
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_logic_link.c(89): warning:  #177-D: function "logic_link_send_ack_packet" was declared but never referenced
+  static void logic_link_send_ack_packet( )
+..\..\..\kernel\hicling_comm_prot\cling_comm_logic_link.c: 7 warnings, 0 errors
+compiling cling_comm_mac.c...
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(50): warning:  #1-D: last line of file ends without a newline
         
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\q_shell\Q_Shell.c(679): warning:  #111-D: statement is unreachable
-      return LX_OK;
-..\..\..\kernel\q_shell\Q_Shell.c: 2 warnings, 1 error
-".\_build\nrf51422_xxac_s120.axf" - 163 Error(s), 75 Warning(s).
-Target not created
-no effect
-          DM_TRC("[DM]: Device Addr 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(668): warning:  #174-D: expression has no effect
-          DM_TRC("[DM]: Device Addr 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(668): warning:  #174-D: expression has no effect
-          DM_TRC("[DM]: Device Addr 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(668): warning:  #174-D: expression has no effect
-          DM_TRC("[DM]: Device Addr 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(668): warning:  #174-D: expression has no effect
-          DM_TRC("[DM]: Device Addr 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(668): warning:  #174-D: expression has no effect
-          DM_TRC("[DM]: Device Addr 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(668): warning:  #174-D: expression has no effect
-          DM_TRC("[DM]: Device Addr 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X.\r\n",
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(691): warning:  #174-D: expression has no effect
-              DM_LOG("[DM]: Allocated device instance 0x%02X\r\n", index);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(691): warning:  #174-D: expression has no effect
-              DM_LOG("[DM]: Allocated device instance 0x%02X\r\n", index);
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(695): error:  #112: expected "while"
-      }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(695): error:  #125: expected a "("
-      }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(695): error:  #29: expected an expression
-      }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(695): error:  #18: expected a ")"
-      }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(695): error:  #65: expected a ";"
-      }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(707): error:  #112: expected "while"
-  static __INLINE ret_code_t device_instance_free(uint32_t device_index)
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(779): warning:  #12-D: parsing restarts here after previous syntax error
-  }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(779): error:  #125: expected a "("
-  }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(779): error:  #29: expected an expression
-  }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(779): error:  #18: expected a ")"
-  }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(779): error:  #65: expected a ";"
-  }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(788): error:  #112: expected "while"
-  static __INLINE void app_evt_notify(dm_handle_t const * const p_handle,
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(959): warning:  #12-D: parsing restarts here after previous syntax error
-      }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(959): error:  #125: expected a "("
-      }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(959): error:  #29: expected an expression
-      }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(959): error:  #18: expected a ")"
-      }
-E:\vm\share\nrf51822_framework\components\ble\device_manager\device_manager_central.c(959): error:  #65: expected a ";"
-      }
-..\..\..\..\..\..\components\ble\device_manager\device_manager_central.c: 18 warnings, 30 errors
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(263): warning:  #1295-D: Deprecated declaration ble_stack_logic_link_write_rsp_call_back - give arg types
+  int ble_stack_logic_link_write_rsp_call_back();
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_mac.c(55): warning:  #550-D: variable "error_handle_callback" was set but never used
+  static int (*error_handle_callback)(uint8_t error_code) = NULL;
+..\..\..\kernel\hicling_comm_prot\cling_comm_mac.c: 3 warnings, 0 errors
+compiling cling_comm_user.c...
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(50): warning:  #1-D: last line of file ends without a newline
+        
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_user.c(245): warning:  #177-D: variable "stream_package_recieve_callback" was declared but never referenced
+  static int (*stream_package_recieve_callback)(char *msg, uint32_t len);
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\hicling_comm_prot\cling_comm_user.c(246): warning:  #177-D: variable "normal_package_recieve_callback" was declared but never referenced
+  static int (*normal_package_recieve_callback)(char *msg, uint32_t len);
+..\..\..\kernel\hicling_comm_prot\cling_comm_user.c: 3 warnings, 0 errors
+compiling bsp.c...
+compiling bsp_btn_ble.c...
+compiling system_nrf51.c...
+compiling ble_advdata.c...
+compiling ble_bas_c.c...
+compiling ble_db_discovery.c...
+compiling ble_hrs_c.c...
+E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(106): warning:  #1295-D: Deprecated declaration ble_stack_mac_layer_write_rsp_call_back - give arg types
+  int ble_stack_mac_layer_write_rsp_call_back();
+E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(284): warning:  #1295-D: Deprecated declaration cling_comm_cmd_load_device_info - give arg types
+  void cling_comm_cmd_load_device_info();
+E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(285): warning:  #1295-D: Deprecated declaration cling_comm_cmd_device_reboot - give arg types
+  void cling_comm_cmd_device_reboot();
+E:\vm\share\nrf51822_framework\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c(286): warning:  #1295-D: Deprecated declaration cling_comm_cmd_get_daily_activity_total - give arg types
+  void cling_comm_cmd_get_daily_activity_total();
+..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c: 4 warnings, 0 errors
+compiling ble_srv_common.c...
+compiling device_manager_central.c...
 compiling app_uart_fifo.c...
+compiling nrf_delay.c...
+compiling nrf_drv_common.c...
+compiling nrf_drv_gpiote.c...
+compiling pstorage.c...
+compiling app_button.c...
+compiling app_error.c...
+compiling app_fifo.c...
+compiling app_timer.c...
 compiling app_trace.c...
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(39): error:  #77-D: this declaration has no storage class or type specifier
-                len += sprintf(buf, __VA_ARGS__);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(39): error:  #147: declaration is incompatible with "uint16_t len" (declared at line 38)
-                len += sprintf(buf, __VA_ARGS__);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(39): error:  #65: expected a ";"
-                len += sprintf(buf, __VA_ARGS__);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(39): error:  #969: the identifier __VA_ARGS__ can only appear in the replacement lists of variadic macros
-                len += sprintf(buf, __VA_ARGS__);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(40): error:  #77-D: this declaration has no storage class or type specifier
-                len += sprintf(buf+len, "\r\n"); \
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(40): error:  #65: expected a ";"
-                len += sprintf(buf+len, "\r\n"); \
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(41): error:  #260-D: explicit type is missing ("int" assumed)
-                simple_uart_putstring(buf);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(41): error:  #92: identifier-list parameters may only be used in a function definition
-                simple_uart_putstring(buf);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(41): error:  #147: declaration is incompatible with "void simple_uart_putstring(const uint8_t *)" (declared at line 33)
-                simple_uart_putstring(buf);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(42): error:  #169: expected a declaration
-  }while(0)
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(51): warning:  #12-D: parsing restarts here after previous syntax error
-  void app_trace_dump(uint8_t * p_buffer, uint32_t len);
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(69): warning:  #174-D: expression has no effect
-      app_trace_log("\r\n");
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(72): warning:  #174-D: expression has no effect
-          app_trace_log("0x%02X ", p_buffer[index]);
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(72): warning:  #174-D: expression has no effect
-          app_trace_log("0x%02X ", p_buffer[index]);
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(74): error:  #112: expected "while"
-      app_trace_log("\r\n");
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #125: expected a "("
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #29: expected an expression
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #18: expected a ")"
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #65: expected a ";"
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #67: expected a "}"
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #67: expected a "}"
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #112: expected "while"
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #125: expected a "("
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #29: expected an expression
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #18: expected a ")"
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #65: expected a ";"
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.c(82): error: At end of source:  #67: expected a "}"
-..\..\..\..\..\..\components\libraries\trace\app_trace.c: 5 warnings, 23 errors
+compiling nrf_assert.c...
+compiling retarget.c...
+compiling softdevice_handler.c...
+E:\vm\share\nrf51822_framework\components\softdevice\common\softdevice_handler\softdevice_handler.c(312): warning:  #1-D: last line of file ends without a newline
+  }
+..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.c: 1 warning, 0 errors
+compiling cmd.c...
 compiling Q_Shell.c...
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(39): error:  #77-D: this declaration has no storage class or type specifier
-                len += sprintf(buf, __VA_ARGS__);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(39): error:  #147: declaration is incompatible with "uint16_t len" (declared at line 38)
-                len += sprintf(buf, __VA_ARGS__);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(39): error:  #65: expected a ";"
-                len += sprintf(buf, __VA_ARGS__);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(39): error:  #969: the identifier __VA_ARGS__ can only appear in the replacement lists of variadic macros
-                len += sprintf(buf, __VA_ARGS__);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(40): error:  #77-D: this declaration has no storage class or type specifier
-                len += sprintf(buf+len, "\r\n"); \
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(40): error:  #65: expected a ";"
-                len += sprintf(buf+len, "\r\n"); \
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(41): error:  #260-D: explicit type is missing ("int" assumed)
-                simple_uart_putstring(buf);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(41): error:  #92: identifier-list parameters may only be used in a function definition
-                simple_uart_putstring(buf);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(41): error:  #147: declaration is incompatible with "void simple_uart_putstring(const uint8_t *)" (declared at line 33)
-                simple_uart_putstring(buf);\
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(42): error:  #169: expected a declaration
-  }while(0)
-E:\vm\share\nrf51822_framework\components\libraries\trace\app_trace.h(51): warning:  #12-D: parsing restarts here after previous syntax error
-  void app_trace_dump(uint8_t * p_buffer, uint32_t len);
-E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(53): warning:  #1-D: last line of file ends without a newline
+E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\incs\oop_hal.h(50): warning:  #1-D: last line of file ends without a newline
         
 E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\kernel\q_shell\Q_Shell.c(679): warning:  #111-D: statement is unreachable
       return LX_OK;
-..\..\..\kernel\q_shell\Q_Shell.c: 3 warnings, 10 errors
-".\_build\nrf51422_xxac_s120.axf" - 255 Error(s), 114 Warning(s).
-Target not created
+..\..\..\kernel\q_shell\Q_Shell.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=27976 RO-data=2536 RW-data=368 ZI-data=10016  
+FromELF: creating hex file...
+".\_build\nrf51422_xxac_s120.axf" - 0 Error(s), 37 Warning(s).
+Load "E:\\vm\\share\\nrf51822_framework\\examples\\ble_central\\ble_app_hrs_c\\pca10028\\s120\\arm4\\_build\\nrf51422_xxac_s120.axf" 
+Set JLink Project File to "E:\vm\share\nrf51822_framework\examples\ble_central\ble_app_hrs_c\pca10028\s120\arm4\JLinkSettings.ini"
+* JLink Info: Device "NRF51422_XXAC" selected.
+ 
+JLink info:
+------------
+DLL: V4.98c, compiled Apr 23 2015 20:21:50
+Firmware: J-Link OB-SAM3U128-V2-NordicSemi compiled Apr 23 2015 19:13:52
+Hardware: V1.00
+S/N : 681857305 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
+* JLink Info: CoreSight components:
+* JLink Info: ROMTbl 0 @ F0000000
+* JLink Info: ROMTbl 0 [0]: F00FF000, CID: B105100D, PID: 000BB471 ROM Table
+* JLink Info: ROMTbl 1 @ E00FF000
+* JLink Info: ROMTbl 1 [0]: FFF0F000, CID: B105E00D, PID: 000BB008 SCS
+* JLink Info: ROMTbl 1 [1]: FFF02000, CID: B105E00D, PID: 000BB00A DWT
+* JLink Info: ROMTbl 1 [2]: FFF03000, CID: B105E00D, PID: 000BB00B FPB
+* JLink Info: ROMTbl 0 [1]: 00002000, CID: B105900D, PID: 000BB9A3 ???
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: nRF51422_xxAC
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 1000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...

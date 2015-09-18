@@ -11,6 +11,7 @@
 ".\_build\cling_comm_hal.o"
 ".\_build\cling_comm_logic_link.o"
 ".\_build\cling_comm_mac.o"
+".\_build\cling_comm_user.o"
 ".\_build\bsp.o"
 ".\_build\bsp_btn_ble.o"
 ".\_build\arm_startup_nrf51.o"

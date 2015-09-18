@@ -15,7 +15,7 @@
 #define __CLING_COMM_CMD_H__
 
 /* Exported constants --------------------------------------------------------*/
-
+#include "stdint.h"
 
 
 /* Exported types ------------------------------------------------------------*/
@@ -72,8 +72,16 @@ typedef enum {
 } SYSTEM_DEVICE_REGISTER_LIST;
 
 
+enum{
+     COMM_PROTOCOL_ERROR_RX_FAILED,
+     COMM_PROTOCOL_ERROR_TX_FAILED,
+};
 
 
+void cling_comm_cmd_init(void);
+int comm_cmd_error_handle_register(int (*p_callback)(uint8_t));
+int comm_cmd_normal_package_recieve_callback_register(int (*p_callback)(char* , uint32_t));
+int comm_cmd_stream_recieved_callback_register(int (*p_callback)(char* , uint32_t));
 #endif // __VERSION_H__
 
 

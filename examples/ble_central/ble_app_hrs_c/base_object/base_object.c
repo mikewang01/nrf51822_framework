@@ -47,7 +47,8 @@
  *
  *   @return the LX_ERROR code, OS_EOK on initialization successfully.
  */
-int os_object_find(CLASS(base_object_implement) *arg, struct base_object *object_dev_list, struct base_object **object_finded, const char * name) {
+int os_object_find(CLASS(base_object_implement) *arg, struct base_object *object_dev_list, struct base_object **object_finded, const char * name)
+{
     struct base_object *obj = object_dev_list;
 
     if(obj == NULL) {
@@ -55,10 +56,10 @@ int os_object_find(CLASS(base_object_implement) *arg, struct base_object *object
     }
 
     while(obj != NULL) {
-        if(strcmp(name, obj->name) == 0){
-						*object_finded = obj;
-						return LX_OK;					
-				}
+        if(strcmp(name, obj->name) == 0) {
+            *object_finded = obj;
+            return LX_OK;
+        }
         obj = obj->next;
 
 
@@ -66,6 +67,34 @@ int os_object_find(CLASS(base_object_implement) *arg, struct base_object *object
 
     return LX_OK;
 }
+/*********************************************************************
+ * @fn      OS_err_t os_object_pop
+ *
+ * @brief   This function registers a device driver with specified name
+ *
+ * 			    @param dev the pointer of device driver structure
+ *					@param name the device driver's name
+ *					@param flags the flag of device
+ *
+ *   @return the LX_ERROR code, OS_EOK on initialization successfully.
+ */
+int os_object_pop(CLASS(base_object_implement) *arg, struct base_object **object_dev_list, struct base_object **object_finded)
+{
+    struct base_object *obj = *object_dev_list;
+   // LX_ENTER_CRITICAL();
+    if(obj != NULL) {
+        *object_finded = obj;
+        if(obj->next != NULL) {
+            (*object_dev_list) = obj->next;
+        } else {
+            *object_dev_list = NULL;
+        }
+        return LX_OK;
+    }
+   // LX_EXIT_CRITICAL();
+    return LX_ERROR;
+}
+
 /*********************************************************************
  * @fn      OS_err_t os_object_detach
  *
@@ -90,8 +119,8 @@ int os_object_add(CLASS(base_object_implement) *arg, struct base_object **object
     strcpy(obj->name , name);
     obj->type = class_type;
     obj->next = NULL;
-		
-		LX_ENTER_CRITICAL();
+
+    //LX_ENTER_CRITICAL();
     if(*object_list == NULL) {
         *object_list = obj;
     } else {
@@ -103,7 +132,7 @@ int os_object_add(CLASS(base_object_implement) *arg, struct base_object **object
 
         (object_temp)->next = obj;
     }
-		LX_EXIT_CRITICAL();
+   // LX_EXIT_CRITICAL();
     return LX_OK;
 }
 
@@ -161,8 +190,8 @@ int os_object_detach(CLASS(base_object_implement) *arg, struct base_object **obj
 int deinit_base_object_implement(CLASS(base_object_implement) *arg) /*initiate http object*/
 {
 //	ASSERT(arg != NULL);
-	LX_Free(arg);
-	return LX_OK;
+    LX_Free(arg);
+    return LX_OK;
 }
 
 
@@ -177,11 +206,11 @@ int deinit_base_object_implement(CLASS(base_object_implement) *arg) /*initiate h
 int init_base_object_implement(CLASS(base_object_implement) *arg) /*initiate http object*/
 {
 //	assert(arg != NULL);
-	arg->init = init_base_object_implement;
- 	arg->de_init =  deinit_base_object_implement;
-	arg->add =  os_object_add;
-	arg->detach =  os_object_detach;
-	arg->find = os_object_find;
-	
-	return LX_OK;
+    arg->init = init_base_object_implement;
+    arg->de_init =  deinit_base_object_implement;
+    arg->add =  os_object_add;
+    arg->detach =  os_object_detach;
+    arg->find = os_object_find;
+    arg->pop = os_object_pop;
+    return LX_OK;
 }
