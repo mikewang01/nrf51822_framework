@@ -11,71 +11,47 @@
  * INCLUDES
  */
 
-#ifndef __CLING_COMM_CMD_H__
-#define __CLING_COMM_CMD_H__
-
+#ifndef __CLING_COMM_USER_H__
+#define __CLING_COMM_USER_H__
+#include "oop_hal.h"
 /* Exported constants --------------------------------------------------------*/
 
-
-
+/**
+ * Weather type for setting peripheral weather forecast information.
+ */
+typedef enum {
+    PERIPHERAL_WEATHER_SUNNY=0,
+    PERIPHERAL_WEATHER_CLOUDY,
+    PERIPHERAL_WEATHER_RAINY,
+    PERIPHERAL_WEATHER_SNOWY,
+    PERIPHERAL_WEATHER_MAX,
+}peripheral_weather_type_t;
+    
 /* Exported types ------------------------------------------------------------*/
 // ----------------------------------
 // Control register definition
-#define CTL_IM   0x80   /* Streaming */
-#define CTL_A2   0x40   /* Auth A1 */
-#define CTL_A1   0x20   /* Auth A2*/
-#define CTL_TS   0x10  /* time sync */
-#define CTL_DF   0x08  /* disk format */
-#define CTL_A0   0x04  /* keep alive */
-#define CTL_FA   0x02  /* Auth FA */
-#define CTL_RFNU 0x01  /* Reset for new user .*/
+DEF_CLASS(cling_comm_controller)
+int (*init)(CLASS(cling_comm_controller)*);
+int (*de_init)(CLASS(cling_comm_controller)*);
 
-// Protocal message order type
-typedef enum {
-    PROTOCOL_MESSAGE_REGISTER_READ = 0,        // 0
-    PROTOCOL_MESSAGE_REGISTER_WRITE,
-    PROTOCOL_MESSAGE_FILE_LOAD_LIST,
-    PROTOCOL_MESSAGE_FILE_READ,
-    PROTOCOL_MESSAGE_FILE_WRITE,
-    PROTOCOL_MESSAGE_FILE_DELETE,              // 5
-    PROTOCOL_MESSAGE_LOAD_DEVICE_INFO,
-    PROTOCOL_MESSAGE_STREAMING_SECOND,
-    PROTOCOL_MESSAGE_STREAMING_MINUTE,
-    PROTOCOL_MESSAGE_STREAMING_MULTI_MINUTES,
-    PROTOCOL_MESSAGE_ACK,                      // 10
-    PROTOCOL_MESSAGE_AUTHENTICATIOIN,
-    PROTOCOL_MESSAGE_REBOOT,
-    PROTOCOL_MESSAGE_START_OTA,
-    PROTOCOL_MESSAGE_WEATHER,
-    PROTOCOL_MESSAGE_USER_REMINDER,            // 15
-    PROTOCOL_MESSAGE_SIMULATION,
-    PROTOCOL_MESSAGE_BLE_DISCONNECT,
-    PROTOCOL_MESSAGE_LOAD_DAILY_ACTIVITY,
-    PROTOCOL_MESSAGE_SET_ANCS,
-    PROTOCOL_MESSAGE_DEBUG_MSG,                // 20
-    PROTOCOL_MESSAGE_DEVICE_SETTING,
-    PROTOCOL_MESSAGE_STREAMING_DAY,
-    PROTOCOL_MESSAGE_SET_SMART_NOTIFICATION,
-} PROTOCOL_MESSAGE_TYPE;
+/*weather related function*/
+int (*add_weather)(CLASS(cling_comm_controller)* arg, uint8_t month, uint8_t day, peripheral_weather_type_t weather_type, uint8_t low_temperature, uint8_t high_temperature);
+int (*set_weather)(CLASS(cling_comm_controller)* arg);
+int (*get_weather_buffer_left)(CLASS(cling_comm_controller)* arg, uint16_t *buffer_size);
+/*time set related*/
+int (*set_time)(CLASS(cling_comm_controller)* arg, uint32_t utc_time);
 
-typedef enum {
-    SYSTEM_DEVICE_REGISTER_CTL = 0,
-    SYSTEM_DEVICE_REGISTER_CLEAR,
-    SYSTEM_DEVICE_REGISTER_REVH,
-    SYSTEM_DEVICE_REGISTER_REVL,
-    SYSTEM_DEVICE_REGISTER_HWINFO,
-    SYSTEM_DEVICE_REGISTER_HW_REV,
-    SYSTEM_DEVICE_REGISTER_BATTERY,
-    SYSTEM_DEVICE_REGISTER_MUTEX,
-    SYSTEM_DEVICE_REGISTER_PROTECT,
-
-} SYSTEM_DEVICE_REGISTER_LIST;
-
-
-enum{
-     COMM_PROTOCOL_ERROR_RX_FAILED,
-     COMM_PROTOCOL_ERROR_TX_FAILED,
-};
+int (*register_normal_package_process)(CLASS(cling_comm_controller)* arg, int(*p_callback)(uint8_t *data, uint16_t lenth));
+int (*register_stream_package_process)(CLASS(cling_comm_controller)* arg, int(*p_callback)(uint8_t *data, uint16_t lenth));
+int (*register_error_handle_process)(CLASS(cling_comm_controller)* arg, int(*p_callback)(uint8_t error_code));
+int (*register_task_id)(CLASS(cling_comm_controller)* arg, uint16_t task_id);
+int (*reboot)(CLASS(cling_comm_controller)* arg);
+int (*device_config)(CLASS(cling_comm_controller)* arg, uint8_t *data, uint16_t lenth);
+int (*set_smart_notification)(CLASS(cling_comm_controller)* arg, char* data, uint16_t lenth );
+int (*set_ancs)(CLASS(cling_comm_controller)* arg, char* data, uint16_t lenth );
+int (*load_device_info)(CLASS(cling_comm_controller)* arg);
+void* user_data;
+END_DEF_CLASS(cling_comm_controller)
 
 #endif // __VERSION_H__
 

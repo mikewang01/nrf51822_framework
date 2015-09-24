@@ -82,6 +82,15 @@ void cling_comm_cmd_init(void);
 int comm_cmd_error_handle_register(int (*p_callback)(uint8_t));
 int comm_cmd_normal_package_recieve_callback_register(int (*p_callback)(char* , uint32_t));
 int comm_cmd_stream_recieved_callback_register(int (*p_callback)(char* , uint32_t));
+
+int cling_comm_cmd_update_weather_forcast(char *data, uint16_t len);
+int cling_comm_cmd_device_setup(uint8_t *data, uint16_t len);
+int cling_comm_cmd_set_smart_notification(uint8_t * data, uint16_t len);
+int cling_comm_cmd_set_ancs(uint8_t *data, uint16_t len);
+int cling_comm_cmd_update_user_reminder(uint8_t *data, uint16_t len);
+int cling_comm_cmd_device_over_the_air_update(void);
+int cling_comm_cmd_delete_one_file(uint8_t *f_name);
+void cling_comm_cmd_load_device_info(void);
 #endif // __VERSION_H__
 
 

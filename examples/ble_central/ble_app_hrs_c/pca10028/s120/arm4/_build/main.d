@@ -66,3 +66,4 @@
 .\_build\main.o: ..\..\..\incs\os.h
 .\_build\main.o: ..\..\..\incs\../lx_nrf51Kit.h
 .\_build\main.o: ..\..\..\incs\lx_heap.h
+.\_build\main.o: ..\..\..\incs\cling_comm_user.h

@@ -50,6 +50,8 @@
 #define DEV_MSG    0X03
 #define EVENT_CENTER_MSG    0X04
 
+
+
 /* U can define your own timer event here*/
 #define TIMEOUT_500MS  0x03
 #define TIMEOUT_400MS  0x04
@@ -83,6 +85,12 @@
 /*battery related event*/
 #define BAT_POWER_USB_PLUGIN  0X05
 #define BAT_POWER_USB_PULLOUT 0X06
+
+
+#define CTRL_DEV_NORMAL_PACKAGE 0X08
+#define CTRL_DEV_STREAM_PACKAGE 0X09
+#define CTRL_DEV_ERROR_PACKAGE  0X0A
+
 
 #define YMODEM_START_UP       0x07
 

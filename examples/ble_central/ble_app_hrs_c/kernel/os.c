@@ -119,7 +119,6 @@ void os_show_version(void)
 *
 * @return  none
 */
-extern  os_err_t clock_add_to_manager_list(void);
 void os_init()
 {
     uint8_t count;
@@ -167,6 +166,20 @@ uint32_t os_get_tick()
     return tick_tok;
 }
 /*********************************************************************
+ * @fn      os_get_task_max()
+ *
+ * @brief   return max task number
+ *
+ * @param
+ *
+ * @return  current_tick count
+ */
+uint16_t os_get_task_max()
+{
+    return task_num;
+}
+
+/*********************************************************************
  * @fn      task_ticks_inc()
  *
  * @brief   inc task tick timr
@@ -175,9 +188,10 @@ uint32_t os_get_tick()
  *
  * @return  current_tick count
  */
-void task_ticks_inc(uint16_t taskid){
-	(os_get_taskstate())[taskid].task_tick++;
-} 
+void task_ticks_inc(uint16_t taskid)
+{
+    (os_get_taskstate())[taskid].task_tick++;
+}
 
 /*********************************************************************
  * @fn      os_get_current_taskid()
@@ -207,7 +221,7 @@ void os_shedule()
 {
     uint8_t idx = 0;
 
-    if(1) {
+    while(1) {
 
         do {
             /* Task is highest priority that is ready.*/
@@ -220,9 +234,11 @@ void os_shedule()
         if(idx < task_num) {
             current_task = idx;
             my_task[idx]();
-
+            idx = 0;
+            continue;
+        }else{
+            break;
         }
-
         /*clear task index or result gonna be a unkown error*/
         idx = 0;
     }

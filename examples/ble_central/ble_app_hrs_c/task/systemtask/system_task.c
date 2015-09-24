@@ -32,6 +32,7 @@ Mike      14/8/18      0.0       build this moudle
 #include "task.h"
 #include "message.h"
 #include "hal_timer.h"
+#include "cling_comm_user.h"
 /*********************************************************************
 * MACROS
 */
@@ -60,19 +61,26 @@ void  task_shell_init(void);
 void  task_shell(void);
 static void task_system_init(void);
 static void task_system(void);
+void  task_comm_ble_init(void);
+void task_comm_ble(void);
 /*********************************************************************
  * GLOBAL VARIABLES
  */
+ 
+const task my_task_init[] = {
+    task_system_init,
+    task_comm_ble_init,
+    task_free_init,
+};
+ 
 const task my_task[] = {
 
     task_system,
+    task_comm_ble,
     task_free		     /*free time task*/
 };
 
-const task my_task_init[] = {
-    task_system_init,
-    task_free_init,
-};
+
 
 uint16_t task_num = (sizeof(my_task) / sizeof(my_task[0]));
 
@@ -142,6 +150,7 @@ void task_free()
  * @return  none
  */
 
+    
 static void task_system_init()
 {
     uint8_t this_task_id = os_get_current_taskid();
@@ -207,8 +216,6 @@ static void task_system()
  * @return  none
  */
 #if 1
-void tx_buffer_process(void);
-int send_packet_list_demon(void * p_context);
 static void process_msg(uint16_t taskid , uint16_t msg_num , smessage_t* msg)
 {
 
@@ -228,7 +235,7 @@ static void process_msg(uint16_t taskid , uint16_t msg_num , smessage_t* msg)
                 if((msg->event) == TIMEOUT_SYSTEM_STATE_SWITCH) {
                    // DEBUG("HELLO\r\n");
                     //send_packet_list_demon(NULL);
-                    tx_buffer_process();
+                    //tx_buffer_process();
                     LEDS_INVERT(BSP_LED_1_MASK);
                 }
 
@@ -274,8 +281,6 @@ void board_hardware_initiate()
 
 void System_Tick_Hook()
 {
-
-
 
 }
 

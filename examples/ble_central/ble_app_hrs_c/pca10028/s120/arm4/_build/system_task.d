@@ -49,3 +49,4 @@
 .\_build\system_task.o: ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h
 .\_build\system_task.o: ..\..\..\incs\lx_heap.h
 .\_build\system_task.o: ..\..\..\incs\hal_timer.h
+.\_build\system_task.o: ..\..\..\incs\cling_comm_user.h

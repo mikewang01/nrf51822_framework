@@ -1,11 +1,11 @@
 Dependencies for Project 'ble_app_hrs_c_s120_pca10028', Target 'nrf51422_xxac_s120': (DO NOT MODIFY !)
-F (..\..\..\task\systemtask\system_task.c)(0x55FA3CFD)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\system_task.o --omf_browse .\_build\system_task.crf --depend .\_build\system_task.d)
+F (..\..\..\task\systemtask\system_task.c)(0x56039A4D)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\system_task.o --omf_browse .\_build\system_task.crf --depend .\_build\system_task.d)
 I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
-I (..\..\..\incs\event.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
 I (..\..\..\incs\task.h)(0x55F62480)
 I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
+I (..\..\..\incs\os.h)(0x56039BF3)
 I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
 I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
 I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
@@ -24,7 +24,7 @@ I (..\..\..\config\core_cmFunc.h)(0x55F62480)
 I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
 I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
 I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
 I (..\..\..\incs\hal_event.h)(0x55F62480)
 I (..\..\..\incs\base_object.h)(0x55F926DD)
@@ -49,24 +49,45 @@ I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
 I (..\..\..\incs\lx_heap.h)(0x55F62480)
 I (..\..\..\incs\hal_timer.h)(0x55F62480)
-F (..\..\..\main.c)(0x55FB8F23)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\main.o --omf_browse .\_build\main.crf --depend .\_build\main.d)
-I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\incs\cling_comm_user.h)(0x5603AD6A)
+F (..\..\..\task\commtask\comm_task.c)(0x5603D32D)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\comm_task.o --omf_browse .\_build\comm_task.crf --depend .\_build\comm_task.d)
 I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\task.h)(0x55F62480)
+I (..\..\..\incs\message.h)(0x55F62480)
+I (..\..\..\incs\os.h)(0x56039BF3)
+I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
 I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
-I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
+I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
 I (..\..\..\config\core_cm0.h)(0x55F62480)
 I (..\..\..\config\core_cmInstr.h)(0x55F62480)
 I (..\..\..\config\core_cmFunc.h)(0x55F62480)
 I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
-I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
 I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
+I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+I (..\..\..\incs\hal_event.h)(0x55F62480)
+I (..\..\..\incs\base_object.h)(0x55F926DD)
+I (..\..\..\incs\oop_hal.h)(0x55FB8760)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
@@ -76,47 +97,11 @@ I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_hci.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\ble\ble_db_discovery\ble_db_discovery.h)(0x55F63671)
-I (..\..\..\..\..\..\components\ble\common\ble_srv_common.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
-I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
-I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
-I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
-I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
-I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\drivers_nrf\pstorage\pstorage.h)(0x55F6247C)
-I (..\..\..\config\pstorage_platform.h)(0x55F62480)
-I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\ble\device_manager\device_manager.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\libraries\util\sdk_common.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\libraries\util\sdk_os.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x55F6247D)
-I (..\..\..\config\device_manager_cnfg.h)(0x55F62480)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
-I (..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c\ble_hrs_c.h)(0x55F62908)
-I (..\..\..\..\..\..\components\ble\ble_services\ble_bas_c\ble_bas_c.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
-I (..\..\..\..\..\bsp\bsp.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\button\app_button.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\drivers_nrf\uart\app_uart.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x55F6247D)
-I (..\..\..\..\..\bsp\bsp_btn_ble.h)(0x55F62486)
-I (..\..\..\lx_nrf51Kit.h)(0x55FA3C6E)
-I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
-I (..\..\..\incs\hal_event.h)(0x55F62480)
-I (..\..\..\incs\base_object.h)(0x55F926DD)
-I (..\..\..\incs\oop_hal.h)(0x55FB8760)
-I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
-I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
 I (..\..\..\incs\lx_heap.h)(0x55F62480)
+I (..\..\..\incs\hal_timer.h)(0x55F62480)
+I (..\..\..\task\commtask\comm_task.h)(0x5603714F)
+I (..\..\..\incs\cling_comm_user.h)(0x5603AD6A)
 F (..\..\..\lx_heap\lx_heap.c)(0x55F62480)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\lx_heap.o --omf_browse .\_build\lx_heap.crf --depend .\_build\lx_heap.d)
 I (..\..\..\incs\lx_heap.h)(0x55F62480)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
@@ -139,14 +124,14 @@ I (..\..\..\config\core_cmFunc.h)(0x55F62480)
 I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
 I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
 I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
 I (..\..\..\incs\hal_event.h)(0x55F62480)
 I (..\..\..\incs\base_object.h)(0x55F926DD)
 I (..\..\..\incs\oop_hal.h)(0x55FB8760)
 I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
 I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
@@ -190,12 +175,12 @@ I (..\..\..\config\core_cmFunc.h)(0x55F62480)
 I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
 I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
 I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
 I (..\..\..\incs\hal_event.h)(0x55F62480)
 I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
 I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
@@ -236,14 +221,14 @@ I (..\..\..\config\core_cmFunc.h)(0x55F62480)
 I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
 I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
 I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
 I (..\..\..\incs\hal_event.h)(0x55F62480)
 I (..\..\..\incs\base_object.h)(0x55F926DD)
 I (..\..\..\incs\oop_hal.h)(0x55FB8760)
 I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
 I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
@@ -286,14 +271,14 @@ I (..\..\..\config\core_cmFunc.h)(0x55F62480)
 I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
 I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
 I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
 I (..\..\..\incs\hal_event.h)(0x55F62480)
 I (..\..\..\incs\base_object.h)(0x55F926DD)
 I (..\..\..\incs\oop_hal.h)(0x55FB8760)
 I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
 I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
@@ -315,7 +300,7 @@ I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
 I (..\..\..\incs\lx_heap.h)(0x55F62480)
 I (..\..\..\incs\hal_timer.h)(0x55F62480)
-F (..\..\..\kernel\os.c)(0x55F62480)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\os.o --omf_browse .\_build\os.crf --depend .\_build\os.d)
+F (..\..\..\kernel\os.c)(0x56039BE2)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\os.o --omf_browse .\_build\os.crf --depend .\_build\os.d)
 I (..\..\..\kernel\../lx_nrf51Kit.h)(0x55FA3C6E)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
 I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
@@ -336,14 +321,14 @@ I (..\..\..\config\core_cmFunc.h)(0x55F62480)
 I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
 I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
 I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
 I (..\..\..\incs\hal_event.h)(0x55F62480)
 I (..\..\..\incs\base_object.h)(0x55F926DD)
 I (..\..\..\incs\oop_hal.h)(0x55FB8760)
 I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
 I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
@@ -370,8 +355,8 @@ F (..\..\..\kernel\message.c)(0x55FB7706)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3
 I (..\..\..\incs\message.h)(0x55F62480)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
 I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
 I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
 I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
 I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
@@ -390,7 +375,7 @@ I (..\..\..\config\core_cmFunc.h)(0x55F62480)
 I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
 I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
 I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
 I (..\..\..\incs\hal_event.h)(0x55F62480)
 I (..\..\..\incs\base_object.h)(0x55F926DD)
@@ -414,49 +399,24 @@ I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
 I (..\..\..\incs\lx_heap.h)(0x55F62480)
-F (..\..\..\kernel\hicling_comm_prot\cling_comm_cmd.c)(0x55FB8D3C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cling_comm_cmd.o --omf_browse .\_build\cling_comm_cmd.crf --depend .\_build\cling_comm_cmd.d)
-I (..\..\..\incs\cling_comm_cmd.h)(0x55FB8DBD)
+F (..\..\..\main.c)(0x56035915)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\main.o --omf_browse .\_build\main.crf --depend .\_build\main.d)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
-I (..\..\..\incs\cling_comm_mac.h)(0x55FB88A6)
-I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
+I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
 I (..\..\..\config\core_cm0.h)(0x55F62480)
 I (..\..\..\config\core_cmInstr.h)(0x55F62480)
 I (..\..\..\config\core_cmFunc.h)(0x55F62480)
 I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
-I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
-I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
-I (..\..\..\incs\cling_comm_hal.h)(0x55FB86A7)
-I (..\..\..\incs\base_object.h)(0x55F926DD)
-I (..\..\..\incs\oop_hal.h)(0x55FB8760)
-I (..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h)(0x55FA3C6E)
-I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
-I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
-I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
-I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
-I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
-I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
-I (..\..\..\incs\hal_event.h)(0x55F62480)
-I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
-I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
@@ -466,224 +426,48 @@ I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
-I (..\..\..\incs\lx_heap.h)(0x55F62480)
-F (..\..\..\kernel\hicling_comm_prot\cling_comm_hal.c)(0x55FBE2C1)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cling_comm_hal.o --omf_browse .\_build\cling_comm_hal.crf --depend .\_build\cling_comm_hal.d)
-I (..\..\..\incs\cling_comm_mac.h)(0x55FB88A6)
-I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
-I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
-I (..\..\..\config\core_cm0.h)(0x55F62480)
-I (..\..\..\config\core_cmInstr.h)(0x55F62480)
-I (..\..\..\config\core_cmFunc.h)(0x55F62480)
-I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
-I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
-I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
-I (..\..\..\incs\cling_comm_cmd.h)(0x55FB8DBD)
-I (..\..\..\incs\base_object.h)(0x55F926DD)
-I (..\..\..\incs\oop_hal.h)(0x55FB8760)
-I (..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h)(0x55FA3C6E)
-I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
-I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_hci.h)(0x55FF8005)
+I (..\..\..\..\..\..\components\ble\ble_db_discovery\ble_db_discovery.h)(0x55F63671)
+I (..\..\..\..\..\..\components\ble\common\ble_srv_common.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
+I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
+I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
 I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
 I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
 I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\drivers_nrf\pstorage\pstorage.h)(0x55F6247C)
+I (..\..\..\config\pstorage_platform.h)(0x55F62480)
+I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\ble\device_manager\device_manager.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\libraries\util\sdk_common.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\libraries\util\sdk_os.h)(0x55FFCC82)
+I (..\..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x55F6247D)
+I (..\..\..\config\device_manager_cnfg.h)(0x55F62480)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
+I (..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c\ble_hrs_c.h)(0x55F62908)
+I (..\..\..\..\..\..\components\ble\ble_services\ble_bas_c\ble_bas_c.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (..\..\..\..\..\bsp\bsp.h)(0x55F62486)
+I (..\..\..\..\..\..\components\libraries\button\app_button.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\drivers_nrf\uart\app_uart.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x55F6247D)
+I (..\..\..\..\..\bsp\bsp_btn_ble.h)(0x55F62486)
+I (..\..\..\lx_nrf51Kit.h)(0x55FA3C6E)
 I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
 I (..\..\..\incs\hal_event.h)(0x55F62480)
-I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
-I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
-I (..\..\..\incs\lx_heap.h)(0x55F62480)
-I (..\..\..\incs\cling_comm_link.h)(0x55FAB6C6)
-I (..\..\..\incs\cling_comm_hal.h)(0x55FB86A7)
-F (..\..\..\kernel\hicling_comm_prot\cling_comm_logic_link.c)(0x55FBAE6C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cling_comm_logic_link.o --omf_browse .\_build\cling_comm_logic_link.crf --depend .\_build\cling_comm_logic_link.d)
-I (..\..\..\incs\cling_comm_mac.h)(0x55FB88A6)
-I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
-I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
-I (..\..\..\config\core_cm0.h)(0x55F62480)
-I (..\..\..\config\core_cmInstr.h)(0x55F62480)
-I (..\..\..\config\core_cmFunc.h)(0x55F62480)
-I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
-I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
-I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
-I (..\..\..\incs\cling_comm_cmd.h)(0x55FB8DBD)
-I (..\..\..\incs\cling_comm_link.h)(0x55FAB6C6)
 I (..\..\..\incs\base_object.h)(0x55F926DD)
 I (..\..\..\incs\oop_hal.h)(0x55FB8760)
-I (..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h)(0x55FA3C6E)
-I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
-I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
-I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
-I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
-I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
-I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
-I (..\..\..\incs\hal_event.h)(0x55F62480)
 I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
 I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
 I (..\..\..\incs\lx_heap.h)(0x55F62480)
-F (..\..\..\kernel\hicling_comm_prot\cling_comm_mac.c)(0x55FB9BD8)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cling_comm_mac.o --omf_browse .\_build\cling_comm_mac.crf --depend .\_build\cling_comm_mac.d)
-I (..\..\..\incs\cling_comm_mac.h)(0x55FB88A6)
-I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
-I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
-I (..\..\..\config\core_cm0.h)(0x55F62480)
-I (..\..\..\config\core_cmInstr.h)(0x55F62480)
-I (..\..\..\config\core_cmFunc.h)(0x55F62480)
-I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
-I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
-I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
-I (..\..\..\incs\cling_comm_cmd.h)(0x55FB8DBD)
-I (..\..\..\incs\base_object.h)(0x55F926DD)
-I (..\..\..\incs\oop_hal.h)(0x55FB8760)
-I (..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h)(0x55FA3C6E)
-I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
-I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
-I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
-I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
-I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
-I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
-I (..\..\..\incs\hal_event.h)(0x55F62480)
-I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
-I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
-I (..\..\..\incs\lx_heap.h)(0x55F62480)
-F (..\..\..\kernel\hicling_comm_prot\cling_comm_user.c)(0x55FBB12C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cling_comm_user.o --omf_browse .\_build\cling_comm_user.crf --depend .\_build\cling_comm_user.d)
-I (..\..\..\incs\cling_comm_cmd.h)(0x55FB8DBD)
-I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
-I (..\..\..\incs\cling_comm_mac.h)(0x55FB88A6)
-I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
-I (..\..\..\config\core_cm0.h)(0x55F62480)
-I (..\..\..\config\core_cmInstr.h)(0x55F62480)
-I (..\..\..\config\core_cmFunc.h)(0x55F62480)
-I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
-I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
-I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
-I (..\..\..\incs\cling_comm_hal.h)(0x55FB86A7)
-I (..\..\..\incs\base_object.h)(0x55F926DD)
-I (..\..\..\incs\oop_hal.h)(0x55FB8760)
-I (..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h)(0x55FA3C6E)
-I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
-I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
-I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
-I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
-I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
-I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
-I (..\..\..\incs\hal_event.h)(0x55F62480)
-I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
-I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
-I (..\..\..\incs\lx_heap.h)(0x55F62480)
+I (..\..\..\incs\cling_comm_user.h)(0x5603AD6A)
 F (..\..\..\..\..\bsp\bsp.c)(0x55FA3357)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\bsp.o --omf_browse .\_build\bsp.crf --depend .\_build\bsp.d)
 I (..\..\..\..\..\bsp\bsp.h)(0x55F62486)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
@@ -713,7 +497,7 @@ I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
 I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
 I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
 I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
-F (..\..\..\..\..\bsp\bsp_btn_ble.c)(0x55F62486)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\bsp_btn_ble.o --omf_browse .\_build\bsp_btn_ble.crf --depend .\_build\bsp_btn_ble.d)
+F (..\..\..\..\..\bsp\bsp_btn_ble.c)(0x5603C6D8)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\bsp_btn_ble.o --omf_browse .\_build\bsp_btn_ble.crf --depend .\_build\bsp_btn_ble.d)
 I (..\..\..\..\..\bsp\bsp_btn_ble.h)(0x55F62486)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
@@ -749,7 +533,7 @@ I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
 I (d:\Keil\ARM\ARMCC\include\stddef.h)(0x5284661A)
 F (..\..\..\..\..\..\components\toolchain\arm\arm_startup_nrf51.s)(0x55F6247F)(--cpu Cortex-M0 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include--pd "__HEAP_SIZE SETA 0" --pd "BLE_STACK_SUPPORT_REQD SETA 1" --pd "S120 SETA 1" --pd "BOARD_PCA10028 SETA 1" --pd "BSP_UART_SUPPORT SETA 1" --pd "NRF51 SETA 1" --pd "SOFTDEVICE_PRESENT SETA 1" --pd "SWI_DISABLE0 SETA 1" --list .\_build\arm_startup_nrf51.lst --xref -o .\_build\arm_startup_nrf51.o --depend .\_build\arm_startup_nrf51.d)
-F (..\..\..\..\..\..\components\toolchain\system_nrf51.c)(0x55F6247F)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\system_nrf51.o --omf_browse .\_build\system_nrf51.crf --depend .\_build\system_nrf51.d)
+F (..\..\..\..\..\..\components\toolchain\system_nrf51.c)(0x5603C836)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\system_nrf51.o --omf_browse .\_build\system_nrf51.crf --depend .\_build\system_nrf51.d)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
 I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
 I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
@@ -761,6 +545,332 @@ I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
 I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+F (..\..\..\kernel\hicling_comm_prot\cling_comm_cmd.c)(0x56039BA0)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cling_comm_cmd.o --omf_browse .\_build\cling_comm_cmd.crf --depend .\_build\cling_comm_cmd.d)
+I (..\..\..\incs\cling_comm_cmd.h)(0x5603601E)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\incs\cling_comm_mac.h)(0x55FB88A6)
+I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (..\..\..\config\core_cm0.h)(0x55F62480)
+I (..\..\..\config\core_cmInstr.h)(0x55F62480)
+I (..\..\..\config\core_cmFunc.h)(0x55F62480)
+I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\incs\cling_comm_hal.h)(0x55FB86A7)
+I (..\..\..\incs\base_object.h)(0x55F926DD)
+I (..\..\..\incs\oop_hal.h)(0x55FB8760)
+I (..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h)(0x55FA3C6E)
+I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
+I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
+I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+I (..\..\..\incs\hal_event.h)(0x55F62480)
+I (..\..\..\incs\message.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
+I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\incs\lx_heap.h)(0x55F62480)
+F (..\..\..\kernel\hicling_comm_prot\cling_comm_hal.c)(0x55FF64F2)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cling_comm_hal.o --omf_browse .\_build\cling_comm_hal.crf --depend .\_build\cling_comm_hal.d)
+I (..\..\..\incs\cling_comm_mac.h)(0x55FB88A6)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (..\..\..\config\core_cm0.h)(0x55F62480)
+I (..\..\..\config\core_cmInstr.h)(0x55F62480)
+I (..\..\..\config\core_cmFunc.h)(0x55F62480)
+I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\incs\cling_comm_cmd.h)(0x5603601E)
+I (..\..\..\incs\base_object.h)(0x55F926DD)
+I (..\..\..\incs\oop_hal.h)(0x55FB8760)
+I (..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h)(0x55FA3C6E)
+I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
+I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
+I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+I (..\..\..\incs\hal_event.h)(0x55F62480)
+I (..\..\..\incs\message.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
+I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\incs\lx_heap.h)(0x55F62480)
+I (..\..\..\incs\cling_comm_link.h)(0x55FAB6C6)
+I (..\..\..\incs\cling_comm_hal.h)(0x55FB86A7)
+F (..\..\..\kernel\hicling_comm_prot\cling_comm_logic_link.c)(0x55FFDA37)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cling_comm_logic_link.o --omf_browse .\_build\cling_comm_logic_link.crf --depend .\_build\cling_comm_logic_link.d)
+I (..\..\..\incs\cling_comm_mac.h)(0x55FB88A6)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (..\..\..\config\core_cm0.h)(0x55F62480)
+I (..\..\..\config\core_cmInstr.h)(0x55F62480)
+I (..\..\..\config\core_cmFunc.h)(0x55F62480)
+I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\incs\cling_comm_cmd.h)(0x5603601E)
+I (..\..\..\incs\cling_comm_link.h)(0x55FAB6C6)
+I (..\..\..\incs\base_object.h)(0x55F926DD)
+I (..\..\..\incs\oop_hal.h)(0x55FB8760)
+I (..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h)(0x55FA3C6E)
+I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
+I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
+I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+I (..\..\..\incs\hal_event.h)(0x55F62480)
+I (..\..\..\incs\message.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
+I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\incs\lx_heap.h)(0x55F62480)
+F (..\..\..\kernel\hicling_comm_prot\cling_comm_mac.c)(0x560384DE)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cling_comm_mac.o --omf_browse .\_build\cling_comm_mac.crf --depend .\_build\cling_comm_mac.d)
+I (..\..\..\incs\cling_comm_mac.h)(0x55FB88A6)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (..\..\..\config\core_cm0.h)(0x55F62480)
+I (..\..\..\config\core_cmInstr.h)(0x55F62480)
+I (..\..\..\config\core_cmFunc.h)(0x55F62480)
+I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\incs\cling_comm_cmd.h)(0x5603601E)
+I (..\..\..\incs\base_object.h)(0x55F926DD)
+I (..\..\..\incs\oop_hal.h)(0x55FB8760)
+I (..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h)(0x55FA3C6E)
+I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
+I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
+I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+I (..\..\..\incs\hal_event.h)(0x55F62480)
+I (..\..\..\incs\message.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
+I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\incs\lx_heap.h)(0x55F62480)
+F (..\..\..\kernel\hicling_comm_prot\cling_comm_user.c)(0x5603BF5E)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cling_comm_user.o --omf_browse .\_build\cling_comm_user.crf --depend .\_build\cling_comm_user.d)
+I (..\..\..\incs\cling_comm_cmd.h)(0x5603601E)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\incs\cling_comm_mac.h)(0x55FB88A6)
+I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (..\..\..\config\core_cm0.h)(0x55F62480)
+I (..\..\..\config\core_cmInstr.h)(0x55F62480)
+I (..\..\..\config\core_cmFunc.h)(0x55F62480)
+I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\incs\cling_comm_hal.h)(0x55FB86A7)
+I (..\..\..\incs\cling_comm_user.h)(0x5603AD6A)
+I (..\..\..\incs\oop_hal.h)(0x55FB8760)
+I (..\..\..\incs\base_object.h)(0x55F926DD)
+I (..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h)(0x55FA3C6E)
+I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
+I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
+I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+I (..\..\..\incs\hal_event.h)(0x55F62480)
+I (..\..\..\incs\message.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
+I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\incs\lx_heap.h)(0x55F62480)
+F (..\..\..\kernel\q_shell\cmd.c)(0x55F62480)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cmd.o --omf_browse .\_build\cmd.crf --depend .\_build\cmd.d)
+I (..\..\..\incs\Q_Shell.h)(0x55F62480)
+I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+F (..\..\..\kernel\q_shell\Q_Shell.c)(0x55F65E8A)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\q_shell.o --omf_browse .\_build\q_shell.crf --depend .\_build\q_shell.d)
+I (..\..\..\config\../lx_nrf51Kit.h)(0x55FA3C6E)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
+I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (..\..\..\config\core_cm0.h)(0x55F62480)
+I (..\..\..\config\core_cmInstr.h)(0x55F62480)
+I (..\..\..\config\core_cmFunc.h)(0x55F62480)
+I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
+I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+I (..\..\..\incs\hal_event.h)(0x55F62480)
+I (..\..\..\incs\base_object.h)(0x55F926DD)
+I (..\..\..\incs\oop_hal.h)(0x55FB8760)
+I (..\..\..\incs\message.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
+I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\incs\lx_heap.h)(0x55F62480)
+I (..\..\..\incs\Q_Shell.h)(0x55F62480)
 F (..\..\..\Abstract.txt)(0x55F62480)()
 F (..\..\..\license.txt)(0x55F62480)()
 F (..\..\..\..\..\..\components\ble\common\ble_advdata.c)(0x55F6247C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\ble_advdata.o --omf_browse .\_build\ble_advdata.crf --depend .\_build\ble_advdata.d)
@@ -803,7 +913,7 @@ I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
 I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
 I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
 F (..\..\..\..\..\..\components\ble\ble_db_discovery\ble_db_discovery.c)(0x55F6247C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\ble_db_discovery.o --omf_browse .\_build\ble_db_discovery.crf --depend .\_build\ble_db_discovery.d)
 I (..\..\..\..\..\..\components\ble\ble_db_discovery\ble_db_discovery.h)(0x55F63671)
@@ -825,10 +935,10 @@ I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
 I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
 I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
 I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
 I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
-F (..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c)(0x55FBAB77)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\ble_hrs_c.o --omf_browse .\_build\ble_hrs_c.crf --depend .\_build\ble_hrs_c.d)
+F (..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c\ble_hrs_c.c)(0x5603BE68)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\ble_hrs_c.o --omf_browse .\_build\ble_hrs_c.crf --depend .\_build\ble_hrs_c.d)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
 I (..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c\ble_hrs_c.h)(0x55F62908)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
@@ -848,9 +958,38 @@ I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
 I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
 I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
 I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
+I (..\..\..\config\../lx_nrf51Kit.h)(0x55FA3C6E)
+I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
+I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
+I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (..\..\..\config\core_cm0.h)(0x55F62480)
+I (..\..\..\config\core_cmInstr.h)(0x55F62480)
+I (..\..\..\config\core_cmFunc.h)(0x55F62480)
+I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
+I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+I (..\..\..\incs\hal_event.h)(0x55F62480)
+I (..\..\..\incs\base_object.h)(0x55F926DD)
+I (..\..\..\incs\oop_hal.h)(0x55FB8760)
+I (..\..\..\incs\message.h)(0x55F62480)
+I (..\..\..\incs\event.h)(0x5603A8BD)
+I (..\..\..\incs\os.h)(0x56039BF3)
+I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
+I (..\..\..\incs\lx_heap.h)(0x55F62480)
 F (..\..\..\..\..\..\components\ble\common\ble_srv_common.c)(0x55F6247C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\ble_srv_common.o --omf_browse .\_build\ble_srv_common.crf --depend .\_build\ble_srv_common.d)
 I (..\..\..\..\..\..\components\ble\common\ble_srv_common.h)(0x55F6247C)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
@@ -871,7 +1010,7 @@ I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
 I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
 I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
 I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
-F (..\..\..\..\..\..\components\ble\device_manager\device_manager_central.c)(0x55F6247C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\device_manager_central.o --omf_browse .\_build\device_manager_central.crf --depend .\_build\device_manager_central.d)
+F (..\..\..\..\..\..\components\ble\device_manager\device_manager_central.c)(0x55FF83E5)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\device_manager_central.o --omf_browse .\_build\device_manager_central.crf --depend .\_build\device_manager_central.d)
 I (..\..\..\..\..\..\components\ble\device_manager\device_manager.h)(0x55F6247C)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
 I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
@@ -879,7 +1018,7 @@ I (..\..\..\..\..\..\components\libraries\util\sdk_common.h)(0x55F6247D)
 I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
 I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
 I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\libraries\util\sdk_os.h)(0x55F6247D)
+I (..\..\..\..\..\..\components\libraries\util\sdk_os.h)(0x55FFCC82)
 I (..\..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x55F6247D)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
@@ -894,7 +1033,7 @@ I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
 I (..\..\..\config\device_manager_cnfg.h)(0x55F62480)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
 I (..\..\..\..\..\..\components\ble\common\ble_advdata.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\drivers_nrf\pstorage\pstorage.h)(0x55F6247C)
@@ -907,9 +1046,9 @@ I (..\..\..\config\core_cmFunc.h)(0x55F62480)
 I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
 I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_hci.h)(0x55F6247E)
+I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_hci.h)(0x55FF8005)
 I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
-F (..\..\..\..\..\..\components\drivers_nrf\uart\app_uart_fifo.c)(0x55F6A1EE)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\app_uart_fifo.o --omf_browse .\_build\app_uart_fifo.crf --depend .\_build\app_uart_fifo.d)
+F (..\..\..\..\..\..\components\drivers_nrf\uart\app_uart_fifo.c)(0x56036D7C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\app_uart_fifo.o --omf_browse .\_build\app_uart_fifo.crf --depend .\_build\app_uart_fifo.d)
 I (..\..\..\..\..\..\components\drivers_nrf\uart\app_uart.h)(0x55F6247C)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
 I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
@@ -1091,7 +1230,7 @@ I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_delay.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
 I (..\..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x55F6247D)
-F (..\..\..\..\..\..\components\libraries\trace\app_trace.c)(0x55F6247D)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\app_trace.o --omf_browse .\_build\app_trace.crf --depend .\_build\app_trace.d)
+F (..\..\..\..\..\..\components\libraries\trace\app_trace.c)(0x55FF9663)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\app_trace.o --omf_browse .\_build\app_trace.crf --depend .\_build\app_trace.d)
 I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
 I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
@@ -1115,7 +1254,7 @@ I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
 I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
 I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
 I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
+I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x5603C4B6)
 F (..\..\..\..\..\..\components\libraries\util\nrf_assert.c)(0x55F6247D)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\nrf_assert.o --omf_browse .\_build\nrf_assert.crf --depend .\_build\nrf_assert.d)
 I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
 I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
@@ -1173,58 +1312,3 @@ I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
 I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
-F (..\..\..\kernel\q_shell\cmd.c)(0x55F62480)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\cmd.o --omf_browse .\_build\cmd.crf --depend .\_build\cmd.d)
-I (..\..\..\incs\Q_Shell.h)(0x55F62480)
-I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
-I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
-F (..\..\..\kernel\q_shell\Q_Shell.c)(0x55F65E8A)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\config -I..\..\..\..\..\..\components\softdevice\s120\headers -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\ble\common -I..\..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\..\components\ble\device_manager -I..\..\..\..\..\..\components\ble\ble_services\ble_hrs_c -I..\..\..\..\..\..\components\ble\ble_services\ble_bas_c -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain -I..\..\..\..\..\..\components\libraries\util -I..\..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\libraries\button -I..\..\..\..\..\..\components\ble\ble_db_discovery -I..\..\..\..\..\..\components\softdevice\common\softdevice_handler -I..\..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\..\components\drivers_nrf\pstorage -I..\..\..\..\..\..\components\libraries\trace -I..\..\..\incs --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I d:\Keil\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\7.1.0\Device\Include-DNRF51 -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS120 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0 -DENABLE_DEBUG_LOG_SUPPORT -o .\_build\q_shell.o --omf_browse .\_build\q_shell.crf --depend .\_build\q_shell.d)
-I (..\..\..\config\../lx_nrf51Kit.h)(0x55FA3C6E)
-I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
-I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
-I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
-I (..\..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
-I (..\..\..\..\..\bsp\boards.h)(0x55F62486)
-I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
-I (..\..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
-I (..\..\..\config\core_cm0.h)(0x55F62480)
-I (..\..\..\config\core_cmInstr.h)(0x55F62480)
-I (..\..\..\config\core_cmFunc.h)(0x55F62480)
-I (..\..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
-I (..\..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
-I (..\..\..\..\..\bsp\pca10028.h)(0x55F62486)
-I (..\..\..\..\..\..\components\libraries\trace\app_trace.h)(0x55FA1E30)
-I (..\..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
-I (..\..\..\incs\hal_event.h)(0x55F62480)
-I (..\..\..\incs\base_object.h)(0x55F926DD)
-I (..\..\..\incs\oop_hal.h)(0x55FB8760)
-I (..\..\..\incs\message.h)(0x55F62480)
-I (..\..\..\incs\event.h)(0x55F62480)
-I (..\..\..\incs\os.h)(0x55F62480)
-I (..\..\..\incs\../lx_nrf51Kit.h)(0x55FA3C6E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_svc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_soc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\nrf_error_sdm.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_ranges.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_types.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gap.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_l2cap.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_err.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatt.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gattc.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\s120\headers\ble_gatts.h)(0x55F6247E)
-I (..\..\..\..\..\..\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h)(0x55F6247E)
-I (..\..\..\incs\lx_heap.h)(0x55F62480)
-I (..\..\..\incs\Q_Shell.h)(0x55F62480)

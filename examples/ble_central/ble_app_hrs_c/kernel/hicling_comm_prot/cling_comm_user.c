@@ -13,10 +13,58 @@
 #include "cling_comm_cmd.h"
 #include "cling_comm_mac.h"
 #include "cling_comm_hal.h"
+#include "cling_comm_user.h"
 #include "base_object.h"
 #include "../../lx_nrf51Kit.h"
 #include <string.h>
+#include "event.h"
 
+
+
+struct cling_parameter {
+    // Device UI configuration
+    bool b_device_configure;
+    int device_ppg_day_interval;/*ppg detection interval during the day*/
+    int device_ppg_night_interval;/*ppg detection interval during the night*/
+    int device_skin_temp_day_interval;/*skin temp detetction interval during the day*/
+    int device_skin_temp_night_interval;
+    bool deviceUIScreenActivateWristFlip;
+    bool deviceUIScreenActivatePressHold1s;
+    bool deviceUIScreenActivatePressHold3s;
+    bool deviceUIScreenTapping;
+    bool deviceUINavigationTapping;
+    bool deviceUINavigationWristShaking;
+    bool deviceReminderOffWeekends;
+    int deviceIdleAlertTimeInMinutes;
+    int deviceIdleAlertTimeStart;
+    int deviceIdleAlertTimeEnd;
+    int deviceScreenOnTimeGeneral;
+    int deviceScreenOnTimeHeartRate;
+    int deviceSleepSensitivity;
+
+    // Simulation related
+    bool bUpdateSimulationMode;
+    bool bEnableSimulationMode;
+
+};
+//
+// Device weather info structure
+//
+typedef struct cling_weather_contex {
+    uint8_t month;
+    uint8_t day;
+    uint8_t type;
+    uint8_t low_temperature;
+    uint8_t high_temperature;
+} cling_weather_contex_t;
+
+
+
+#define CLING_WEATHER_SETTING_BUFFER_SIZE  5
+struct private_data {
+    struct cling_weather_contex weather_buffer[CLING_WEATHER_SETTING_BUFFER_SIZE];
+
+};
 /*********************************************************************
  * TYPEDEFS
  */
@@ -80,7 +128,7 @@ typedef enum {
     PROTOCOL_MESSAGE_STATE_BUSY,
 } MESSAGE_STATE;
 
-typedef struct device_info_context{
+typedef struct device_info_context {
     uint8_t                statusReg;
     bool                bUpdated;
 
@@ -99,7 +147,7 @@ typedef struct cling_device_info_context {
     uint8_t                memory_free[4]; /*memory avalable left*/
     uint8_t                available_file_writes[2];/*avalable files  that can be writed*/
     uint8_t                bond_token[2]; /*bond token*/
-    uint8_t                bond_crc[2];/*bond crc number*/ 
+    uint8_t                bond_crc[2];/*bond crc number*/
     uint8_t                bonded_user_id[4]; /*the user id boned with this cling device*/
     uint8_t                bond_epoch[4];/**/
     uint8_t                cling_id[20]; /*cling id string*/
@@ -150,16 +198,7 @@ typedef struct cling_file_list_context {
     bool bUpdated;
 } cling_file_list_context_t;
 
-//
-// Device weather info structure
-//
-typedef struct cling_weather_contex{
-    uint8_t month;
-    uint8_t day;
-    uint8_t type;
-    uint8_t low_temperature;
-    uint8_t high_temperature;
-} cling_weather_contex_t;
+
 
 //
 // Device weather info structure
@@ -211,40 +250,23 @@ typedef struct file_context {
 
 } file_context_t;
 
-typedef struct cling_cp_object {
-    // Cling communication channel list
-    //BASE_OBJECTLIST channelList;
-    // Packet TX/RX state
-    PROTOCOL_PACKET_CONTEXT packet;
-    // File operation context
-    file_context_t file;
-    // critical section (TX)
-    //OS_CRITICALSECTION criticalSectionTX;
-    // critical section (RX)
-    //OS_CRITICALSECTION criticalSectionRX;
-    // device state
-    MESSAGE_STATE messageState;
-    // Device info
-    device_info_context_t device;								// Local device information
-    // Terminal state
-    PROTOCOL_TERMINAL_STATE terminalState;
-#if 0
-    CLING_AUTHENTICATION_CTX auth;
-#endif
-} cling_cp_object;
+
 
 /*********************************************************************
  * GLOBAL VARIABLES
  */
 
-
+#define  CONTRLLOR_MAX_WEATHER_BUFFER_SIZE 5
+#define  IS_TASKID_VALID(__x)  (__x>=0 && __x < os_get_task_max())
 /*********************************************************************
  * LOCAL VARIABLES
  */
 static int (*error_handler_callback)(uint8_t error_code) = NULL;
 static int (*stream_package_recieve_callback)(char *msg, uint32_t len);
 static int (*normal_package_recieve_callback)(char *msg, uint32_t len);
-
+static struct cling_weather_contex weather_setting_buffer[CONTRLLOR_MAX_WEATHER_BUFFER_SIZE];
+static uint16_t weather_buffer_pos = 0;
+static  uint16_t registered_task_id;
 /*********************************************************************
  * EXTERNAL VARIABLES
  */
@@ -261,12 +283,15 @@ static int (*normal_package_recieve_callback)(char *msg, uint32_t len);
  *
  * @param  type uint8_t *msg: dat buffer uint32_t len : data lenth
  *
- * @return  LX_OK : SUCCESSFULLY LX_ERROR_ FUNCTION 
+ * @return  LX_OK : SUCCESSFULLY LX_ERROR_ FUNCTION
  */
-int comm_user_stream_recieved_callback(char *msg, uint32_t len)
+static int comm_user_stream_recieved_callback(char *msg, uint32_t len)
 {
- 
+
     return LX_OK;
+    if(IS_TASKID_VALID(registered_task_id)) {
+        send_message(registered_task_id , SYSTEM_EVENT , DEV_MSG ,  CTRL_DEV_STREAM_PACKAGE, msg, len);
+    }
 }
 
 
@@ -277,18 +302,28 @@ int comm_user_stream_recieved_callback(char *msg, uint32_t len)
  *
  * @param   type uint8_t *msg: dat buffer uint32_t len : data lenth
  *
- * @return  LX_OK : SUCCESSFULLY LX_ERROR_ FUNCTION 
+ * @return  LX_OK : SUCCESSFULLY LX_ERROR_ FUNCTION
  */
-int comm_user_normal_recieved_callback(char *msg, uint32_t len)
+static int comm_user_normal_recieved_callback(char *msg, uint32_t len)
 {
-    DEBUG("user RECIEVED lenth = %d\r\n", len);
+   // DEBUG("user RECIEVED lenth = %d\r\n", len);
     struct cling_device_info_context *t = (struct cling_device_info_context *)msg;
-    t->cling_id[19] = 0;
+    // t->cling_id[19] = 0;
+    /*
                 int i = 0;
             for (i = 0; i < len; i++) {
                 DEBUG("0x%02x ", msg[i]);
             }
-   // DEBUG("[ling id] = %s\r\n", t->cling_id);
+    */
+    if(IS_TASKID_VALID(registered_task_id)) {
+        send_message(registered_task_id , SYSTEM_EVENT , DEV_MSG ,  CTRL_DEV_NORMAL_PACKAGE, msg, len);
+    }
+            int i = 0;
+            for (i = 0; i < 19; i++) {
+                DEBUG("%c", t->cling_id[i]);
+            }
+     DEBUG("user RECIEVED lenth = %d\r\n", len); 
+    //DEBUG("[ling id] = %s\r\n", t->cling_id);
     return LX_OK;
 }
 
@@ -306,9 +341,83 @@ static int comm_user_error_handler(uint8_t error_code)
     if(error_handler_callback != NULL) {
         error_handler_callback(error_code);
     }
+    if(IS_TASKID_VALID(registered_task_id)) {
+        send_message(registered_task_id , SYSTEM_EVENT , DEV_MSG ,  CTRL_DEV_ERROR_PACKAGE, &error_code, sizeof(error_code));
+    }
     return LX_OK;
 }
- /*********************************************************************
+
+/*********************************************************************
+ * @fn      add_weather
+ *
+ * @brief   add weather data to buffer
+ *
+* @param   p_callback: callback function pointer
+ * @return  LX_OK : sucessfully  LX_ERROR: ERROR
+ */
+int add_weather(CLASS(cling_comm_controller)* arg, uint8_t month, uint8_t day, peripheral_weather_type_t weather_type, uint8_t low_temperature, uint8_t high_temperature)
+{
+    if(weather_buffer_pos >= CONTRLLOR_MAX_WEATHER_BUFFER_SIZE) {
+        return LX_ERROR;
+    }
+    weather_setting_buffer[weather_buffer_pos].month = month;
+    weather_setting_buffer[weather_buffer_pos].day = day;
+    weather_setting_buffer[weather_buffer_pos].type = weather_type;
+    weather_setting_buffer[weather_buffer_pos].low_temperature = low_temperature;
+    weather_setting_buffer[weather_buffer_pos].high_temperature = high_temperature;
+    weather_buffer_pos ++;
+    return LX_OK;
+}
+/*********************************************************************
+ * @fn      cling_send_weather
+ *
+ * @brief   send weather setting to cling function
+ *
+ * @param   p_callback: callback function pointer
+ * @return  LX_OK : sucessfully  LX_ERROR: ERROR
+ */
+static int cling_send_weather(CLASS(cling_comm_controller)* arg)
+{
+    cling_comm_cmd_update_weather_forcast((char*)weather_setting_buffer, sizeof(struct cling_weather_contex)*weather_buffer_pos);
+    return LX_OK;
+}
+
+
+int cling_comm_cmd_update_weather_forcast(char *data, uint16_t len);
+int cling_comm_cmd_set_smart_notification(uint8_t * data, uint16_t len);
+int cling_comm_cmd_set_ancs(uint8_t *data, uint16_t len);
+int cling_comm_cmd_update_user_reminder(uint8_t *data, uint16_t len);
+int cling_comm_cmd_delete_one_file(uint8_t *f_name);
+
+/*********************************************************************
+ * @fn      start_ota
+ *
+ * @brief   send weather setting to cling function
+ *
+* @param   p_callback: callback function pointer
+ * @return  LX_OK : sucessfully  LX_ERROR: ERROR
+ */
+static int device_config(CLASS(cling_comm_controller)* arg)
+{
+    //cling_comm_cmd_device_setup(data, len);
+    return LX_OK;
+}
+
+
+/*********************************************************************
+ * @fn      start_ota
+ *
+ * @brief   send weather setting to cling function
+ *
+* @param   p_callback: callback function pointer
+ * @return  LX_OK : sucessfully  LX_ERROR: ERROR
+ */
+static int start_ota(CLASS(cling_comm_controller)* arg)
+{
+    return cling_comm_cmd_device_over_the_air_update();
+}
+
+/*********************************************************************
 * @fn      cling_comm_cmd_init
 *
 * @brief   comm protocol communication initiate and resister coresponed callback function
@@ -317,11 +426,158 @@ static int comm_user_error_handler(uint8_t error_code)
 *
 * @return  none
 */
-void cling_comm_user_init()
+static int load_device_info(CLASS(cling_comm_controller)* arg)
 {
-    cling_comm_hal_init();
-    comm_hal_normal_package_recieve_callback_register(comm_user_normal_recieved_callback);
-    comm_hal_single_package_recieve_callback_register(comm_user_stream_recieved_callback);
-    comm_hal_error_handle_register(comm_user_error_handler);
+    cling_comm_cmd_load_device_info();
+}
+/*********************************************************************
+* @fn      reboot
+*
+* @brief   reboot cling device
+*
+* @param   void
+*
+* @return  none
+*/
+int cling_comm_cmd_device_reboot(void);
+static int reboot(CLASS(cling_comm_controller)* arg)
+{
+    cling_comm_cmd_device_reboot();
 }
 
+
+/*********************************************************************
+* @fn      cling_set_time
+*
+* @brief   syncronize cling time method
+*
+* @param   arg : object pointer
+*
+* @return  lx_ok:  return successfully lx_error: return failed
+*/
+static int cling_set_time(CLASS(cling_comm_controller) *arg, uint32_t utc_time)
+{
+
+    return LX_OK;
+}
+
+
+/*********************************************************************
+* @fn      register_stream_package_callback
+*
+* @brief   used to register stream data call back function
+*
+* @param   arg : object pointer
+*
+* @return  lx_ok:  return successfully lx_error: return failed
+*/
+static int register_stream_package_callback(CLASS(cling_comm_controller)* arg, int(*p_callback)(uint8_t *data, uint16_t lenth))
+{
+
+    return LX_OK;
+}
+
+/*********************************************************************
+* @fn      register_normal_package_callback
+*
+* @brief   used to register narmal data call back function
+*
+* @param   arg : object pointer
+*
+* @return  lx_ok:  return successfully lx_error: return failed
+*/
+static int register_normal_package_callback(CLASS(cling_comm_controller)* arg, int(*p_callback)(uint8_t *data, uint16_t lenth))
+{
+
+    return LX_OK;
+}
+
+/*********************************************************************
+* @fn      register_error_handler_callback
+*
+* @brief   used to register error handler call back function
+*
+* @param   arg : object pointer
+*
+* @return  lx_ok:  return successfully lx_error: return failed
+*/
+static int register_error_handler_callback(CLASS(cling_comm_controller)* arg, int(*p_callback)(uint8_t error_code))
+{
+
+    return LX_OK;
+}
+/*********************************************************************
+* @fn      register_task_id
+*
+* @brief   used to register  the id of task who recieve the error or recieve message
+*
+* @param   arg : object pointer task_id: task id resigtered
+*
+* @return  lx_ok:  return successfully lx_error: return failed
+*/
+static int register_task_id(CLASS(cling_comm_controller)* arg, uint16_t task_id)
+{
+    if(IS_TASKID_VALID(task_id)) {
+        registered_task_id = task_id;
+    }
+    return LX_OK;
+}
+/******************************************************************************
+ * FunctionName : int  cling_comm_controller(void* env)
+ * Description  :data recieved function after data sended
+ * Parameters   : level : output level of pin
+ * Returns      : 0: init successfully
+ *				 -1: init failed
+ *
+*******************************************************************************/
+int deinit_cling_comm_user(CLASS(cling_comm_controller) *arg) /*initiate http object*/
+{
+//	ASSERT(arg != NULL);
+    LX_Free(arg);
+    return LX_OK;
+}
+
+/*********************************************************************
+* @fn      init_cling_comm_user
+*
+* @brief   communication construction function
+*
+* @param   arg:object pointer
+*
+* @return  lx_ok:sucessfully lx_error: failed
+*/
+
+int init_cling_comm_controller(CLASS(cling_comm_controller) *arg)
+{
+
+    ASSERT(arg != NULL);
+
+    registered_task_id = os_get_task_max();
+
+    arg->init = init_cling_comm_controller;
+    arg->de_init = deinit_cling_comm_user;
+
+    arg->add_weather = add_weather;
+    //arg->get_weather_buffer_left
+    arg->set_weather = cling_send_weather;
+
+    arg->set_time = cling_set_time;
+
+    arg->register_error_handle_process = register_error_handler_callback;
+    arg->register_normal_package_process = register_normal_package_callback;
+    arg->register_stream_package_process = register_stream_package_callback;
+    arg->register_task_id = register_task_id;
+    /*load device id from cling device*/
+    arg->reboot = reboot;
+    arg->load_device_info = load_device_info;
+    /*initiate user private data*/
+    arg->user_data = NULL;
+    arg->user_data = (void*)(LX_Malloc(sizeof(struct private_data)));
+    
+    cling_comm_cmd_init();
+    comm_cmd_error_handle_register(comm_user_error_handler);
+    comm_cmd_normal_package_recieve_callback_register(comm_user_normal_recieved_callback);
+    comm_cmd_stream_recieved_callback_register(comm_user_stream_recieved_callback);
+
+    return LX_OK;
+}

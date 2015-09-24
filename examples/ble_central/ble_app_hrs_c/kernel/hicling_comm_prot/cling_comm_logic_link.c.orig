@@ -137,6 +137,7 @@ int logic_link_send_normal_package(uint8_t *msg, uint16_t lenth, uint8_t need_ac
 #define _START_COUNT_ 0
 #define __APP_ACK_UP_THREHOLD_ 7
     int i = 0;
+    int ret = LX_ERROR;
     int package_ack_count = __APP_ACK_UP_THREHOLD_;
     for(i = _START_COUNT_; i < pkt_number + _START_COUNT_; i++) {
         struct logic_link_package *pkt = (struct logic_link_package *)LX_Malloc(sizeof(struct logic_link_package));
@@ -169,8 +170,9 @@ int logic_link_send_normal_package(uint8_t *msg, uint16_t lenth, uint8_t need_ac
         // logic_link_layer_package_sending = pkt;
 #if 1
         MUTEX_WAIT(logic_link_mutex);
-        int ret = list_mgr_obj->add(list_mgr_obj, &mac_send_list_header, (struct base_object *)(pkt), OS_Object_Class_Mgr, "l");
+        ret = list_mgr_obj->add(list_mgr_obj, &mac_send_list_header, (struct base_object *)(pkt), OS_Object_Class_Mgr, "l");
         MUTEX_POST(logic_link_mutex);
+         }
         if(ret == LX_OK && logic_link_layer_package_sending == NULL) {
             DEBUG("ist_mgr_o bj->add(list_mgr_obj\r\n");
             send_packet_list_demon(NULL);
@@ -179,7 +181,7 @@ int logic_link_send_normal_package(uint8_t *msg, uint16_t lenth, uint8_t need_ac
 
         }
 #endif
-    }
+   
     return LX_OK;
 }
 
@@ -245,7 +247,7 @@ static int send_packet_list_demon(void * p_context)
                 TIMER_STOP(m_logic_link_send_timer_id);
             }
             /*call user error hanlder*/
-            if(error_handle_callback != NULL){
+            if(error_handle_callback != NULL) {
                 error_handle_callback(COMM_PROTOCOL_ERROR_TX_FAILED);
             }
         }
@@ -404,7 +406,7 @@ int comm_logic_link_recevive_normal_package_call_back(uint16_t uuid, char type, 
             }
             total_lenth = LOGINC_LINK_REC_BUFFER_SIZE;
             positon = 0;
-            
+
         } else {
             TIMER_STOP(m_logic_link_recieve_timer_id);
             /*some package among the group has been missed*/
@@ -467,8 +469,8 @@ static int ble_stack_logic_link_write_rsp_call_back()
                 logic_link_layer_package_sending = (struct logic_link_package *)t;
                 /*restart timer to check out ack time out*/
                 TIMER_START(m_logic_link_send_timer_id, PACKET_TX_TIMEOUT, NULL);
-            }else{
-             DEBUG("[%s]:%s\r\n", __FUNCTION__, "no more data existed");
+            } else {
+                DEBUG("[%s]:%s\r\n", __FUNCTION__, "no more data existed");
             }
 
         }
@@ -510,7 +512,7 @@ static int ble_stack_logic_link_app_ack_process()
                 //send_packet_list_demon(NULL);
                 /*once a new package sended timeout timer started to count down*/
                 TIMER_START(m_logic_link_send_timer_id, PACKET_TX_TIMEOUT, NULL);
-            
+
             }
         }
     }
@@ -597,7 +599,7 @@ int cling_comm_logic_link_init()
     comm_mac_normal_package_recieve_callback_register(comm_logic_link_recevive_normal_package_call_back);
     ble_stack_mac_layer_write_rsp_callback_register(ble_stack_logic_link_write_rsp_call_back);
     comm_mac_error_handle_register(comm_link_error_handler);
-     
+
     TIMER_INSTALL(&m_logic_link_send_timer_id,  send_packet_list_demon);
     TIMER_INSTALL(&m_logic_link_recieve_timer_id , recieve_packet_timeout_process);
     return LX_OK;

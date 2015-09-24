@@ -52,7 +52,7 @@ void app_trace_init(void)
         CTS_PIN_NUMBER, 
         APP_UART_FLOW_CONTROL_DISABLED, 
         false, 
-        UART_BAUDRATE_BAUDRATE_Baud38400
+        UART_BAUDRATE_BAUDRATE_Baud921600
     }; 
         
     APP_UART_FIFO_INIT(&comm_params, 

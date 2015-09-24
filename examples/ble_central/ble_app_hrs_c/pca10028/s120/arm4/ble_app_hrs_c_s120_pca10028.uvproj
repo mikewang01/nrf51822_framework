@@ -396,13 +396,58 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Application</GroupName>
+          <GroupName>task</GroupName>
           <Files>
             <File>
               <FileName>system_task.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\task\systemtask\system_task.c</FilePath>
             </File>
+            <File>
+              <FileName>comm_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\task\commtask\comm_task.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>kernel</GroupName>
+          <Files>
+            <File>
+              <FileName>lx_heap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\lx_heap\lx_heap.c</FilePath>
+            </File>
+            <File>
+              <FileName>base_object.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\base_object\base_object.c</FilePath>
+            </File>
+            <File>
+              <FileName>hal_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hal_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>event_hal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\event_hal.c</FilePath>
+            </File>
+            <File>
+              <FileName>os.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\os.c</FilePath>
+            </File>
+            <File>
+              <FileName>message.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\message.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>oal</GroupName>
+          <Files>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
@@ -448,66 +493,6 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
-            </File>
-            <File>
-              <FileName>lx_heap.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\lx_heap\lx_heap.c</FilePath>
-            </File>
-            <File>
-              <FileName>base_object.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\base_object\base_object.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>kernel</GroupName>
-          <Files>
-            <File>
-              <FileName>hal_timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hal_timer.c</FilePath>
-            </File>
-            <File>
-              <FileName>event_hal.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\event_hal.c</FilePath>
-            </File>
-            <File>
-              <FileName>os.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\os.c</FilePath>
-            </File>
-            <File>
-              <FileName>message.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\message.c</FilePath>
-            </File>
-            <File>
-              <FileName>cling_comm_cmd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_cmd.c</FilePath>
-            </File>
-            <File>
-              <FileName>cling_comm_hal.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_hal.c</FilePath>
-            </File>
-            <File>
-              <FileName>cling_comm_logic_link.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_logic_link.c</FilePath>
-            </File>
-            <File>
-              <FileName>cling_comm_mac.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_mac.c</FilePath>
-            </File>
-            <File>
-              <FileName>cling_comm_user.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_user.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -697,6 +682,66 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>comm_protocol</GroupName>
+          <Files>
+            <File>
+              <FileName>cling_comm_cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>cling_comm_hal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_hal.c</FilePath>
+            </File>
+            <File>
+              <FileName>cling_comm_logic_link.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_logic_link.c</FilePath>
+            </File>
+            <File>
+              <FileName>cling_comm_mac.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_mac.c</FilePath>
+            </File>
+            <File>
+              <FileName>cling_comm_user.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_user.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>wificomm</GroupName>
+          <Files>
+            <File>
+              <FileName>wifi_cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\wifi_comm_protocol\wifi_cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>wifi_mac.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\wifi_comm_protocol\wifi_mac.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>shell</GroupName>
+          <Files>
+            <File>
+              <FileName>cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\q_shell\cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>Q_Shell.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\q_shell\Q_Shell.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1630,21 +1675,6 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>shell</GroupName>
-          <Files>
-            <File>
-              <FileName>cmd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\q_shell\cmd.c</FilePath>
-            </File>
-            <File>
-              <FileName>Q_Shell.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\q_shell\Q_Shell.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2040,13 +2070,58 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Application</GroupName>
+          <GroupName>task</GroupName>
           <Files>
             <File>
               <FileName>system_task.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\task\systemtask\system_task.c</FilePath>
             </File>
+            <File>
+              <FileName>comm_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\task\commtask\comm_task.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>kernel</GroupName>
+          <Files>
+            <File>
+              <FileName>lx_heap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\lx_heap\lx_heap.c</FilePath>
+            </File>
+            <File>
+              <FileName>base_object.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\base_object\base_object.c</FilePath>
+            </File>
+            <File>
+              <FileName>hal_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hal_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>event_hal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\event_hal.c</FilePath>
+            </File>
+            <File>
+              <FileName>os.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\os.c</FilePath>
+            </File>
+            <File>
+              <FileName>message.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\message.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>oal</GroupName>
+          <Files>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
@@ -2092,66 +2167,6 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
-            </File>
-            <File>
-              <FileName>lx_heap.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\lx_heap\lx_heap.c</FilePath>
-            </File>
-            <File>
-              <FileName>base_object.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\base_object\base_object.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>kernel</GroupName>
-          <Files>
-            <File>
-              <FileName>hal_timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hal_timer.c</FilePath>
-            </File>
-            <File>
-              <FileName>event_hal.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\event_hal.c</FilePath>
-            </File>
-            <File>
-              <FileName>os.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\os.c</FilePath>
-            </File>
-            <File>
-              <FileName>message.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\message.c</FilePath>
-            </File>
-            <File>
-              <FileName>cling_comm_cmd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_cmd.c</FilePath>
-            </File>
-            <File>
-              <FileName>cling_comm_hal.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_hal.c</FilePath>
-            </File>
-            <File>
-              <FileName>cling_comm_logic_link.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_logic_link.c</FilePath>
-            </File>
-            <File>
-              <FileName>cling_comm_mac.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_mac.c</FilePath>
-            </File>
-            <File>
-              <FileName>cling_comm_user.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_user.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2341,6 +2356,66 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>comm_protocol</GroupName>
+          <Files>
+            <File>
+              <FileName>cling_comm_cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>cling_comm_hal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_hal.c</FilePath>
+            </File>
+            <File>
+              <FileName>cling_comm_logic_link.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_logic_link.c</FilePath>
+            </File>
+            <File>
+              <FileName>cling_comm_mac.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_mac.c</FilePath>
+            </File>
+            <File>
+              <FileName>cling_comm_user.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\hicling_comm_prot\cling_comm_user.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>wificomm</GroupName>
+          <Files>
+            <File>
+              <FileName>wifi_cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\wifi_comm_protocol\wifi_cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>wifi_mac.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\wifi_comm_protocol\wifi_mac.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>shell</GroupName>
+          <Files>
+            <File>
+              <FileName>cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\q_shell\cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>Q_Shell.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\kernel\q_shell\Q_Shell.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -3274,21 +3349,6 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>shell</GroupName>
-          <Files>
-            <File>
-              <FileName>cmd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\q_shell\cmd.c</FilePath>
-            </File>
-            <File>
-              <FileName>Q_Shell.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\kernel\q_shell\Q_Shell.c</FilePath>
             </File>
           </Files>
         </Group>

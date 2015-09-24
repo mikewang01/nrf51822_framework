@@ -22,7 +22,7 @@
 #include "app_util.h"
 #include "app_trace.h"
 #include "string.h"
-
+#include "../lx_nrf51Kit.h"
 
 #define LOG                    app_trace_log         /**< Debug logger macro that will be used in this file to do logging of important information over UART. */
 
@@ -130,7 +130,7 @@ void _receivedPacketProcess(uint16_t uuid, char type, char *msg, uint32_t len);
 static void on_hvx(ble_hrs_c_t * p_ble_hrs_c, const ble_evt_t * p_ble_evt)
 {
     // Check if this is a heart rate notification.
-    LOG("[%s]:%d %d\r\n",__FUNCTION__,p_ble_evt->evt.gattc_evt.params.hvx.handle, p_ble_evt->evt.gattc_evt.params.hvx.len);
+    //LOG("[%s]:%d %d\r\n",__FUNCTION__,p_ble_evt->evt.gattc_evt.params.hvx.handle, p_ble_evt->evt.gattc_evt.params.hvx.len);
     _receivedPacketProcess(((p_ble_evt->evt.gattc_evt.params.hvx.handle - p_ble_hrs_c->hrm_handle[0] ) >>2)+ CLING_UUID_1 + 1, 0 , (char*)p_ble_evt->evt.gattc_evt.params.hvx.data, p_ble_evt->evt.gattc_evt.params.hvx.len);
  #if 0
     if (p_ble_evt->evt.gattc_evt.params.hvx.handle == p_ble_hrs_c->hrm_handle[0]) {
@@ -280,9 +280,7 @@ static uint32_t cccd_configure(uint16_t conn_handle, uint16_t handle_cccd, bool 
     return NRF_SUCCESS;
 }
 
-void cling_comm_cmd_load_device_info();
-void cling_comm_cmd_device_reboot();
-void cling_comm_cmd_get_daily_activity_total();
+
 uint32_t ble_hrs_c_hrm_notif_enable(ble_hrs_c_t * p_ble_hrs_c)
 {
     if (p_ble_hrs_c == NULL) {
@@ -293,12 +291,7 @@ uint32_t ble_hrs_c_hrm_notif_enable(ble_hrs_c_t * p_ble_hrs_c)
     for(i=0; i< 4; i++){
         cccd_configure(p_ble_hrs_c->conn_handle, p_ble_hrs_c->hrm_cccd_handle[i], true);
     }
-    //cling_comm_cmd_device_reboot();
-    //cling_comm_cmd_load_device_info();
-    cling_comm_cmd_load_device_info();
-    cling_comm_cmd_load_device_info();
-    cling_comm_cmd_load_device_info();
-    cling_comm_cmd_load_device_info();
+    send_message(1 , SYSTEM_EVENT, DEV_MSG , BAT_POWER_USB_PULLOUT, NULL, 0);
     return NRF_SUCCESS;
 }
 

@@ -36,7 +36,7 @@
 #include "bsp.h"
 #include "bsp_btn_ble.h"
 #include "lx_nrf51Kit.h"
-
+#include "cling_comm_user.h"
 #define UART_TX_BUF_SIZE           256                                /**< UART TX buffer size. */
 #define UART_RX_BUF_SIZE           1                                  /**< UART RX buffer size. */
 
@@ -787,7 +787,7 @@ static void uart_init(void)
                        UART_RX_BUF_SIZE,
                        UART_TX_BUF_SIZE,
                        uart_error_handle,
-                       APP_IRQ_PRIORITY_LOW,
+                       APP_IRQ_PRIORITY_HIGH,
                        err_code);
 
     APP_ERROR_CHECK(err_code);
@@ -829,8 +829,9 @@ extern void system_timer_init(void);
 
 void os_init(void);
 void os_shedule(void);
-int cling_comm_logic_link_init();
 int cling_comm_user_init();
+
+
 int main(void)
 {
     bool erase_bonds;
@@ -847,7 +848,8 @@ int main(void)
     device_manager_init(erase_bonds);
     db_discovery_init();
     hrs_c_init();
-    cling_comm_user_init();
+
+   // cling_comm_user_init();
     //bas_c_init();
     NEW(event_upload_obj_p, event_hal_manager);
     scan_start();

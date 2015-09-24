@@ -13,8 +13,9 @@
 .\_build\cling_comm_user.o: ..\..\..\..\..\..\components\device\compiler_abstraction.h
 .\_build\cling_comm_user.o: d:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\_build\cling_comm_user.o: ..\..\..\incs\cling_comm_hal.h
-.\_build\cling_comm_user.o: ..\..\..\incs\base_object.h
+.\_build\cling_comm_user.o: ..\..\..\incs\cling_comm_user.h
 .\_build\cling_comm_user.o: ..\..\..\incs\oop_hal.h
+.\_build\cling_comm_user.o: ..\..\..\incs\base_object.h
 .\_build\cling_comm_user.o: ..\..\..\kernel\hicling_comm_prot\../../lx_nrf51Kit.h
 .\_build\cling_comm_user.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
 .\_build\cling_comm_user.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h

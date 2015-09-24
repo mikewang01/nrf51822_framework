@@ -48,9 +48,11 @@ uint32_t   os_get_tick(void);
 void   os_show_version(void);
 /*get current task id*/
 uint16_t os_get_current_taskid(void);
-
+uint16_t os_get_task_max(void);
 void  exam_assert(char * file_name, unsigned int line_no);
 
+/*
+*/
 
 #endif
 

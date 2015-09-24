@@ -129,6 +129,7 @@ int logic_link_send_single_package(uint8_t *msg, uint16_t lenth)
 int logic_link_send_normal_package(uint8_t *msg, uint16_t lenth, uint8_t need_ack)
 {
     uint16_t pkt_number = 0;
+    uint16_t positon = 0;
     /*the package number that is gonna splited*/
     pkt_number = (uint16_t)(lenth / MAXIMUM_PACKET_PAYLOAD_SIZE);
     if (lenth % MAXIMUM_PACKET_PAYLOAD_SIZE) {
@@ -137,15 +138,20 @@ int logic_link_send_normal_package(uint8_t *msg, uint16_t lenth, uint8_t need_ac
 #define _START_COUNT_ 0
 #define __APP_ACK_UP_THREHOLD_ 7
     int i = 0;
+    int ret = LX_ERROR;
     int package_ack_count = __APP_ACK_UP_THREHOLD_;
+    /*imcrese the maek varires of package number*/
+    package_mark++;
     for(i = _START_COUNT_; i < pkt_number + _START_COUNT_; i++) {
         struct logic_link_package *pkt = (struct logic_link_package *)LX_Malloc(sizeof(struct logic_link_package));
         ASSERT(pkt != NULL);
         pkt->need_ack = false;
-
+        /*this area means the package lenth taht has been sended*/
+        pkt->lenth = i*MAXIMUM_PACKET_PAYLOAD_SIZE;
         /*this is the first package*/
         if(i == _START_COUNT_) {
             pkt->send_channel_uuid = (uint16_t)UUID_RX_START;
+            pkt->lenth = lenth;
         } else if(i == pkt_number + _START_COUNT_ - 1) {
             /*this is the last package data*/
             pkt->send_channel_uuid = (uint16_t)UUID_RX_END;
@@ -153,15 +159,16 @@ int logic_link_send_normal_package(uint8_t *msg, uint16_t lenth, uint8_t need_ac
                 pkt->need_ack = true;
             }
         } else {
-            /*this is the last package data*/
+            /*this is the middle package data*/
             if(need_ack == true && i >= package_ack_count) {
                 package_ack_count += __APP_ACK_UP_THREHOLD_;
                 pkt->need_ack = true;
             }
             pkt->send_channel_uuid = (uint16_t)UUID_RX_MIDDLE;
         }
-        pkt->package_id = package_mark++;
-        pkt->lenth = lenth;
+        /*used to identify which group these spltted pachage blonged to */
+        pkt->package_id = package_mark;
+        /*indicate package state  wait for send or wait for ack*/
         pkt->package_state = LOGIC_LINK_WAIT_FOR_SEND;
         pkt->type = (uint16_t)NORMAL_PACKAGE;
         memcpy(pkt->pay_load, msg + (i * MAXIMUM_PACKET_PAYLOAD_SIZE), lenth);
@@ -169,17 +176,16 @@ int logic_link_send_normal_package(uint8_t *msg, uint16_t lenth, uint8_t need_ac
         // logic_link_layer_package_sending = pkt;
 #if 1
         MUTEX_WAIT(logic_link_mutex);
-        int ret = list_mgr_obj->add(list_mgr_obj, &mac_send_list_header, (struct base_object *)(pkt), OS_Object_Class_Mgr, "l");
+        ret = list_mgr_obj->add(list_mgr_obj, &mac_send_list_header, (struct base_object *)(pkt), OS_Object_Class_Mgr, "l");
         MUTEX_POST(logic_link_mutex);
-        if(ret == LX_OK && logic_link_layer_package_sending == NULL) {
-            DEBUG("ist_mgr_o bj->add(list_mgr_obj\r\n");
-            send_packet_list_demon(NULL);
-            TIMER_START(m_logic_link_send_timer_id, PACKET_TX_TIMEOUT, NULL);
-            return LX_OK;
-
-        }
-#endif
     }
+    if(ret == LX_OK && logic_link_layer_package_sending == NULL) {
+        DEBUG("ist_mgr_o bj->add(list_mgr_obj\r\n");
+        send_packet_list_demon(NULL);
+        TIMER_START(m_logic_link_send_timer_id, PACKET_TX_TIMEOUT, NULL);
+        return LX_OK;
+    }
+#endif
     return LX_OK;
 }
 
@@ -253,6 +259,8 @@ static int send_packet_list_demon(void * p_context)
     }
 
     if( ret == LX_OK) {
+        /*after package sended, change state of this pac*/
+        logic_link_layer_package_sending->package_state = LOGIC_LINK_WAIT_FOR_ACK;
         /*this is a  single process package*/
         if(logic_link_layer_package_sending->type == SINGLE_PACKAGE) {
             comm_protocol_mac_send_singlepacket(logic_link_layer_package_sending->send_channel_uuid,
@@ -267,8 +275,7 @@ static int send_packet_list_demon(void * p_context)
                                                   logic_link_layer_package_sending->lenth);
 
         }
-        /*after package sended, change state of this pac*/
-        logic_link_layer_package_sending->package_state = LOGIC_LINK_WAIT_FOR_ACK;
+
 
     }
 
@@ -465,6 +472,7 @@ static int ble_stack_logic_link_write_rsp_call_back()
                 DEBUG("[%s]:%s\r\n", __FUNCTION__, "more data existed");
                 /*add new element to sending buffer*/
                 logic_link_layer_package_sending = (struct logic_link_package *)t;
+                send_packet_list_demon(NULL);
                 /*restart timer to check out ack time out*/
                 TIMER_START(m_logic_link_send_timer_id, PACKET_TX_TIMEOUT, NULL);
             } else {

@@ -1,0 +1,226 @@
+Dependencies for Project 'spi_slave_pca10028', Target 'nrf51422_xxac': (DO NOT MODIFY !)
+F (..\..\main.c)(0x55F62489)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\main.o --omf_browse .\_build\main.crf --depend .\_build\main.d)
+I (..\..\spi_slave_example.h)(0x55F62489)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x55F6247C)
+I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (..\..\..\..\bsp\bsp.h)(0x55F62486)
+I (..\..\..\..\bsp\boards.h)(0x55F62486)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\bsp\pca10028.h)(0x55F62486)
+I (..\..\..\..\..\components\libraries\button\app_button.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+F (..\..\spi_slave_example.c)(0x55F62489)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\spi_slave_example.o --omf_browse .\_build\spi_slave_example.crf --depend .\_build\spi_slave_example.d)
+I (..\..\spi_slave_example.h)(0x55F62489)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\..\..\components\drivers_nrf\spi_slave\spi_slave.h)(0x55F6247C)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x55F6247C)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\..\bsp\bsp.h)(0x55F62486)
+I (..\..\..\..\bsp\boards.h)(0x55F62486)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\bsp\pca10028.h)(0x55F62486)
+I (..\..\..\..\..\components\libraries\button\app_button.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+F (..\..\..\..\bsp\bsp.c)(0x55FA3357)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\bsp.o --omf_browse .\_build\bsp.crf --depend .\_build\bsp.d)
+I (..\..\..\..\bsp\bsp.h)(0x55F62486)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\..\bsp\boards.h)(0x55F62486)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\bsp\pca10028.h)(0x55F62486)
+I (..\..\..\..\..\components\libraries\button\app_button.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stddef.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+F (..\..\..\..\..\components\toolchain\arm\arm_startup_nrf51.s)(0x55F6247F)(--cpu Cortex-M0 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include--pd "BOARD_PCA10028 SETA 1" --pd "NRF51 SETA 1" --pd "SWI_DISABLE0 SETA 1" --list .\_build\arm_startup_nrf51.lst --xref -o .\_build\arm_startup_nrf51.o --depend .\_build\arm_startup_nrf51.d)
+F (..\..\..\..\..\components\toolchain\system_nrf51.c)(0x5603C836)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\system_nrf51.o --omf_browse .\_build\system_nrf51.crf --depend .\_build\system_nrf51.d)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+F (..\..\Abstract.txt)(0x55F62489)()
+F (..\..\license.txt)(0x55F62489)()
+F (..\..\..\..\..\components\drivers_nrf\hal\nrf_delay.c)(0x55F6247C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\nrf_delay.o --omf_browse .\_build\nrf_delay.crf --depend .\_build\nrf_delay.d)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_delay.h)(0x55F6247C)
+F (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c)(0x55F6247C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\nrf_drv_common.o --omf_browse .\_build\nrf_drv_common.crf --depend .\_build\nrf_drv_common.d)
+I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x55F6247C)
+F (..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.c)(0x55F6247C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\nrf_drv_gpiote.o --omf_browse .\_build\nrf_drv_gpiote.crf --depend .\_build\nrf_drv_gpiote.d)
+I (..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.h)(0x55F6247C)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stddef.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\config\nrf_drv_config.h)(0x55F62489)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x55F6247D)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x55F6247C)
+I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x55F6247C)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x55F6247D)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+F (..\..\..\..\..\components\drivers_nrf\spi_slave\spi_slave.c)(0x55F6247C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\spi_slave.o --omf_browse .\_build\spi_slave.crf --depend .\_build\spi_slave.d)
+I (..\..\..\..\..\components\drivers_nrf\spi_slave\spi_slave.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x55F6247D)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+F (..\..\..\..\..\components\libraries\button\app_button.c)(0x55F6247C)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\app_button.o --omf_browse .\_build\app_button.crf --depend .\_build\app_button.d)
+I (..\..\..\..\..\components\libraries\button\app_button.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x55F6247C)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\string.h)(0x5284661A)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.h)(0x55F6247C)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stddef.h)(0x5284661A)
+I (..\..\config\nrf_drv_config.h)(0x55F62489)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x55F6247D)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+F (..\..\..\..\..\components\libraries\util\app_error.c)(0x55F6247D)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\app_error.o --omf_browse .\_build\app_error.crf --depend .\_build\app_error.d)
+I (..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x55F6247C)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x55F6247D)
+F (..\..\..\..\..\components\libraries\timer\app_timer.c)(0x55FA3DCE)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\app_timer.o --omf_browse .\_build\app_timer.crf --depend .\_build\app_timer.d)
+I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x55F6247D)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (d:\Keil\ARM\ARMCC\include\stdbool.h)(0x55F65E6D)
+I (d:\Keil\ARM\ARMCC\include\stdio.h)(0x5563F0BE)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x55F6247D)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x55F6247C)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x55F6247D)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (d:\Keil\ARM\ARMCC\include\stdlib.h)(0x5284661A)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+I (..\..\..\..\..\components\device\nrf51_bitfields.h)(0x55F6247C)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.h)(0x55F6247C)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_delay.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51_deprecated.h)(0x55F6247C)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x55F6247D)
+F (..\..\..\..\..\components\libraries\util\app_util_platform.c)(0x55F6247D)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\app_util_platform.o --omf_browse .\_build\app_util_platform.crf --depend .\_build\app_util_platform.d)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x55F6247D)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)
+I (..\..\..\..\..\components\device\nrf51.h)(0x55F6247C)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm0.h)(0x512C1E62)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmInstr.h)(0x51BA6374)
+I (d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cmFunc.h)(0x512C1E62)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x55F6247F)
+F (..\..\..\..\..\components\libraries\util\nrf_assert.c)(0x55F6247D)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_slave -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd --c99-I d:\Keil\ARM\RV31\INC-I d:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-DNRF51 -DBOARD_PCA10028 -DNRF51 -DSWI_DISABLE0 -o .\_build\nrf_assert.o --omf_browse .\_build\nrf_assert.crf --depend .\_build\nrf_assert.d)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x55F6247D)
+I (d:\Keil\ARM\ARMCC\include\stdint.h)(0x5284661A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x55F6247C)

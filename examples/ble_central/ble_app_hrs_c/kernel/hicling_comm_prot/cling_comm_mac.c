@@ -58,6 +58,8 @@ static int (*normal_package_recieve_callback)(uint16_t uuid, char type, char *ms
 static int (*single_package_recieve_callback)(uint16_t uuid, char type, char *msg, uint32_t len) = NULL;
 /*ble stack wrtite rsp callback*/
 static int (*ble_mac_layer_write_rsp_callback)(void) = NULL;
+
+
 /*********************************************************************
  * EXTERNAL VARIABLES
  */

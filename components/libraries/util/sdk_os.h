@@ -24,11 +24,10 @@
 
 #ifndef SDK_OS_H__
 #define SDK_OS_H__
-
-#define SDK_MUTEX_DEFINE(X)
-#define SDK_MUTEX_INIT(X)
-#define SDK_MUTEX_LOCK(X)
-#define SDK_MUTEX_UNLOCK(X)
+#define SDK_MUTEX_DEFINE(X)    //DECLARE_MUTEX(X) 
+#define SDK_MUTEX_INIT(X)       
+#define SDK_MUTEX_LOCK(X)      // MUTEX_WAIT(X) 
+#define SDK_MUTEX_UNLOCK(X)    // MUTEX_POST(X)
 
 /**
  * @defgroup os_data_type Data types.
